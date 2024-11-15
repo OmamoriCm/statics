@@ -1,0 +1,17 @@
+<?xml version="1.0"?> 
+<openerp>
+  <data> 
+   
+    <record model="ir.ui.view" id="res_partner_form">
+      <field name="name">view_partner_property_form</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="account.view_partner_property_form"/>
+      <field name="arch" type="xml">
+	    <field name="property_account_position" position="after"> 
+	      <field name="account_payment_preference" widget="selection"/> 
+	    </field> 
+	    </field>
+    </record>
+
+  </data>
+</openerp>

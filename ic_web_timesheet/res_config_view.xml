@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="ic_hr_timesheet_config_setting">
+            <field name="name">ic.hr.timesheet.config.setting</field>
+            <field name="model">hr.config.settings</field>
+            <field name="inherit_id" ref="hr_timesheet_sheet.view_hr_timehseet_config_settings"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[field[@name='timesheet_max_difference']]" position="after">
+                    <div>
+                        <label for="timesheet_day_duration" attrs="{'invisible': [('module_hr_timesheet_sheet','=',False)]}"/>
+                        <field name="timesheet_day_duration" attrs="{'invisible': [('module_hr_timesheet_sheet','=',False)], 'required': [('module_hr_timesheet_sheet','=',True)]}" class="oe_inline"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

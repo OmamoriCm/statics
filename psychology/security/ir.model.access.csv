@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_psychology_case_type_employee,psychology.case_type - user,model_psychology_case_type,base.group_user,1,1,1,1
+access_psychology_case_type_all,psychology.case_type - all,model_psychology_case_type,,1,0,0,0
+access_psychology_case_employee,psychology.case - user,model_psychology_case,base.group_user,1,1,1,1
+access_psychology_case_all,psychology.case - all,model_psychology_case,,1,0,0,0
+access_psychology_case_service_employee,psychology.case_service - user,model_psychology_case_service,base.group_user,1,1,1,1
+access_psychology_case_service_all,psychology.case_service - all,model_psychology_case_service,,1,0,0,0
+access_psychology_case_activity_employee,psychology.case_activity - user,model_psychology_case_activity,base.group_user,1,1,1,1
+access_psychology_case_activity_all,psychology.case_activity - all,model_psychology_case_activity,,1,0,0,0
+access_psychology_case_activity_report_employee,psychology.case_activity_report - user,model_psychology_case_activity_report,base.group_user,1,1,1,1
+access_psychology_case_activity_report_all,psychology.case_activity_report - all,model_psychology_case_activity_report,,1,0,0,0

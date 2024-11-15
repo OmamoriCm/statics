@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- Inherited Account Voucher Form View -->
+        <record id="view_voucher_form_inherit" model="ir.ui.view">
+            <field name="name">account.voucher.form_inherit</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_vendor_receipt_dialog_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='journal_id']" position="after">
+                    <field name="journal_type" invisible="1"/>
+                    <field name="stamped" attrs="{'invisible':[('journal_type', '!=', 'cash')]}"/>
+                    <field name="invoice_id" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="account_voucher_tree_inherit" model="ir.ui.view">
+            <field name="name">account.voucher.tree.inherit</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_voucher_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount']" position="after">
+                    <field name="stamped"/>
+                    <field name="amount_letter" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+         <record id="view_vendor_receipt_form_inherit" model="ir.ui.view">
+            <field name="name">view.vendor.receipt.form.inherit</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_vendor_receipt_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount']" position="after">
+                    <field name="stamped"/>
+                </xpath>
+            </field>
+        </record>
+        <!-- Inherited Account Invoice Form View -->
+        <record id="view_invoice_customer_inherit" model="ir.ui.view">
+            <field name="name">account.voucher.set_invoice_id</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account_voucher.view_invoice_customer"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='invoice_pay_customer']" position="attributes">
+                    <attribute name="context">{'default_invoice_id':id}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

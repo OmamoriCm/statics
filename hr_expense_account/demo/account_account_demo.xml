@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="demo_account1" model="account.account">
+    <field name="name">Medical Expense - (test)</field>
+    <field name="user_type" ref="account.data_account_type_expense" />
+    <field name="code">EXA01</field>
+    <field name="reconcile" eval="False" />
+    <field name="type">other</field>
+    <field name="parent_id" ref="account.ovr" />
+</record>
+
+<record id="demo_account2" model="account.account">
+    <field name="name">Entertainment Expense - (test)</field>
+    <field name="user_type" ref="account.data_account_type_expense" />
+    <field name="code">EXA02</field>
+    <field name="reconcile" eval="False" />
+    <field name="type">other</field>
+    <field name="parent_id" ref="account.ovr" />
+</record>
+
+</data>
+</openerp>

@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+rental_property_recurring_fee_employee,rental.property_recurring_fee - user,model_rental_property_recurring_fee,base.group_user,1,1,1,1
+rental_property_recurring_fee_all,rental.property_recurring_fee - all,model_rental_property_recurring_fee,,0,0,0,0
+rental_property_detail_schedule_employee,rental.property_detail_schedule - user,model_rental_property_detail_schedule,base.group_user,1,1,1,1
+rental_property_detail_schedule_all,rental.property_detail_schedule - all,model_rental_property_detail_schedule,,0,0,0,0
+rental_property_detail_employee,rental.property_detail - user,model_rental_property_detail,base.group_user,1,1,1,1
+rental_property_detail_all,rental.property_detail - all,model_rental_property_detail,,0,0,0,0
+rental_property_recurring_fee_schedule_employee,rental.property_recurring_fee_schedule - user,model_rental_property_recurring_fee_schedule,base.group_user,1,1,1,1
+rental_property_recurring_fee_schedule_all,rental.property_recurring_fee_schedule - all,model_rental_property_recurring_fee_schedule,,0,0,0,0
+rental_property_upfront_cost_employee,rental.property_upfront_cost - user,model_rental_property_upfront_cost,base.group_user,1,1,1,1
+rental_property_upfront_cost_all,rental.property_upfront_cost - all,model_rental_property_upfront_cost,,0,0,0,0
+rental_property_employee,rental.property - user,model_rental_property,base.group_user,1,1,1,1
+rental_property_all,rental.property - all,model_rental_property,,0,0,0,0

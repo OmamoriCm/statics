@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <template id="assets_backend" inherit_id="mail.assets_backend">
+			<xpath expr="." position="inside">
+				<script type="text/javascript" src="/mail_extend/static/src/js/mail_extend.js"></script>
+          	</xpath>
+        </template>
+
+    </data>
+</openerp>

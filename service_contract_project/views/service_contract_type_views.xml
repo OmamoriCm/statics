@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="service_contract_type_view_form" model="ir.ui.view">
+    <field name="name">service.contract_type form</field>
+    <field name="model">service.contract_type</field>
+    <field name="inherit_id" ref="service_contract.service_contract_type_view_form" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='parent_analytic_account_id']" position="after">
+                <field name="auto_create_project_ok" />
+            </xpath>
+        </data>
+    </field>
+</record>
+</data>
+</openerp>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_export_id_generator_product_export_id_generator,product_export_id_generator.product_export_id_generator,model_product_export_id_generator_product_export_id_generator,,1,0,0,0

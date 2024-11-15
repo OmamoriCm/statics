@@ -1,0 +1,29 @@
+<?xml version="1.0"?> 
+<openerp>
+  <data> 
+   
+    <record model="ir.ui.view" id="customer_invoice_form">
+      <field name="name">invoice_form</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_form"/>
+      <field name="arch" type="xml">
+	    <field name="fiscal_position" position="before"> 
+	      <field name="account_payment_preference" attrs="{'readonly':[('state','!=','draft')]}" widget="selection"/> 
+	    </field> 
+	    </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="supplier_invoice_form">
+      <field name="name">invoice_supplier_form</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_supplier_form"/>
+      <field name="arch" type="xml">
+        <field name="fiscal_position" position="before"> 
+	      <field name="account_payment_preference" attrs="{'readonly':[('state','!=','draft')]}" widget="selection"/> 
+	    </field> 
+	  </field>
+    </record>
+    
+  </data>
+</openerp>

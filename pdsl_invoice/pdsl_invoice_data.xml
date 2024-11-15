@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+
+<!-- Define customer paper format four invoice -->
+<record id="paperformat_invoice" model="report.paperformat">
+    <field name="name">US Letter (for invoice)</field>
+    <field name="default" eval="True" />
+    <field name="format">Letter</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">50</field>
+    <field name="margin_bottom">20</field>
+    <field name="margin_left">7</field>
+    <field name="margin_right">7</field>
+    <field name="header_line" eval="False" />
+    <field name="header_spacing">40</field>
+    <field name="dpi">90</field>
+</record>
+
+<!-- Replace existing invoice report by ours. -->
+<report
+    id="account.account_invoices"
+    model="account.invoice"
+    string="Invoices"
+    report_type="qweb-pdf"
+    name="pdsl_invoice.report_invoice"
+    file="pdsl_invoice.report_invoice"
+    attachment_use="False"
+    attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+    />
+
+<!-- Define the paper format of the report. -->
+<record id="account.account_invoices" model="ir.actions.report.xml">
+    <field name="paperformat_id" ref="pdsl_invoice.paperformat_invoice"/>
+</record>
+
+
+<!-- Replace existing quote report by ours. -->
+<report
+    id="sale.report_sale_order"
+    model="sale.order"
+    string="Quotation / Order"
+    report_type="qweb-pdf"
+    file="pdsl_invoice.report_saleorder" 
+    name="pdsl_invoice.report_saleorder"
+    />
+    
+<!-- Define the paper format of the report. -->
+<record id="sale.report_sale_order" model="ir.actions.report.xml">
+    <field name="paperformat_id" ref="pdsl_invoice.paperformat_invoice"/>
+</record>
+
+
+</data>
+</openerp>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="paperformat_warehouse_landscape" model="report.paperformat">
+            <field name="name">Warehouse Landscape</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">3</field>
+            <field name="dpi">90</field>
+        </record>
+
+    	<report
+            string="Stock Report"
+            id="report_warehouse_id"
+            model="report.warehouse"
+            report_type="qweb-pdf"
+            name="report_warehouse.warehouse_report"
+            file="report_warehouse.warehouse_report"
+        />
+    </data>
+</openerp>

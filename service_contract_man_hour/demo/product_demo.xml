@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="product_product_demo1" model="product.product">
+    <field name="name">Odoo Prepaid 100 Hour(s)</field>
+    <field name="categ_id" ref="product_category_demo1" />
+    <field name="list_price">35000000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product_uom_demo1" />
+    <field name="uom_po_id" ref="product_uom_demo1" />
+</record>
+
+<record id="product_product_demo2" model="product.product">
+    <field name="name">Odoo Prepaid 80 Hour(s)</field>
+    <field name="categ_id" ref="product_category_demo1" />
+    <field name="list_price">32000000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product_uom_demo2" />
+    <field name="uom_po_id" ref="product_uom_demo2" />
+</record>
+
+<record id="product_product_demo3" model="product.product">
+    <field name="name">Odoo Prepaid 40 Hour(s)</field>
+    <field name="categ_id" ref="product_category_demo1" />
+    <field name="list_price">17000000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product_uom_demo3" />
+    <field name="uom_po_id" ref="product_uom_demo3" />
+</record>
+
+<record id="product_product_demo4" model="product.product">
+    <field name="name">Odoo Prepaid 20 Hour(s)</field>
+    <field name="categ_id" ref="product_category_demo1" />
+    <field name="list_price">9000000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product_uom_demo4" />
+    <field name="uom_po_id" ref="product_uom_demo4" />
+</record>
+
+<record id="product_product_demo5" model="product.product">
+    <field name="name">Odoo Prepaid 10 Hour(s)</field>
+    <field name="categ_id" ref="product_category_demo1" />
+    <field name="list_price">3500000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product_uom_demo5" />
+    <field name="uom_po_id" ref="product_uom_demo5" />
+</record>
+
+</data>
+</openerp>

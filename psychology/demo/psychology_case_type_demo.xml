@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="psychology_case_type_demo1" model="psychology.case_type">
+    <field name="name">Clinical - Adult</field>
+    <field name="code">X001</field>
+    <field name="receivable_journal_id" ref="account.sales_journal" />
+    <field name="receivable_account_id" ref="account.a_recv" />
+    <field name="service_pricelist_id" ref="pricelist_standard_psi_service" />
+    <field name="activity_pricelist_id" ref="pricelist_standard_psi_activity" />
+    <field
+                name="service_allowed_product_categ_ids"
+                eval="[(6,0,[ref('product_category_demo1'), ref('product_category_demo2')])]"
+            />
+    <field
+                name="activity_allowed_product_categ_ids"
+                eval="[(6,0,[ref('product_category_demo4'), ref('product_category_demo5')])]"
+            />
+    <field
+                name="allowed_psychologist_ids"
+                eval="[(6,0,[ref('res_partner_demo1'), ref('res_partner_demo2'), ref('res_partner_demo3')])]"
+            />
+</record>
+
+<record id="psychology_case_type_demo2" model="psychology.case_type">
+    <field name="name">Clinical - Child &amp; Adolescent</field>
+    <field name="code">X002</field>
+    <field name="receivable_journal_id" ref="account.sales_journal" />
+    <field name="receivable_account_id" ref="account.a_recv" />
+    <field name="service_pricelist_id" ref="pricelist_standard_psi_service" />
+    <field name="activity_pricelist_id" ref="pricelist_standard_psi_activity" />
+    <field
+                name="service_allowed_product_categ_ids"
+                eval="[(6,0,[ref('product_category_demo1'), ref('product_category_demo3')])]"
+            />
+    <field
+                name="activity_allowed_product_categ_ids"
+                eval="[(6,0,[ref('product_category_demo4'), ref('product_category_demo6')])]"
+            />
+    <field
+                name="allowed_psychologist_ids"
+                eval="[(6,0,[ref('res_partner_demo4'), ref('res_partner_demo5'), ref('res_partner_demo6')])]"
+            />
+</record>
+
+</data>
+</openerp>

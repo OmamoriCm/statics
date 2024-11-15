@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="demo_reimbursement_type01" model="hr.reimbursement_type">
+    <field name="name">Employee Equipment - (test)</field>
+    <field name="code">T001</field>
+    <field name="journal_id" ref="employe_reimbursement_journal" />
+    <field
+                name="employee_reimbursement_payable_account_id"
+                ref="employe_reimbursement_account"
+            />
+    <field
+                name="allowed_product_categ_ids"
+                eval="[(6,0,[ref('product.imac'), ref('product.ipad'), ref('product.ipod')])]"
+            />
+    <field
+                name="allowed_product_ids"
+                eval="[(6,0,[ref('product.product_product_32'),ref('product.product_product_33')])]"
+            />
+</record>
+</data>
+</openerp>

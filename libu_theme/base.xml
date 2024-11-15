@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+	<data>
+		<template id="assets_common" name="tab_name_width assets" inherit_id="web.assets_common">
+			<xpath expr="." position="inside">
+			<script type="text/javascript" src="/colorz/static/src/js/chrome1.js"></script>
+			</xpath>
+		</template>
+
+		<template id="assets_backend" name="cnew_color_view_width assets" inherit_id="web.assets_backend">
+			
+			<xpath expr="." position="inside">
+				<link rel="stylesheet" href="/colorz/static/src/css/form_view.css"/>
+			</xpath>
+		</template>
+	</data>
+</openerp>

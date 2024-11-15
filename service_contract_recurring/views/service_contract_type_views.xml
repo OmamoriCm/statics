@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="service_contract_type_view_form" model="ir.ui.view">
+    <field name="name">service.contract_type form</field>
+    <field name="model">service.contract_type</field>
+    <field name="inherit_id" ref="service_contract.service_contract_type_view_form" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//page[@name='fix_item']" position="after">
+                <page name="recurring_item" string="Recurring Configuration">
+                    <group
+                                name="recurring_item_accounting"
+                                string="Accounting"
+                                colspan="4"
+                                col="2"
+                            >
+                        <field
+                                    name="recurring_item_receivable_journal_id"
+                                    string="Receivable Journal"
+                                    domain="[('type','=','sale')]"
+                                />
+                        <field
+                                    name="recurring_item_receivable_account_id"
+                                    string="Receivable Account"
+                                    domain="[('type','=','receivable')]"
+                                />
+                    </group>
+                    <group
+                                name="allowed_product"
+                                string="Allowed Products"
+                                colspan="4"
+                                col="2"
+                            >
+                        <field name="recurring_service_ok" />
+                        <field
+                                    name="recurring_item_allowed_product_ids"
+                                    colspan="2"
+                                    nolabel="1"
+                                />
+                    </group>
+                    <group
+                                name="allowed_product_categ"
+                                string="Allowed Product Categories"
+                                colspan="4"
+                                col="2"
+                            >
+                        <field
+                                    name="recurring_item_allowed_product_categ_ids"
+                                    colspan="2"
+                                    nolabel="1"
+                                />
+                    </group>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+</data>
+</openerp>

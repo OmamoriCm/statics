@@ -1,0 +1,4 @@
+"id","active","perm_create","create_uid/id","create_date","perm_unlink","group_id/id","write_uid/id","write_date","name","model_id/id","perm_read","perm_write"
+"account_payment_preference.read","True","False","base.user_root",,"False","account.group_account_invoice",,,"Invoicing & Payments READONLY","account_payment_preference.model_account_payment_preference","True","False"
+"account_payment_preference.full","True","True","base.user_root",,"True","account.group_account_user",,,"Accountant FULL ACCESS","account_payment_preference.model_account_payment_preference","True","True"
+

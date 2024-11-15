@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- SEARCH VIEW -->
+        <record id="view_law_tracking_log_filter" model="ir.ui.view">
+            <field name="name">law_tracking.log.select</field>
+            <field name="model">law_tracking.log</field>
+            <field name="arch" type="xml">
+                <search string="log" version="7.0">
+                    <group string="By Attribute">
+                    <field name="date" string="Date"
+                            />
+                    <field name="user_id" string="User"
+                            />
+                    <field name="name" string="Description"
+                            />
+                    </group>
+                    <group string="By object">
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- FORMVIEW -->
+        <record id="view_law_tracking_log_form" model="ir.ui.view">
+            <field name="name">law_tracking.log.form</field>
+            <field name="model">law_tracking.log</field>
+            <field name="arch" type="xml">
+                <form string="log" version="7.0">
+                    <header>
+                    </header>
+                    <sheet string="log">
+                     <group>
+                        <field name="date"
+                            />
+                        <field name="user_id"
+                            />
+                        <field name="name"
+                            />
+                     </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <!-- TREEVIEW -->
+
+        <record id="view_law_tracking_log_tree" model="ir.ui.view">
+            <field name="name">law_tracking.log.tree</field>
+            <field name="model">law_tracking.log</field>
+            <field name="arch" type="xml">
+                <tree string="log"
+                    >
+                    <field name="date"
+                        />
+                    <field name="user_id"
+                        />
+                    <field name="name"
+                        />
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4
+     -->

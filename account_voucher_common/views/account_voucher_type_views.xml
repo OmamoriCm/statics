@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="account_voucher_type_view_tree" model="ir.ui.view">
+    <field name="name">account.voucher_type tree</field>
+    <field name="model">account.voucher_type</field>
+    <field name="arch" type="xml">
+        <tree create="false" delete="false">
+            <field name="name" />
+        </tree>
+    </field>
+</record>
+
+<record id="account_voucher_type_view_form" model="ir.ui.view">
+    <field name="name">account.voucher_type form</field>
+    <field name="model">account.voucher_type</field>
+    <field name="arch" type="xml">
+        <form create="false" delete="false">
+            <header>
+                <button
+                            name="action_execute"
+                            type="object"
+                            string="Apply"
+                            class="oe_highlight"
+                            confirm="Apply configuration. Are you sure?"
+                        />
+            </header>
+            <group name="group_1">
+                <label for="id" string="Checks" />
+                <div>
+                    <div>
+                        <label for="check_total" />
+                        <field name="check_total" class="oe_inline" />
+                    </div>
+                    <div>
+                        <label for="check_debit_credit" />
+                        <field name="check_debit_credit" class="oe_inline" />
+                    </div>
+                    <div>
+                        <label for="check_partner" />
+                        <field name="check_partner" class="oe_inline" />
+                    </div>
+                </div>
+                <label for="id" string="Header" />
+                <div>
+                    <div>
+                        <label for="header_allow_negative" />
+                        <field name="header_allow_negative" class="oe_inline" />
+                    </div>
+                    <div>
+                        <label for="create_header_item" />
+                        <field name="create_header_item" class="oe_inline" />
+                    </div>
+                    <div>
+                        <label for="header_type" />
+                        <field name="header_type" class="oe_inline" />
+                    </div>
+                </div>
+                <label for="id" string="Detail" />
+                <div>
+                    <div>
+                        <label for="detail_allow_negative" />
+                        <field name="detail_allow_negative" class="oe_inline" />
+                    </div>
+                </div>
+            </group>
+            <notebook>
+                <page name="page_python_expression" string="Domain Expression">
+                    <field name="python_code" nolabel="1" />
+                </page>
+            </notebook>
+        </form>
+    </field>
+</record>
+
+</data>
+</openerp>

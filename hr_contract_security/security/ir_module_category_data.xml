@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<openerp>
+<data>
+
+<record id="module_hr_contract" model="ir.module.category">
+    <field name="name">Employee Contract Operation</field>
+</record>
+
+<record id="module_hr_contract_viewer" model="ir.module.category">
+    <field name="name">Employee Contract Viewer</field>
+</record>
+
+</data>
+</openerp>

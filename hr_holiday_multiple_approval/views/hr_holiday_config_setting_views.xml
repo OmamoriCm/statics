@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 PT. Simetri Sinergi Indonesia
+     Copyright 2020 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="hr_holiday_config_setting_view_form" model="ir.ui.view">
+    <field name="name">hr.holiday_config_setting form</field>
+    <field name="model">hr.holiday_config_setting</field>
+    <field
+                name="inherit_id"
+                ref="hr_holiday_configuration_page.hr_holiday_config_setting_view_form"
+            />
+    <field name="mode">extension</field>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <separator string="Leave Request Workflow Policy" />
+                <group name="leave_request_workflow_policy">
+                    <label for="id" string="Allowed Groups" />
+                    <div>
+                        <div>
+                            <label for="id" string="To Confirm" class="oe_inline" />
+                            <field
+                                        name="leave_request_confirm_grp_ids"
+                                        widget="many2many_tags"
+                                        class="oe_inline"
+                                    />
+                        </div>
+                        <div>
+                            <label for="id" string="To Cancel" class="oe_inline" />
+                            <field
+                                        name="leave_request_cancel_grp_ids"
+                                        widget="many2many_tags"
+                                        class="oe_inline"
+                                    />
+                        </div>
+                        <div>
+                            <label for="id" string="To Restart" class="oe_inline" />
+                            <field
+                                        name="leave_request_restart_grp_ids"
+                                        widget="many2many_tags"
+                                        class="oe_inline"
+                                    />
+                        </div>
+                        <div>
+                            <label
+                                        for="id"
+                                        string="To Restart Approval"
+                                        class="oe_inline"
+                                    />
+                            <field
+                                        name="leave_request_restart_val_grp_ids"
+                                        widget="many2many_tags"
+                                        class="oe_inline"
+                                    />
+                        </div>
+                    </div>
+                </group>
+                <separator string="Leave Allocation Workflow Policy" />
+                <group name="leave_allocation_workflow_policy">
+                    <label for="id" string="Allowed Groups" />
+                    <div>
+                        <div>
+                            <label for="id" string="To Confirm" class="oe_inline" />
+                            <field
+                                        name="leave_allocation_confirm_grp_ids"
+                                        widget="many2many_tags"
+                                        class="oe_inline"
+                                    />
+                        </div>
+                        <div>
+                            <label for="id" string="To Cancel" class="oe_inline" />
+                            <field
+                                        name="leave_allocation_cancel_grp_ids"
+                                        widget="many2many_tags"
+                                        class="oe_inline"
+                                    />
+                        </div>
+                        <div>
+                            <label for="id" string="To Restart" class="oe_inline" />
+                            <field
+                                        name="leave_allocation_restart_grp_ids"
+                                        widget="many2many_tags"
+                                        class="oe_inline"
+                                    />
+                        </div>
+                        <div>
+                            <label
+                                        for="id"
+                                        string="To Restart Approval"
+                                        class="oe_inline"
+                                    />
+                            <field
+                                        name="leave_allocation_restart_val_grp_ids"
+                                        widget="many2many_tags"
+                                        class="oe_inline"
+                                    />
+                        </div>
+                    </div>
+                </group>
+            </xpath>
+        </data>
+    </field>
+</record>
+</data>
+</openerp>

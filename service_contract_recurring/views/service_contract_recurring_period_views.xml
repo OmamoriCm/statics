@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="service_contract_recurring_period_view_search" model="ir.ui.view">
+    <field name="name">service.contract_recurring_period form</field>
+    <field name="model">service.contract_recurring_period</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="type_id" />
+            <field name="partner_id" />
+            <field name="responsible_id" />
+            <field name="contract_id" />
+            <group name="dom_contract_state" string="Contract State">
+                <filter
+                            name="dom_contract_draft"
+                            string="Draft"
+                            domain="[('contract_state','=','draft')]"
+                        />
+                <filter
+                            name="dom_contract_confirm"
+                            string="Waiting for Approval"
+                            domain="[('contract_state','=','confirm')]"
+                        />
+                <filter
+                            name="dom_contract_approve"
+                            string="Ready To Start"
+                            domain="[('contract_state','=','approve')]"
+                        />
+                <filter
+                            name="dom_contract_open"
+                            string="In Progress"
+                            domain="[('contract_state','=','open')]"
+                        />
+                <filter
+                            name="dom_contract_done"
+                            string="Done"
+                            domain="[('contract_state','=','done')]"
+                        />
+                <filter
+                            name="dom_contract_cancel"
+                            string="Cancel"
+                            domain="[('contract_state','=','cancel')]"
+                        />
+                <filter
+                            name="dom_contract_terminate"
+                            string="Terminate"
+                            domain="[('contract_state','=','terminate')]"
+                        />
+            </group>
+            <group name="dom_state" string="State">
+                <filter
+                            name="dom_draft"
+                            string="Draft"
+                            domain="[('state','=','draft')]"
+                        />
+                <filter
+                            name="dom_open"
+                            string="In Progress"
+                            domain="[('state','=','open')]"
+                        />
+                <filter name="dom_done" string="Done" domain="[('state','=','done')]" />
+            </group>
+            <group name="dom_invoice_state" string="Invoice State">
+                <filter
+                            name="dom_tobeinvoiced"
+                            string="To Be Invoiced"
+                            domain="[('invoice_state','=','tobeinvoiced')]"
+                        />
+                <filter
+                            name="dom_invoiced"
+                            string="Invoiced"
+                            domain="[('invoice_state','=','invoiced')]"
+                        />
+            </group>
+            <group name="group" string="Group By">
+                <filter
+                            name="grp_contract"
+                            string="# Contract"
+                            context="{'group_by':'contract_id'}"
+                        />
+                <filter
+                            name="grp_partner"
+                            string="Customer"
+                            context="{'group_by':'partner_id'}"
+                        />
+                <filter
+                            name="grp_type"
+                            string="Type"
+                            context="{'group_by':'type_id'}"
+                        />
+                <filter
+                            name="grp_responsible"
+                            string="Responsible"
+                            context="{'group_by':'responsible_id'}"
+                        />
+                <filter
+                            name="grp_state"
+                            string="State"
+                            context="{'group_by':'state'}"
+                        />
+                <filter
+                            name="grp_invoice_state"
+                            string="Invoice State"
+                            context="{'group_by':'invoice_state'}"
+                        />
+                <filter
+                            name="grp_date_start_year"
+                            string="Date Start by Year"
+                            context="{'group_by':'date_start:year'}"
+                        />
+                <filter
+                            name="grp_date_start_month"
+                            string="Date Start by Month"
+                            context="{'group_by':'date_start:month'}"
+                        />
+                <filter
+                            name="grp_date_start_week"
+                            string="Date Start by Week"
+                            context="{'group_by':'date_start:week'}"
+                        />
+                <filter
+                            name="grp_date_start_day"
+                            string="Date Start by Day"
+                            context="{'group_by':'date_start:day'}"
+                        />
+                <filter
+                            name="grp_date_end_year"
+                            string="Date End by Year"
+                            context="{'group_by':'date_end:year'}"
+                        />
+                <filter
+                            name="grp_date_end_month"
+                            string="Date End by Month"
+                            context="{'group_by':'date_end:month'}"
+                        />
+                <filter
+                            name="grp_date_end_week"
+                            string="Date End by Week"
+                            context="{'group_by':'date_end:week'}"
+                        />
+                <filter
+                            name="grp_date_end_day"
+                            string="Date End by Day"
+                            context="{'group_by':'date_end:day'}"
+                        />
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="service_contract_recurring_period_view_tree" model="ir.ui.view">
+    <field name="name">service.contract_recurring_period tree</field>
+    <field name="model">service.contract_recurring_period</field>
+    <field name="arch" type="xml">
+        <tree create="false" edit="false" delete="false">
+            <field name="contract_id" />
+            <field name="partner_id" />
+            <field name="type_id" />
+            <field name="responsible_id" />
+            <field name="date_start" />
+            <field name="date_end" />
+            <field name="analytic_account_id" />
+            <field name="contract_state" />
+            <field name="income_realization_move_id" />
+            <button
+                        name="action_create_income_realization"
+                        string="Create Income Realization"
+                        type="object"
+                        icon="gtk-execute"
+                        attrs="{'invisible':[('income_realization_move_id','!=',False)]}"
+                    />
+            <button
+                        name="action_delete_income_realization"
+                        string="Delete Income Realization"
+                        type="object"
+                        icon="gtk-cancel"
+                        attrs="{'invisible':[('income_realization_move_id','=',False)]}"
+                    />
+            <field name="invoice_id" />
+            <field name="invoice_state" />
+            <button
+                        name="action_create_invoice"
+                        string="Create Invoice"
+                        type="object"
+                        icon="gtk-execute"
+                        attrs="{'invisible':[('invoice_state','=','invoiced')]}"
+                    />
+            <button
+                        name="action_delete_invoice"
+                        string="Delete Invoice"
+                        type="object"
+                        icon="gtk-cancel"
+                        attrs="{'invisible':[('invoice_state','=','tobeinvoiced')]}"
+                    />
+            <field name="state" />
+            <button
+                        name="action_start"
+                        string="Start"
+                        type="object"
+                        icon="gtk-media-play"
+                        attrs="{'invisible':[('state','!=','draft')]}"
+                    />
+            <button
+                        name="action_end"
+                        string="End"
+                        type="object"
+                        icon="gtk-media-stop"
+                        attrs="{'invisible':[('state','!=','open')]}"
+                    />
+            <button
+                        name="action_restart"
+                        string="Restart"
+                        type="object"
+                        icon="gtk-media-previous"
+                        attrs="{'invisible':[('state','=','draft')]}"
+                    />
+        </tree>
+    </field>
+</record>
+
+<record id="service_contract_recurring_period_view_form" model="ir.ui.view">
+    <field name="name">service.contract_recurring_period form</field>
+    <field name="model">service.contract_recurring_period</field>
+    <field name="arch" type="xml">
+        <form create="false" edit="false" delete="false">
+            <header>
+                <button
+                            name="action_start"
+                            string="Start"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible':[('state','!=','draft')]}"
+                        />
+                <button
+                            name="action_end"
+                            string="End"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible':[('state','!=','open')]}"
+                        />
+                <button
+                            name="action_restart"
+                            string="Restart"
+                            type="object"
+                            attrs="{'invisible':[('state','=','draft')]}"
+                        />
+                <button
+                            name="action_create_income_realization"
+                            string="Create Income Realization"
+                            type="object"
+                            icon="gtk-execute"
+                            attrs="{'invisible':[('income_realization_move_id','!=',False)]}"
+                        />
+                <button
+                            name="action_delete_income_realization"
+                            string="Delete Income Realization"
+                            type="object"
+                            icon="gtk-cancel"
+                            attrs="{'invisible':[('income_realization_move_id','=',False)]}"
+                        />
+                <button
+                            name="action_create_invoice"
+                            string="Create Invoice"
+                            type="object"
+                            icon="gtk-execute"
+                            attrs="{'invisible':[('invoice_state','=','invoiced')]}"
+                        />
+                <button
+                            name="action_delete_invoice"
+                            string="Delete Invoice"
+                            type="object"
+                            icon="gtk-cancel"
+                            attrs="{'invisible':[('invoice_state','=','tobeinvoiced')]}"
+                        />
+                <field
+                            name="state"
+                            widget="statusbar"
+                            statusbar_visible="draft,open,done"
+                        />
+            </header>
+            <sheet>
+                <div
+                            class="oe_right oe_button_box"
+                            style="width: 300px;"
+                            name="buttons"
+                        >
+                </div>
+                <group name="group_1" colspan="4" col="2">
+                    <group name="group_1_1" colspan="1" col="2">
+                        <field name="contract_id" />
+                        <field name="partner_id" />
+                        <field name="type_id" />
+                        <field name="contract_state" />
+
+                    </group>
+                    <group name="group_1_2">
+                        <field name="responsible_id" />
+                        <field name="date_start" />
+                        <field name="date_end" />
+                    </group>
+                    <group name="group_1_3">
+                        <field name="income_realization_move_id" />
+                        <field name="invoice_id" />
+                        <field name="invoice_state" />
+                    </group>
+                    <group name="group_1_4">
+                        <field name="analytic_account_id" />
+                    </group>
+                </group>
+            </sheet>
+            <div class="oe_chatter">
+                <field
+                            name="message_follower_ids"
+                            widget="mail_followers"
+                            groups="base.group_user"
+                        />
+                <field name="message_ids" widget="mail_thread" />
+            </div>
+        </form>
+    </field>
+</record>
+
+<record id="service_contract_recurring_period_action" model="ir.actions.act_window">
+    <field name="name">Recurring Services</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">service.contract_recurring_period</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{}</field>
+</record>
+
+<menuitem
+            id="service_contract_recurring_period_menu"
+            name="Recurring Services"
+            parent="service_contract.service_contract_root_menu"
+            action="service_contract_recurring_period_action"
+            sequence="10"
+        />
+</data>
+</openerp>

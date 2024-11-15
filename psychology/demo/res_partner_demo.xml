@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="res_partner_demo1" model="res.partner">
+    <field name="name">Sigmund Freud</field>
+    <field name="is_company">0</field>
+</record>
+
+<record id="res_partner_demo2" model="res.partner">
+    <field name="name">B.F. Skinner</field>
+    <field name="is_company">0</field>
+</record>
+
+<record id="res_partner_demo3" model="res.partner">
+    <field name="name">Jean Piaget</field>
+    <field name="is_company">0</field>
+</record>
+
+<record id="res_partner_demo4" model="res.partner">
+    <field name="name">Ivan Pavlov</field>
+    <field name="is_company">0</field>
+</record>
+
+<record id="res_partner_demo5" model="res.partner">
+    <field name="name">Erik Erikson</field>
+    <field name="is_company">0</field>
+</record>
+
+<record id="res_partner_demo6" model="res.partner">
+    <field name="name">Albert Bandura</field>
+    <field name="is_company">0</field>
+</record>
+
+</data>
+</openerp>

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		
+		<!--Partner Activation -->
+		
+		<record model="ir.ui.view" id="res_partner_group_form">
+			<field name="name">res.partner.group.form</field>
+			<field name="model">res.partner.group</field>
+			<field name="arch" type="xml">
+				<form string="Partner Groups">
+					<group col="4">
+						<field name="sequence" />
+						<field name="name"/>
+					</group>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="res_partner_group_tree">
+			<field name="name">res.partner.group.tree</field>
+			<field name="model">res.partner.group</field>
+			<field name="arch" type="xml">
+				<tree string="Partner Groups">
+					<field name="name" />
+					<field name="sequence" />
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="res_partner_group_act">
+			<field name="name">Partner Groups</field>
+			<field name="res_model">res.partner.group</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem id="res_partner_group_config_mi" parent="base.menu_config_address_book" 
+			action="res_partner_group_act" groups="base.group_no_one"/>
+		
+		<!-- Partner form -->
+		<record id="view_res_partner_filter_group_tree" model="ir.ui.view">
+			<field name="name">res.partner.group.inherit.tree</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_tree"/>
+			<field name="arch" type="xml">
+				<field name="user_id" position="after">
+					<field name="partner_group_id"/>
+				</field>
+			</field>
+		</record>
+		
+		<record id="view_res_partner_filter_group" model="ir.ui.view">
+			<field name="name">res.partner.group.inherit.search</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_res_partner_filter"/>
+			<field name="arch" type="xml">
+				<field name="category_id" position="after">
+					<field name="partner_group_id"/>
+				</field>
+			</field>
+		</record>
+		
+		<record id="view_partner_group_form" model="ir.ui.view">
+			<field name="name">res.partner.group.inherit</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="///field[@name='category_id']" position="after">
+					<field name="partner_group_id" placeholder="Partner Groups..."/>
+				</xpath>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

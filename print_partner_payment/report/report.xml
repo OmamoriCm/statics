@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<report
+            string="Payment"
+            id="report_account_voucher_payment"
+            model="account.voucher"
+            report_type="qweb-pdf"
+            name="print_partner_payment.report_payment"
+            file="print_partner_payment.report_payment"
+        />
+    </data>
+</openerp>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="ir_action_server_01" model="ir.actions.server">
+    <field name="name">Reimbursement Done</field>
+    <field name="type">ir.actions.server</field>
+    <field name="state">code</field>
+    <field name="model_id" ref="account.model_account_move_line" />
+    <field name="code">object.reimbursement_id.action_done()
+    </field>
+</record>
+
+<record id="ir_action_server_02" model="ir.actions.server">
+    <field name="name">Reimbursement Approved</field>
+    <field name="type">ir.actions.server</field>
+    <field name="state">code</field>
+    <field name="model_id" ref="account.model_account_move_line" />
+    <field name="code">object.reimbursement_id.action_approve()
+    </field>
+</record>
+</data>
+</openerp>

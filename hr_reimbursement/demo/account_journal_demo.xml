@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="employe_reimbursement_journal" model="account.journal">
+    <field name="name">Employee Reimbursement - (test)</field>
+    <field name="type">general</field>
+    <field name="code">TRMB</field>
+</record>
+</data>
+</openerp>

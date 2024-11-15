@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+<data>
+
+<menuitem
+            name="Countries"
+            id="res_partner_countries_menu"
+            parent="res_partner_localization_menu"
+            action="base.action_country"
+            sequence="1"
+        />
+
+</data>
+</openerp>

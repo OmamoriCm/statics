@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="ic_web_timesheet assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/ic_web_timesheet/static/src/css/timesheet.css"/>
+                <script type="text/javascript" src="/ic_web_timesheet/static/src/js/timesheet.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>

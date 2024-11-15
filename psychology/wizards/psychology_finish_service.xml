@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="psychology_finish_service_view_form" model="ir.ui.view">
+    <field name="name">psychology.finish_service form</field>
+    <field name="model">psychology.finish_service</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="group_1" colspan="4" col="2">
+                <field name="date_done" />
+                <field name="service_ids" nolabel="1" colspan="2" invisible="1" />
+              </group>
+              <footer>
+                  <button
+                            name="action_finish_service"
+                            string="Finish"
+                            type="object"
+                            class="oe_highlight"
+                        />
+                  <button string="Cancel" special="cancel" />
+              </footer>
+        </form>
+    </field>
+</record>
+
+<record id="psychology_finish_service_action" model="ir.actions.act_window">
+    <field name="name">Finish Service</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">psychology.finish_service</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+    <field name="context">{'readonly_by_pass': True}</field>
+</record>
+
+<record id="psychology_finish_service_values" model="ir.values">
+    <field name="model_id" ref="psychology.model_psychology_case_service" />
+    <field name="name">Finish Activities</field>
+    <field name="key2">client_action_multi</field>
+    <field
+                name="value"
+                eval="'ir.actions.act_window,' +str(ref('psychology_finish_service_action'))"
+            />
+    <field name="key">action</field>
+    <field name="model">psychology.case_service</field>
+</record>
+</data>
+</openerp>

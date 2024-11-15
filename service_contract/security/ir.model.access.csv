@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+service_contract_type_employee,service.contract_type - user,model_service_contract_type,base.group_user,1,1,1,1
+service_contract_type_all,service.contract_type - all,model_service_contract_type,,1,0,0,0
+service_contract_employee,service.contract - user,model_service_contract,base.group_user,1,1,1,1
+service_contract_all,service.contract - all,model_service_contract,,1,0,0,0
+service_contract_fix_item_employee,service.contract_fix_item - user,model_service_contract_fix_item,base.group_user,1,1,1,1
+service_contract_fix_item_all,service.contract_fix_item - all,model_service_contract_fix_item,,1,0,0,0
+service_contract_fix_item_payment_term_employee,service.contract_fix_item_payment_term - user,model_service_contract_fix_item_payment_term,base.group_user,1,1,1,1
+service_contract_fix_item_payment_term_all,service.contract_fix_item_payment_term - all,model_service_contract_fix_item_payment_term,,1,0,0,0
+service_contract_team_employee,service.contract_team - user,model_service_contract_team,base.group_user,1,1,1,1
+service_contract_team_all,service.contract_team - all,model_service_contract_team,,1,0,0,0
+service_contract_fix_item_payment_term_detail_employee,service.contract_fix_item_payment_term_detail - user,model_service_contract_fix_item_payment_term_detail,base.group_user,1,1,1,1
+service_contract_fix_item_payment_term_detail_all,service.contract_fix_item_payment_term_detail - all,model_service_contract_fix_item_payment_term_detail,,1,0,0,0

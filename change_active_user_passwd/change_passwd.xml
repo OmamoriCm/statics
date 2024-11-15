@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+          <record id="aa_change_passwd_view" model="ir.ui.view">
+            <field name="name">Change Password</field>
+            <field name="model">aa.change_passwd</field>
+            <field name="arch" type="xml">
+                <form string="Change Password">
+                	<sheet><group>
+                	<field name="login"/>
+                   	 <field name="passwd" password="True"/>
+                    </group></sheet>
+                    <footer>
+                        <button string="Change Password" name="change_passwd_button" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+     <act_window id="change_passwd_wizard_action"
+          name="Change Password"
+          src_model="aa.change_passwd"
+          res_model="aa.change_passwd"
+          context="{'active_model' : 'res.users','active_ids': [context.get('uid')]}"
+          view_type="form" view_mode="form"
+          key2="client_action_multi" target="new"/>
+          
+          
+          
+      <menuitem id="menu_change_passwd" name="Change Password" sequence="1000" groups="group_change_passwd"  />
+      <menuitem  id="menu_change_passwd_wizard_action" name="change password" parent="menu_change_passwd" sequence="0" groups="group_change_passwd"/> 
+      	<menuitem action="change_passwd_wizard_action" id="menu_change_passwd_wizard_actionn" name="change password" parent="menu_change_passwd_wizard_action" sequence="0" groups="group_change_passwd"/>
+
+  </data>
+</openerp>

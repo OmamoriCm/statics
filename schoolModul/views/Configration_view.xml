@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- classroom views -->
+
+		<record id="view_classroom_form" model="ir.ui.view">
+			<field name="name">classroom</field>
+			<field name="model">classroom</field>
+			<field name="arch" type="xml">
+				<form string="classroom" version="7.0">
+					<sheet>
+						<group>
+						<h1>
+							<field name="name" placeholder="Name of classroom" />
+						</h1>
+						</group>
+						<group col="4" colspan="4">
+
+							<field name="grade_id" />
+							<field name="section" />
+							<field name="status" />
+
+						</group>
+
+						<group col="2" colspan="2">
+
+							<field name="remarks" />
+							<field name="teacher_id" placeholder="supervisor" />
+
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+        
+<!-- classroom tree views -->
+
+		<record id="view_classroom_tree" model="ir.ui.view">
+			<field name="name">classroom</field>
+			<field name="model">classroom</field>
+			<field name="arch" type="xml">
+				<tree string="classroom">
+
+							<field name="name" />
+							<field name="grade_id" />
+							<field name="section" />
+							<field name="status" />
+							<field name="student_class_room" />
+                            <field name="remarks" />
+							<field name="teacher_id"/>
+					
+				</tree>
+			</field>
+		</record>
+        
+<!-- grades form views -->
+		<record id="view_grades_form" model="ir.ui.view">
+			<field name="name">grades</field>
+			<field name="model">grades</field>
+			<field name="arch" type="xml">
+				<form string="grades" version="7.0">
+					<sheet>
+						<group>
+							<h1>
+							<field name="name" placeholder="Name of grades" />
+
+							</h1>
+						
+						</group>
+
+						<group>
+							<field name="desc" />
+						</group>
+
+					</sheet>
+				</form>
+			</field>
+		</record>
+        
+<!-- grades tree views -->
+
+		<record id="view_grades_tree" model="ir.ui.view">
+			<field name="name">grades</field>
+			<field name="model">grades</field>
+			<field name="arch" type="xml">
+				<tree string="grades">
+
+							<field name="name" />
+							<field name="desc"/>
+					
+				</tree>
+			</field>
+		</record>
+
+<!-- exam_type form views -->
+		<record id="view_exam_type_form" model="ir.ui.view">
+			<field name="name">exam_type</field>
+			<field name="model">exam_type</field>
+			<field name="arch" type="xml">
+				<form string="exam_type" version="7.0">
+					<sheet>
+						<group>
+							<h1>
+							<field name="name" placeholder="Name of exam type" />
+							</h1>
+						
+						</group>
+						<group>
+							<field name="description"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+        
+<!-- exam_type tree views -->
+
+		<record id="view_exam_type_tree" model="ir.ui.view">
+			<field name="name">exam_type</field>
+			<field name="model">exam_type</field>
+			<field name="arch" type="xml">
+				<tree string="exam_type">
+
+							<field name="name" />
+							<field name="description"/>
+					
+				</tree>
+			</field>
+		</record>
+        
+
+        <!-- course form views -->
+		<record id="view_exam_type_form" model="ir.ui.view">
+			<field name="name">course</field>
+			<field name="model">courses</field>
+			<field name="arch" type="xml">
+				<form string="exam_type" version="7.0">
+					<sheet>
+						<group>
+							<h1>
+							<field name="name" placeholder="Name of Course" />
+							</h1>
+						
+						</group>
+						<group>
+							<notebook>
+							<page string="subjects">
+							<field name="subjects" widget="many2many"/>
+							</page>
+						</notebook>
+		
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+        
+<!-- course tree views -->
+
+		<record id="view_exam_type_tree" model="ir.ui.view">
+			<field name="name">course</field>
+			<field name="model">courses</field>
+			<field name="arch" type="xml">
+				<tree string="courses">
+
+							<field name="name" />
+					
+				</tree>
+			</field>
+		</record>
+
+
+<!-- subjects form views -->
+		<record id="view_subjects_vi_form" model="ir.ui.view">
+			<field name="name">subjects</field>
+			<field name="model">subjects</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+						<h1>
+							<field name="name" placeholder="Name" style="width: 22em" />
+							<field name="code" placeholder="Code" style="width: 10em"/>
+						</h1>
+                        </group>
+
+						<group>
+							<field name="maximum_marks" />
+							<field name="minimum_marks"/>
+							<field name="description"/>
+							<field name="grade_id" />					
+						</group>
+
+						<notebook>
+							<page string="Students">
+							<field name="student_ids"/>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+        
+<!-- subjects tree views -->
+
+		<record id="view_subjects_tree" model="ir.ui.view">
+			<field name="name">subjects</field>
+			<field name="model">subjects</field>
+			<field name="arch" type="xml">
+				<tree string="exam_results">
+
+							<field name="name" />
+							<field name="code"/>
+							<field name="maximum_marks" />
+							<field name="minimum_marks" />
+							<field name="grade_id"/>
+					
+				</tree>
+			</field>
+		</record>
+
+
+
+		<!-- classroom action -->
+		<record id="action_classroom" model="ir.actions.act_window">
+			<field name="name">classroom</field>
+			<field name="res_model">classroom</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>   
+
+		<!-- grades action -->
+
+		<record id="action_grades" model="ir.actions.act_window">
+			<field name="name">grades</field>
+			<field name="res_model">grades</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record> 
+
+		<!-- exam_type action -->
+
+		<record id="action_exam_type" model="ir.actions.act_window">
+			<field name="name">exam_type</field>
+			<field name="res_model">exam_type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record> 
+
+		<!-- course action -->
+
+		<record id="action_course" model="ir.actions.act_window">
+			<field name="name">course</field>
+			<field name="res_model">courses</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record> 
+
+		<!-- subjects action -->
+		<record id="action_subjects" model="ir.actions.act_window">
+			<field name="name">subjects</field>
+			<field name="res_model">subjects</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+		<!-- menu of Configration tab -->
+
+            <menuitem id="sub_school_management3" name="Configration"
+			parent="school_management" />
+
+		<!-- course sub menu action -->
+      
+        <menuitem id="school_sub_course" parent="sub_school_management3"
+			name="Courses" action="action_course" />
+
+		<!-- classroom sub menu action -->
+      
+        <menuitem id="school_sub_classroom" parent="sub_school_management3"
+			name="ClassRooms" action="action_classroom" />
+
+		<!-- grades sub menu action -->
+
+		<menuitem id="configra_sub_grades" parent="sub_school_management3"
+			name="Grades" action="action_grades" />
+
+		<!-- exam_type sub menu action -->
+
+		<menuitem id="configra_sub_exam_type" parent="sub_school_management3"
+			name="Exam Types" action="action_exam_type" />
+
+		<!-- subjects sub menu action -->
+
+		<menuitem id="configra_sub_subjects" parent="sub_school_management3"
+			name="Subjects" action="action_subjects" />
+	</data>
+</openerp>

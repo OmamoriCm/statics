@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="partner_end_evaluation_view_form" model="ir.ui.view">
+    <field name="name">partner.end_evaluation form</field>
+    <field name="model">partner.end_evaluation</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="header" colspan="4" col="2">
+                <field name="evaluation_id" invisible="1" />
+                <field
+                            name="allowed_result_ids"
+                            widget="many2many_tags"
+                            invisible="1"
+                        />
+                <field name="manual_result" invisible="1" />
+                <field
+                            name="result_id"
+                            attrs="{'invisible':[('manual_result','=',False)],'required':[('manual_result','=',True)]}"
+                            domain="[('id','in',allowed_result_ids[0][2])]"
+                        />
+                <field name="date_end" />
+            </group>
+            <footer>
+                <button
+                            name="action_end"
+                            string="Done"
+                            class="oe_highlight"
+                            type="object"
+                        />
+                or
+                <button special="cancel" string="Cancel" class="oe_link" />
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="partner_end_evaluation_action" model="ir.actions.act_window">
+    <field name="name">Finish Evaluation</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">partner.end_evaluation</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+</record>
+
+</data>
+</openerp>

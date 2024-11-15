@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_partner_group,res.partner.group,model_res_partner_group,,1,1,1,1
+access_product_customer_discount,product.customer.discount,model_product_customer_discount,,1,1,1,1
+access_discount_multiple,discount.multiple,model_discount_multiple,,1,1,1,1

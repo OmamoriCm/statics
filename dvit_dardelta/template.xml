@@ -1,0 +1,40 @@
+<openerp>
+<data>
+
+    <!-- Inherit Form View to Modify it -->
+    <record id="sale_order_form_dardelta" model="ir.ui.view">
+        <field name="name">Sales Order</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="approved_by"/>
+                <field name="approve_phone" invisible="1"/>
+                <field name="approve_email" invisible="1"/>
+                <field name="approve_mobile" invisible="1"/>
+                <field name="approve_name" invisible="1"/>
+                <field name="approve_fax" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='client_order_ref']" position="after">
+                <field name="presale"/>
+                <field name="presale_phone" invisible="1"/>
+                <field name="presale_mobile" invisible="1"/>
+                <field name="presale_fax" invisible="1"/>
+                <field name="presale_name" invisible="1"/>
+                <field name="presale_email" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="sale_name" invisible="1"/>
+                <field name="sale_phone" invisible="1"/>
+                <field name="sale_mobile" invisible="1"/>
+                <field name="sale_fax" invisible="1"/>
+                <field name="sale_email" invisible="1"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+</data>
+</openerp>

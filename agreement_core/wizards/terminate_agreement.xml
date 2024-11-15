@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+<data>
+<record id="terminate_agreement_view_form" model="ir.ui.view">
+    <field name="name">Terminate Agreements</field>
+    <field name="model">agreement.terminate_agreement</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="group_1" colspan="4" col="2" string="Terminate Agreements">
+                <field name="terminate_reason_id" />
+            </group>
+            <footer>
+                <button
+                            string="Confirm"
+                            name="action_confirm"
+                            type="object"
+                            class="oe_highlight"
+                            confirm="Terminate participants. Are you sure?"
+                        />
+                or
+                <button string="Terminate" class="oe_link" special="terminate" />
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="terminate_agreement_action" model="ir.actions.act_window">
+    <field name="name">Terminate Agreements</field>
+    <field name="res_model">agreement.terminate_agreement</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="terminate_agreement_view_form" />
+    <field name="target">new</field>
+</record>
+</data>
+</openerp>

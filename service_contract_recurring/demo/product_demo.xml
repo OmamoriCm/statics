@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="product_product_demo1" model="product.product">
+    <field name="name">Odoo Implementation Subscription</field>
+    <field name="categ_id" ref="product_category_demo1" />
+    <field name="list_price">7000000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+<record id="product_product_demo2" model="product.product">
+    <field name="name">Odoo Deployment Subscription</field>
+    <field name="categ_id" ref="product_category_demo1" />
+    <field name="list_price">2000000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+</data>
+</openerp>

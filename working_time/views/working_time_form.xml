@@ -1,0 +1,42 @@
+<openerp>
+  <data>
+    <record id="res_company_working_time_form" model="ir.ui.view">
+      <field name="name">res.company.working.time.form</field>
+      <field name="model">res.company</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="base.view_company_form"/>
+      <field name="arch" type="xml">
+        <page position="inside">
+          <group string="Working Time">
+            <field name="schedule" nolabel="1">
+              <tree>
+                <field name="days"/>
+                <field name="morning"/>
+                <field name="afternoon"/>
+              </tree>
+            </field>
+          </group>
+        </page>
+      </field>
+    </record>
+    <record id="res_partner_working_time_form" model="ir.ui.view">
+      <field name="name">res.partner.working.time.form</field>
+      <field name="model">res.partner</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <page name="internal_notes" position="inside">
+          <group string="Working Time">
+            <field name="schedule" nolabel="1">
+              <tree>
+                <field name="days"/>
+                <field name="morning"/>
+                <field name="afternoon"/>
+              </tree>
+            </field>
+          </group>
+        </page>
+      </field>
+    </record>
+  </data>
+</openerp>

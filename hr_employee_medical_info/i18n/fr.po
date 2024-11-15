@@ -1,0 +1,548 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_employee_extensions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-21 16:40+0000\n"
+"PO-Revision-Date: 2018-08-21 12:08-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.0.9\n"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee,blood_type:0
+msgid "AB"
+msgstr "AB"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_extension_2_form_view
+msgid "Accounting"
+msgstr "Comptabilité"
+
+#. module: hr_employee_extensions
+#: field:hr.piece.identite,authority:0
+msgid "Authority"
+msgstr "Autorité"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee,payment_method:0
+msgid "Bank transfert"
+msgstr "Virement bancaire"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,blood_type:0
+msgid "Blood Type"
+msgstr "Groupe sanguin"
+
+#. module: hr_employee_extensions
+#: selection:hr.piece.identite,nature_piece:0
+msgid "CNI"
+msgstr "CNI"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+msgid "Carte de séjour"
+msgstr "Carte de séjour"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee,payment_method:0
+msgid "Cash"
+msgstr "En espèces"
+
+#. module: hr_employee_extensions
+#: selection:hr.piece.identite,nature_piece:0
+msgid "Certificate of identity"
+msgstr "Certificat d'identité"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee.graduate,type:0
+msgid "Certification"
+msgstr "Certification"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee,payment_method:0
+msgid "Checks"
+msgstr "Chèques"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+msgid "Children"
+msgstr "Enfants"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,childrens_ids:0
+msgid "Childrens"
+msgstr "Enfants"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,create_uid:0
+#: field:hr.employee.degree,create_uid:0
+#: field:hr.employee.emergency,create_uid:0
+#: field:hr.employee.graduate,create_uid:0
+#: field:hr.employee.parents,create_uid:0 field:hr.graduate.domain,create_uid:0
+#: field:hr.licence,create_uid:0 field:hr.piece.identite,create_uid:0
+#: field:hr.residence.permit,create_uid:0 field:hr.type.piece,create_uid:0
+#: field:hr.visa,create_uid:0
+msgid "Created by"
+msgstr "Crée par"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,create_date:0
+#: field:hr.employee.degree,create_date:0
+#: field:hr.employee.emergency,create_date:0
+#: field:hr.employee.graduate,create_date:0
+#: field:hr.employee.parents,create_date:0
+#: field:hr.graduate.domain,create_date:0 field:hr.licence,create_date:0
+#: field:hr.piece.identite,create_date:0
+#: field:hr.residence.permit,create_date:0 field:hr.type.piece,create_date:0
+#: field:hr.visa,create_date:0
+msgid "Created on"
+msgstr "Crée le"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,date_entry:0
+msgid "Date entry"
+msgstr "Date de saisie"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,birthday:0 field:hr.employee.parents,birthday:0
+msgid "Date of Birth"
+msgstr "Date de naissance"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.graduate,date_obtention:0
+msgid "Date of obtaining"
+msgstr "Date d'obtention"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee.emergency,relation:0
+msgid "Daughter"
+msgstr "Fille"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,recruitment_degree_id:0
+#: model:ir.model,name:hr_employee_extensions.model_hr_employee_degree
+msgid "Degree of employee"
+msgstr "Niveau de l'employé"
+
+#. module: hr_employee_extensions
+#: field:hr.type.piece,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+msgid "Diplomas and Certificates"
+msgstr "Diplômes et certificats"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,display_name:0
+#: field:hr.employee.degree,display_name:0
+#: field:hr.employee.emergency,display_name:0
+#: field:hr.employee.graduate,display_name:0
+#: field:hr.employee.parents,display_name:0
+#: field:hr.graduate.domain,display_name:0 field:hr.licence,display_name:0
+#: field:hr.piece.identite,display_name:0
+#: field:hr.residence.permit,display_name:0 field:hr.type.piece,display_name:0
+#: field:hr.visa,display_name:0
+msgid "Display Name"
+msgstr "Nom á afficher"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+msgid "Documents"
+msgstr "Documents"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.graduate,domain_id:0
+msgid "Domain"
+msgstr "Domaine"
+
+#. module: hr_employee_extensions
+#: view:hr.employee.graduate:hr_employee_extensions.hr_employee_graduate_form_view
+msgid "Duration"
+msgstr "Duree"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.emergency,email:0
+msgid "Email"
+msgstr "Email"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+#: field:hr.employee,emergency_contact_ids:0
+#: model:ir.model,name:hr_employee_extensions.model_hr_employee_emergency
+msgid "Emergency Contact"
+msgstr "Personne à contacter en cas d'urgence"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,employee_id:0
+#: field:hr.employee.emergency,employee_id:0
+#: field:hr.employee.graduate,employee_id:0
+#: field:hr.employee.parents,employee_id:0 field:hr.licence,employee_id:0
+#: field:hr.residence.permit,employee_id:0 field:hr.visa,employee_id:0
+#: model:ir.model,name:hr_employee_extensions.model_hr_employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.graduate,end_date:0 field:hr.licence,end_date:0
+#: field:hr.residence.permit,end_date:0 field:hr.visa,end_date:0
+msgid "End Date"
+msgstr "Date de Fin"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+msgid "Enfants"
+msgstr "Enfants"
+
+#. module: hr_employee_extensions
+#: field:hr.piece.identite,established_date:0
+msgid "Established Date"
+msgstr "Date d'etablissement"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+msgid "Family Information"
+msgstr "Information familiale"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee.emergency,relation:0
+msgid "Father"
+msgstr "Père"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,father:0
+msgid "Father name"
+msgstr "Nom du Père"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee.children,gender:0
+#: selection:hr.employee.parents,gender:0
+msgid "Female"
+msgstr "Femme"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,gender:0 field:hr.employee.parents,gender:0
+msgid "Gender"
+msgstr "Sexe"
+
+#. module: hr_employee_extensions
+#: help:hr.employee.degree,sequence:0
+msgid "Gives the sequence order when displaying a list of degrees."
+msgstr "Donne l'ordre de séquence lors de l'affichage d'une liste de degrés."
+
+#. module: hr_employee_extensions
+#: field:hr.employee,grade:0
+msgid "Grade"
+msgstr "Grade"
+
+#. module: hr_employee_extensions
+#: view:hr.employee.graduate:hr_employee_extensions.hr_employee_graduate_form_view
+msgid "Graduate"
+msgstr "Diplômé"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,graduate_ids:0
+msgid "Graduate of the employee"
+msgstr "Diplômes de l'employé"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,id:0 field:hr.employee.degree,id:0
+#: field:hr.employee.emergency,id:0 field:hr.employee.graduate,id:0
+#: field:hr.employee.parents,id:0 field:hr.graduate.domain,id:0
+#: field:hr.licence,id:0 field:hr.piece.identite,id:0
+#: field:hr.residence.permit,id:0 field:hr.type.piece,id:0 field:hr.visa,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_employee_extensions
+#: field:hr.piece.identite,numero_piece:0
+msgid "Id"
+msgstr "Id"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,piece_identite_id:0
+msgid "Id Card"
+msgstr "Numero carte"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.graduate,image:0 field:hr.piece.identite,image:0
+msgid "Image"
+msgstr "Image"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,__last_update:0
+#: field:hr.employee.degree,__last_update:0
+#: field:hr.employee.emergency,__last_update:0
+#: field:hr.employee.graduate,__last_update:0
+#: field:hr.employee.parents,__last_update:0
+#: field:hr.graduate.domain,__last_update:0 field:hr.licence,__last_update:0
+#: field:hr.piece.identite,__last_update:0
+#: field:hr.residence.permit,__last_update:0
+#: field:hr.type.piece,__last_update:0 field:hr.visa,__last_update:0
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,write_uid:0 field:hr.employee.degree,write_uid:0
+#: field:hr.employee.emergency,write_uid:0
+#: field:hr.employee.graduate,write_uid:0 field:hr.employee.parents,write_uid:0
+#: field:hr.graduate.domain,write_uid:0 field:hr.licence,write_uid:0
+#: field:hr.piece.identite,write_uid:0 field:hr.residence.permit,write_uid:0
+#: field:hr.type.piece,write_uid:0 field:hr.visa,write_uid:0
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,write_date:0
+#: field:hr.employee.degree,write_date:0
+#: field:hr.employee.emergency,write_date:0
+#: field:hr.employee.graduate,write_date:0
+#: field:hr.employee.parents,write_date:0 field:hr.graduate.domain,write_date:0
+#: field:hr.licence,write_date:0 field:hr.piece.identite,write_date:0
+#: field:hr.residence.permit,write_date:0 field:hr.type.piece,write_date:0
+#: field:hr.visa,write_date:0
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.graduate,grade_id:0
+msgid "Level"
+msgstr "Niveau"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+msgid "Licence"
+msgstr "Licence"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,licence_ids:0
+#: model:ir.model,name:hr_employee_extensions.model_hr_licence
+msgid "Licence of employee"
+msgstr "Licence de l'employé"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+msgid "Licences"
+msgstr "Licences"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee.children,gender:0
+#: selection:hr.employee.parents,gender:0
+msgid "Male"
+msgstr "homme"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+msgid "Matricule"
+msgstr "Matricule"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,mobile:0 field:hr.employee.emergency,mobile:0
+#: field:hr.employee.parents,mobile:0
+msgid "Mobile"
+msgstr "Mobile"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee.emergency,relation:0
+msgid "Mother"
+msgstr "Mère"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.degree,name:0 field:hr.employee.emergency,name:0
+#: field:hr.employee.graduate,name:0 field:hr.graduate.domain,libelle:0
+#: field:hr.licence,name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: hr_employee_extensions
+#: field:hr.piece.identite,nature_piece:0
+msgid "Nature"
+msgstr "Type"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,name:0 field:hr.employee.parents,name:0
+msgid "Nom"
+msgstr "Nom"
+
+#. module: hr_employee_extensions
+#: field:hr.visa,reference:0
+msgid "N° Visa"
+msgstr "N° Visa"
+
+#. module: hr_employee_extensions
+#: field:hr.residence.permit,reference:0
+msgid "N° permit"
+msgstr "N° permit"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+msgid "Parents"
+msgstr "Parents"
+
+#. module: hr_employee_extensions
+#: selection:hr.piece.identite,nature_piece:0
+msgid "Passport"
+msgstr "Passport"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,payment_method:0
+msgid "Payment Method"
+msgstr "Mode de paiement"
+
+#. module: hr_employee_extensions
+#: field:hr.residence.permit,pays_id:0 field:hr.visa,pays_id:0
+msgid "Pays"
+msgstr "Pays"
+
+#. module: hr_employee_extensions
+#: field:hr.residence.permit,name:0
+msgid "Permit title"
+msgstr "Titre du permis"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.graduate,reference:0 field:hr.licence,reference:0
+msgid "Reference"
+msgstr "Réference"
+
+#. module: hr_employee_extensions
+#: help:hr.employee.emergency,relation:0
+msgid "Relation with employee"
+msgstr "Relation avec l'employé"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.emergency,relation:0
+msgid "Relationship"
+msgstr "Filiation"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,residence_permit_ids:0
+msgid "Residence permit"
+msgstr "Permis de sejour"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+msgid "Residences permit"
+msgstr "Permis de sejour"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.degree,sequence:0
+msgid "Sequence"
+msgstr "Sequence"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee.emergency,relation:0
+msgid "Son"
+msgstr "Fils"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.graduate,start_date:0 field:hr.licence,start_date:0
+#: field:hr.residence.permit,start_date:0 field:hr.visa,start_date:0
+msgid "Start Date"
+msgstr "Date de debut"
+
+#. module: hr_employee_extensions
+#: sql_constraint:hr.employee.degree:0
+msgid "The name of the Degree of employee must be unique!"
+msgstr "Le libelle du niveau de l'employé doit etre unique !"
+
+#. module: hr_employee_extensions
+#: field:hr.type.piece,name:0
+msgid "Title"
+msgstr "Titre"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.graduate,type:0
+msgid "Type"
+msgstr "Type"
+
+#. module: hr_employee_extensions
+#: model:ir.model,name:hr_employee_extensions.model_hr_type_piece
+msgid "Type of identity document"
+msgstr "Type de document d'identité"
+
+#. module: hr_employee_extensions
+#: view:hr.employee:hr_employee_extensions.hr_employee_inh_form_view
+msgid "Visas"
+msgstr "Visas"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee.emergency,relation:0
+msgid "Wife"
+msgstr "Femme"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.parents,email:0
+msgid "email"
+msgstr "courriel"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,visa_ids:0
+#: model:ir.model,name:hr_employee_extensions.model_hr_visa
+msgid "employee visa"
+msgstr "visa de l'employé"
+
+#. module: hr_employee_extensions
+#: model:ir.model,name:hr_employee_extensions.model_hr_employee_children
+msgid "employee's children"
+msgstr "les enfants de l'employé"
+
+#. module: hr_employee_extensions
+#: model:ir.model,name:hr_employee_extensions.model_hr_graduate_domain
+msgid "graduate domain"
+msgstr "domaine des diplômes"
+
+#. module: hr_employee_extensions
+#: model:ir.model,name:hr_employee_extensions.model_hr_employee_graduate
+msgid "graduate of the employee"
+msgstr "les diplômes de l'employé"
+
+#. module: hr_employee_extensions
+#: selection:hr.employee.graduate,type:0
+msgid "graduates"
+msgstr "Diplômes"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,mother:0
+msgid "mother Name"
+msgstr "Nom de la mère"
+
+#. module: hr_employee_extensions
+#: field:hr.employee,parent_employee_ids:0
+msgid "parents of the employee"
+msgstr "Les parents de l'employe"
+
+#. module: hr_employee_extensions
+#: field:hr.employee.children,birth_place:0
+#: field:hr.employee.parents,birth_place:0
+msgid "place of birth"
+msgstr "Lieu de naissance"
+
+#. module: hr_employee_extensions
+#: model:ir.model,name:hr_employee_extensions.model_hr_residence_permit
+msgid "residence permit of the employee"
+msgstr "Les parents de l'employe"
+
+#. module: hr_employee_extensions
+#: model:ir.model,name:hr_employee_extensions.model_hr_employee_parents
+msgid "the parents of the employee"
+msgstr "Les parents de l'employe"
+
+#. module: hr_employee_extensions
+#: field:hr.visa,name:0
+msgid "visa title"
+msgstr "Titre visa"
+
+#. module: hr_employee_extensions
+#: selection:hr.piece.identite,nature_piece:0
+msgid "working license"
+msgstr "permis de travail"

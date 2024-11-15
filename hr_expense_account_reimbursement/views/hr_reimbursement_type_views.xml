@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+
+<record id="hr_reimbursement_type_view_form" model="ir.ui.view">
+    <field name="name">hr.reimbursement_type form</field>
+    <field name="model">hr.reimbursement_type</field>
+    <field name="inherit_id" ref="hr_reimbursement.hr_reimbursement_type_view_form" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//page[@name='accounting']" position="after">
+                <page name="expense_account" string="Expense Account">
+                    <field name="expense_account_ids" />
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+</data>
+</openerp>

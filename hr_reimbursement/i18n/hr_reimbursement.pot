@@ -1,0 +1,1046 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_reimbursement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,name:0
+msgid "# Document"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,move_id:0
+msgid "# Move"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement,reimbursement_id:0
+#: field:hr.reimbursement_line,reimbursement_id:0
+msgid "# Reimbursement"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_line,account_id:0
+msgid "Account"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement_type:hr_reimbursement.hr_reimbursement_type_view_form
+msgid "Accounting"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Accounting Entry"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Accounting Info"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_type,active:0
+msgid "Active"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,active_reviewer_ids:0
+msgid "Active Reviewers"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_type,reimbursement_cancel_grp_ids:0
+msgid "Allow To Cancel Reimbursement"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_type,reimbursement_change_detail_grp_ids:0
+msgid "Allow To Change Reimbursement Detail"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_type,reimbursement_confirm_grp_ids:0
+msgid "Allow To Confirm Reimbursement"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_type,reimbursement_restart_grp_ids:0
+msgid "Allow To Restart Reimbursement"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_type,reimbursement_restart_approval_grp_ids:0
+msgid "Allow To Restart Reimbursement Approval"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_type,reimbursement_terminate_grp_ids:0
+msgid "Allow To Terminate Reimbursement"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,allowed_product_categ_ids:0
+#: view:hr.reimbursement_type:hr_reimbursement.hr_reimbursement_type_view_form
+#: field:hr.reimbursement_type,allowed_product_categ_ids:0
+msgid "Allowed Product Categories"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,allowed_product_ids:0
+#: view:hr.reimbursement_type:hr_reimbursement.hr_reimbursement_type_view_form
+#: field:hr.reimbursement_type,allowed_product_ids:0
+msgid "Allowed Products"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_line,allowed_uom_ids:0
+msgid "Allowed UoM"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: field:hr.reimbursement_analysis,analytic_account_id:0
+#: field:hr.reimbursement_line,analytic_account_id:0
+msgid "Analytic Account"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Approval"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,approve_user_id:0
+msgid "Approve By"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,approve_date:0
+msgid "Approve Date"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.model,name:hr_reimbursement.model_hr_approve_reimbursement
+msgid "Approved Employee Reimbursement"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.model,name:hr_reimbursement.model_hr_approve_reimbursement_line
+msgid "Approved Employee Reimbursement Line"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement_line,approve_price_unit:0
+#: field:hr.reimbursement_analysis,approve_price_unit:0
+#: field:hr.reimbursement_line,approve_price_unit:0
+msgid "Approved Price Unit"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement_line,approve_quantity:0
+#: field:hr.reimbursement_analysis,approve_quantity:0
+#: field:hr.reimbursement_line,approve_quantity:0
+msgid "Approved Quantity"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,change_detail_ok:0
+msgid "Can Change Detail"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,restart_approval_ok:0
+msgid "Can Restart Approval"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,show_accounting_info_ok:0
+msgid "Can See Accounting Info"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,terminate_ok:0
+msgid "Can Terminate"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.approve_reimbursement:hr_reimbursement.hr_approve_reimbursement_view_form
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,cancel_date:0
+msgid "Cancel Date"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,cancel_reason_id:0
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Cancel reimbursement. Are you sure?"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Cancellation"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Cancellation reason:"
+msgstr ""
+
+#. module: hr_reimbursement
+#: selection:hr.reimbursement,state:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: selection:hr.reimbursement_analysis,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,cancel_user_id:0
+msgid "Cancelled By"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Change Approved Price Unit/Quantity"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.actions.act_window,name:hr_reimbursement.hr_approve_reimbursement_view_action
+msgid "Change Approved Price/Unit"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_type,code:0
+msgid "Code"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+msgid "Column Grouping"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: field:hr.reimbursement,company_id:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: field:hr.reimbursement_analysis,company_id:0
+#: model:res.groups,name:hr_reimbursement.group_expense_viewer_company
+#: model:res.groups,name:hr_reimbursement.group_hr_reimbursement_company
+msgid "Company"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.approve_reimbursement:hr_reimbursement.hr_approve_reimbursement_view_form
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,confirm_date:0
+msgid "Confirm Date"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Confirm employee reimbursement. Are you sure?"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Confirmation"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,confirm_user_id:0
+msgid "Confirmed By"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement,create_uid:0
+#: field:hr.approve_reimbursement_line,create_uid:0
+#: field:hr.reimbursement,create_uid:0
+#: field:hr.reimbursement_line,create_uid:0
+#: field:hr.reimbursement_type,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement,create_date:0
+#: field:hr.approve_reimbursement_line,create_date:0
+#: field:hr.reimbursement,create_date:0
+#: field:hr.reimbursement_line,create_date:0
+#: field:hr.reimbursement_type,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement,currency_id:0
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: field:hr.reimbursement,currency_id:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: field:hr.reimbursement_analysis,currency_id:0
+msgid "Currency"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,date_due:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: field:hr.reimbursement_analysis,date_due:0
+msgid "Date Due"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+msgid "Date Due by Day"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+msgid "Date Due by Month"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+msgid "Date Due by Week"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+msgid "Date Due by Year"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,date_expense:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: field:hr.reimbursement_analysis,date_expense:0
+msgid "Date Expense"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+msgid "Date Expense by Day"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+msgid "Date Expense by Month"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+msgid "Date Expense by Week"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+msgid "Date Expense by Year"
+msgstr ""
+
+#. module: hr_reimbursement
+#: help:hr.reimbursement,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,definition_id:0
+msgid "Definition"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: field:hr.reimbursement,department_id:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: field:hr.reimbursement_analysis,department_id:0
+#: model:res.groups,name:hr_reimbursement.group_expense_viewer_department
+#: model:res.groups,name:hr_reimbursement.group_hr_reimbursement_department
+msgid "Department"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement,line_ids:0
+msgid "Details"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement,display_name:0
+#: field:hr.approve_reimbursement_line,display_name:0
+#: field:hr.reimbursement,display_name:0
+#: field:hr.reimbursement_analysis,display_name:0
+#: field:hr.reimbursement_line,display_name:0
+#: field:hr.reimbursement_type,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: selection:hr.reimbursement,state:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: selection:hr.reimbursement_analysis,state:0
+msgid "Done"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: selection:hr.reimbursement,state:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: selection:hr.reimbursement_analysis,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: field:hr.reimbursement,employee_id:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: field:hr.reimbursement_analysis,employee_id:0
+#: field:hr.reimbursement_line,employee_id:0
+#: model:ir.model,name:hr_reimbursement.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.model,name:hr_reimbursement.model_hr_reimbursement
+#: model:ir.module.category,name:hr_reimbursement.module_hr_reimbursement
+msgid "Employee Reimbursement"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.actions.act_window,name:hr_reimbursement.hr_reimbursement_analysis_action
+#: model:ir.model,name:hr_reimbursement.model_hr_reimbursement_analysis
+#: model:ir.ui.menu,name:hr_reimbursement.hr_reimbursement_analysis_menu
+msgid "Employee Reimbursement Analysis"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.model,name:hr_reimbursement.model_hr_reimbursement_line
+msgid "Employee Reimbursement Line"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.employee,employee_reimbursement_payable_account_id:0
+msgid "Employee Reimbursement Payable Account"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_type,name:0
+#: model:ir.model,name:hr_reimbursement.model_hr_reimbursement_type
+msgid "Employee Reimbursement Type"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.module.category,name:hr_reimbursement.employee_reimbursement_usability_module_category
+msgid "Employee Reimbursement Usability"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.module.category,name:hr_reimbursement.module_hr_reimbursement_viewer
+msgid "Employee Reimbursement Viewer"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.actions.act_window,name:hr_reimbursement.hr_reimbursement_action
+msgid "Employee Reimbursements"
+msgstr ""
+
+#. module: hr_reimbursement
+#: code:addons/hr_reimbursement/models/hr_reimbursement.py:549
+#, python-format
+msgid "Employee reimbursement %s"
+msgstr ""
+
+#. module: hr_reimbursement
+#: code:addons/hr_reimbursement/models/hr_reimbursement_line.py:177
+#, python-format
+msgid "Employee reimbursement %s: %s - %s"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+msgid "Empty"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Finish"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,done_date:0
+msgid "Finish Date"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,done_user_id:0
+msgid "Finished By"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: hr_reimbursement
+#: help:hr.reimbursement,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement,id:0
+#: field:hr.approve_reimbursement_line,id:0
+#: field:hr.reimbursement,id:0
+#: field:hr.reimbursement_analysis,id:0
+#: field:hr.reimbursement_line,id:0
+#: field:hr.reimbursement_type,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_reimbursement
+#: help:hr.reimbursement,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: field:hr.reimbursement_analysis,job_id:0
+msgid "Job"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: field:hr.reimbursement,job_id:0
+msgid "Job Position"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,journal_id:0
+#: field:hr.reimbursement_type,journal_id:0
+msgid "Journal"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.model,name:hr_reimbursement.model_account_move_line
+msgid "Journal Items"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement,__last_update:0
+#: field:hr.approve_reimbursement_line,__last_update:0
+#: field:hr.reimbursement,__last_update:0
+#: field:hr.reimbursement_analysis,__last_update:0
+#: field:hr.reimbursement_line,__last_update:0
+#: field:hr.reimbursement_type,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement,write_uid:0
+#: field:hr.approve_reimbursement_line,write_uid:0
+#: field:hr.reimbursement,write_uid:0
+#: field:hr.reimbursement_line,write_uid:0
+#: field:hr.reimbursement_type,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement,write_date:0
+#: field:hr.approve_reimbursement_line,write_date:0
+#: field:hr.reimbursement,write_date:0
+#: field:hr.reimbursement_line,write_date:0
+#: field:hr.reimbursement_type,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Logs"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: field:hr.reimbursement,manager_id:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: field:hr.reimbursement_analysis,manager_id:0
+msgid "Manager"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: hr_reimbursement
+#: help:hr.reimbursement,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+msgid "My Reimbursement to review"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.actions.act_window,name:hr_reimbursement.hr_my_reimbursement_action
+#: model:ir.ui.menu,name:hr_reimbursement.hr_my_reimbursement_menu
+msgid "My Reimbursements"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,need_validation:0
+msgid "Need Validation"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+msgid "Needs my Review"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,next_reviewer_ids:0
+msgid "Next Reviewers"
+msgstr ""
+
+#. module: hr_reimbursement
+#: code:addons/hr_reimbursement/models/hr_reimbursement.py:567
+#, python-format
+msgid "No home address defined for employee"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,note:0
+#: field:hr.reimbursement_line,note:0
+#: view:hr.reimbursement_type:hr_reimbursement.hr_reimbursement_type_view_form
+#: field:hr.reimbursement_type,note:0
+msgid "Note"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Operation has been"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_type,employee_reimbursement_payable_account_id:0
+msgid "Payable Account"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Policies"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_analysis,price_subtotal:0
+msgid "Price Subtotal"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_analysis,price_unit:0
+msgid "Price Unit"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Print"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement_line,product_id:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: field:hr.reimbursement_analysis,product_id:0
+#: field:hr.reimbursement_line,product_id:0
+msgid "Product"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_line,quantity:0
+msgid "Qty"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement_line,quantity:0
+#: field:hr.reimbursement_analysis,quantity:0
+msgid "Quantity"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.filters,name:hr_reimbursement.ir_filter_reimbursement_01
+msgid "Reconcilled"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_line,ref:0
+msgid "Reference"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:account.move.line,reimbursement_id:0
+#: model:ir.ui.menu,name:hr_reimbursement.hr_reimbursement_configuration_menu
+#: model:ir.ui.menu,name:hr_reimbursement.hr_reimbursement_root_menu
+msgid "Reimbursement"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.actions.server,name:hr_reimbursement.ir_action_server_02
+msgid "Reimbursement Approved"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+#: field:hr.reimbursement,line_ids:0
+msgid "Reimbursement Details"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.actions.server,name:hr_reimbursement.ir_action_server_01
+msgid "Reimbursement Done"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement_line,line_id:0
+msgid "Reimbursement Line"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,employee_reimbursement_payable_account_id:0
+msgid "Reimbursement Payable Account"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,employee_reimbursement_payable_move_line_id:0
+msgid "Reimbursement Payable Move Line"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.actions.act_window,name:hr_reimbursement.hr_reimbursement_type_action
+#: model:ir.ui.menu,name:hr_reimbursement.hr_reimbursement_type_menu
+msgid "Reimbursement Types"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.ui.menu,name:hr_reimbursement.hr_reimbursement_menu
+msgid "Reimbursements"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Reject"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,rejected:0
+msgid "Rejected"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Request Validation"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Restart"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Restart Validation"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Restart employee reimbursement. Are you sure?"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,reviewer_partner_ids:0
+msgid "Review Partners"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,reviewer_ids:0
+msgid "Reviewers"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Reviews"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+msgid "Row Grouping"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_line,sequence:0
+#: field:hr.reimbursement_type,sequence_id:0
+msgid "Sequence"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Settings"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:res.groups,name:hr_reimbursement.employee_reimbursement_accounting_setting_group
+msgid "Show Accounting Setting"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: field:hr.reimbursement,state:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: field:hr.reimbursement_analysis,state:0
+#: field:hr.reimbursement_line,reimbursement_state:0
+msgid "State"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_line,price_subtotal:0
+msgid "Subtotal"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:res.groups,name:hr_reimbursement.group_hr_reimbursement_supervisor
+#: model:res.groups,name:hr_reimbursement.group_hr_reimbursement_viewer_supervisor
+msgid "Supervisor"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+msgid "Terminate"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,terminate_date:0
+msgid "Terminate Date"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,terminate_reason_id:0
+msgid "Terminate Reason"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Terminate reimbursement. Are you sure?"
+msgstr ""
+
+#. module: hr_reimbursement
+#: selection:hr.reimbursement,state:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: selection:hr.reimbursement_analysis,state:0
+msgid "Terminated"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,terminate_user_id:0
+msgid "Terminated By"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Termination"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Termination reason:"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "This Reimbursement needs to be\n"
+"                    validated."
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,amount_total:0
+msgid "Total"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,amount_realized:0
+msgid "Total Payment"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_tree
+msgid "Total Realized"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_tree
+msgid "Total Request"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_tree
+#: field:hr.reimbursement,amount_residual:0
+msgid "Total Residual"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: field:hr.reimbursement,type_id:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: field:hr.reimbursement_analysis,type_id:0
+#: field:hr.reimbursement_line,type_id:0
+msgid "Type"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement_line,price_unit:0
+#: field:hr.reimbursement_line,price_unit:0
+msgid "Unit Price"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:ir.filters,name:hr_reimbursement.ir_filter_reimbursement_02
+msgid "Unreconcilled"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement_line,uom_id:0
+msgid "UoM"
+msgstr ""
+
+#. module: hr_reimbursement
+#: model:res.groups,name:hr_reimbursement.group_hr_reimbursement_user
+msgid "User"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "Validate"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,validated:0
+msgid "Validated"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.reimbursement,review_ids:0
+msgid "Validations"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+#: selection:hr.reimbursement,state:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: selection:hr.reimbursement_analysis,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: hr_reimbursement
+#: selection:hr.reimbursement,state:0
+#: view:hr.reimbursement_analysis:hr_reimbursement.hr_reimbursement_analysis_view_search
+#: selection:hr.reimbursement_analysis,state:0
+msgid "Waiting for Payment"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_search
+msgid "Waiting for Realization"
+msgstr ""
+
+#. module: hr_reimbursement
+#: field:hr.approve_reimbursement_line,wizard_id:0
+msgid "Wizard"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement_type:hr_reimbursement.hr_reimbursement_type_view_form
+msgid "Workflow Policy"
+msgstr ""
+
+#. module: hr_reimbursement
+#: code:addons/hr_reimbursement/models/hr_reimbursement.py:619
+#, python-format
+msgid "You can only delete data on draft state"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "rejected"
+msgstr ""
+
+#. module: hr_reimbursement
+#: view:hr.reimbursement:hr_reimbursement.hr_reimbursement_view_form
+msgid "validated"
+msgstr ""
+

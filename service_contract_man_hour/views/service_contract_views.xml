@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="service_contract_view_form" model="ir.ui.view">
+    <field name="name">service.contract form</field>
+    <field name="model">service.contract</field>
+    <field name="inherit_id" ref="service_contract.service_contract_view_form" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//page[@name='team']" position="before">
+                <page name="man_hour" string="Man Hours">
+                    <group
+                                name="man_hour_accounting"
+                                string="Accounting"
+                                colspan="4"
+                                col="2"
+                            >
+                        <field
+                                    name="man_hour_receivable_journal_id"
+                                    domain="[('type','=','sale')]"
+                                />
+                        <field
+                                    name="man_hour_receivable_account_id"
+                                    domain="[('type','=','receivable')]"
+                                />
+                    </group>
+                    <group name="man_hour" string="Detail" colspan="4" col="2">
+                        <field name="man_hour_ok" />
+                        <field
+                                    name="man_hour_allowed_product_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <field
+                                    name="man_hour_allowed_product_categ_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <field
+                                    name="man_hour_ids"
+                                    colspan="2"
+                                    nolabel="1"
+                                    context="{'default_pricelist_id':pricelist_id}"
+                                >
+
+                            <tree>
+                                <field name="sequence" widget="handle" />
+                                <field
+                                            name="product_id"
+                                            domain="['|',('id','in',parent.man_hour_allowed_product_ids[0][2]),('categ_id','in',parent.man_hour_allowed_product_categ_ids[0][2])]"
+                                        />
+                                <field name="name" />
+                                <field name="amount_total" />
+                                <field name="analytic_account_id" />
+                                <field name="prepaid_total" widget="float_time" />
+                                <field name="prepaid_usage" widget="float_time" />
+                                <field name="prepaid_diff" widget="float_time" />
+                                <field name="invoice_method" />
+                                <button
+                                            name="action_create_invoice"
+                                            string="Create Invoice"
+                                            type="object"
+                                            icon="gtk-execute"
+                                            attrs="{'invisible':[('invoice_state','=','invoiced')]}"
+                                        />
+                                <button
+                                            name="action_delete_invoice"
+                                            string="Delete Invoice"
+                                            type="object"
+                                            icon="gtk-cancel"
+                                            attrs="{'invisible':[('invoice_state','=','tobeinvoiced')]}"
+                                        />
+                                <field name="invoice_id" />
+                                <field name="invoice_state" />
+                            </tree>
+                            <form>
+                                <group name="man_hour_form_1" colspan="4" col="2">
+                                    <group name="man_hour_form_1_1" colspan="1" col="2">
+                                        <field name="sequence" />
+                                        <field
+                                                    name="product_id"
+                                                    domain="['|',('id','in',parent.man_hour_allowed_product_ids[0][2]),('categ_id','in',parent.man_hour_allowed_product_categ_ids[0][2])]"
+                                                />
+                                        <field name="name" />
+                                    </group>
+                                    <group name="man_hour_form_1_2" colspan="1" col="2">
+                                        <field name="pricelist_id" />
+                                        <field name="price_unit" />
+                                        <field name="quantity" />
+                                        <field
+                                                    name="allowed_uom_categ_id"
+                                                    invisible="1"
+                                                />
+                                        <field
+                                                    name="uom_id"
+                                                    domain="[('category_id','=',allowed_uom_categ_id)]"
+                                                />
+                                        <field name="amount_untaxed" />
+                                        <field name="tax_ids" widget="many2many_tags" />
+                                        <field name="amount_tax" />
+                                        <field name="amount_total" />
+                                    </group>
+                                </group>
+                                <notebook>
+                                    <page name="man_hour_invoice" string="Invoice">
+                                        <group
+                                                    name="man_hour_invoice_1"
+                                                    colspan="4"
+                                                    col="2"
+                                                >
+                                            <field name="invoice_method" />
+                                            <field name="invoice_id" />
+                                            <field name="invoice_state" />
+                                        </group>
+                                    </page>
+                                    <page name="man_hour_timesheet" string="Timesheet">
+                                        <group
+                                                    name="man_hour_invoice_2"
+                                                    colspan="4"
+                                                    col="2"
+                                                >
+                                            <field name="analytic_account_id" />
+                                            <field
+                                                        name="prepaid_total"
+                                                        widget="float_time"
+                                                    />
+                                            <field
+                                                        name="prepaid_usage"
+                                                        widget="float_time"
+                                                    />
+                                            <field
+                                                        name="prepaid_diff"
+                                                        widget="float_time"
+                                                    />
+                                        </group>
+                                        <field name="timesheet_ids" />
+                                    </page>
+                                </notebook>
+                            </form>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+</data>
+</openerp>

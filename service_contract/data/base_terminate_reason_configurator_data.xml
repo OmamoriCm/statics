@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+    <data>
+        <record
+            id="terminate_reason_service_contract"
+            model="base.terminate.reason_config"
+        >
+            <field name="name" ref="service_contract.model_service_contract" />
+            <field name="method_terminate_name">action_terminate</field>
+        </record>
+    </data>
+</openerp>

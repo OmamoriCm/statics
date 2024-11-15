@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record
+            id="psychology_create_supplier_invoice_from_case_activity_view_form"
+            model="ir.ui.view"
+        >
+    <field
+                name="name"
+            >psychology.create_supplier_invoice_from_case_activity form</field>
+    <field name="model">psychology.create_supplier_invoice_from_case_activity</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="group_1" colspan="4" col="2">
+                <field name="currency_id" />
+                <field
+                            name="journal_id"
+                            domain="[('type','=','purchase'),'|',('currency','=',currency_id),'&amp;',('currency','=',False),('company_id.currency_id','=',currency_id)]"
+                        />
+                    <field
+                            name="account_id"
+                            domain="[('type','=','payable'),'|',('currency_id','=',currency_id),'&amp;',('currency_id','=',False),('company_id.currency_id','=',currency_id)]"
+                        />
+                <field name="date_invoice" />
+                <field
+                            name="activity_ids"
+                            nolabel="1"
+                            colspan="2"
+                            domain="[('case_id','=',case_id),('invoice_state','=','2binvoiced')]"
+                        />
+              </group>
+              <footer>
+                  <button
+                            name="action_create_invoice"
+                            string="Create Invoice"
+                            type="object"
+                            class="oe_highlight"
+                        />
+                  <button string="Cancel" special="cancel" />
+              </footer>
+        </form>
+    </field>
+</record>
+
+<record
+            id="psychology_create_supplier_invoice_from_case_activity_action"
+            model="ir.actions.act_window"
+        >
+    <field name="name">Create Supplier Invoice From Activity</field>
+    <field name="type">ir.actions.act_window</field>
+    <field
+                name="res_model"
+            >psychology.create_supplier_invoice_from_case_activity</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+</record>
+
+<record
+            id="psychology_create_supplier_invoice_from_case_activity_values"
+            model="ir.values"
+        >
+    <field name="model_id" ref="psychology.model_psychology_case_activity" />
+    <field name="name">Create Supplier Invoices</field>
+    <field name="key2">client_action_multi</field>
+    <field
+                name="value"
+                eval="'ir.actions.act_window,' +str(ref('psychology_create_supplier_invoice_from_case_activity_action'))"
+            />
+    <field name="key">action</field>
+    <field name="model">psychology.case_activity</field>
+</record>
+</data>
+</openerp>

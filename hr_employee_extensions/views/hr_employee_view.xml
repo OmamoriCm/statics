@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+    	<!-- diploma management -->
+    		<record model="ir.ui.view" id="hr_employee_graduate_form_view">
+                <field name="name">hr.employee.graduate.form</field>
+                <field name="model">hr.employee.graduate</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Graduate">
+                        <sheet>
+                        	<group>
+                        		<field name="name" required="1"/>
+                        	</group>
+                        	<group>
+                        		<group>
+                        			<field name="grade_id" required="1"/>
+                        			<field name="domain_id" required="1"/>
+                        			<field name="type" required="1"/>
+                        		</group>
+                        		<group>
+                        			<field name="reference" required="1"/>
+                        			<field name="date_obtention" required="1"/>
+                        			<label for="start_date" string="Duration"/>
+                                    <div>
+                                        <field name="start_date" class="oe_inline"/> - <field name="end_date" class="oe_inline"/>
+                                    </div>
+                        		</group>
+                        	</group>
+                        	<field name="image" widget="image" />
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+            
+		<!-- employee management -->
+            <record model="ir.ui.view" id="hr_employee_inh_form_view">
+                <field name="name">hr.employee.form</field>
+                <field name="model">hr.employee</field>
+                <field name="type">form</field>
+                <field name="inherit_id" ref="hr.view_employee_form"/>
+                <field name="arch" type="xml">
+                	<xpath expr="//field[@name='identification_id']" position="replace">
+                		<field name="identification_id" string="Matricule"/>
+                	</xpath>
+                	
+                	<xpath expr="//field[@name='identification_id']" position="after">
+                		<field name="piece_identite_id"/>
+                	</xpath>
+                   <xpath expr="//field[@name='piece_identite_id']" position="after">
+                		<field name="blood_type"/>
+                	</xpath>
+                    <xpath expr="//form/sheet/notebook/page[@string='Personal Information']" position="after">
+                         <page string="Papiers" groups="base.group_hr_manager">
+                         	 <group colspan="4">
+                            	<separator string="Licence" colspan="4"/>
+                            	<field name="licence_ids" nolabel="1" colspan="4">
+		                			<tree string='Licences' editable='top'>
+		                				<field name='name'/>
+		                				<field name='reference'/>
+		                				<field name='start_date'/>
+		                				<field name='end_date'/>
+		                			</tree>
+	                			</field>
+	                			<separator string="Visas" colspan="4"/>
+                            	<field name="visa_ids" nolabel="1" colspan="4">
+		                			<tree string='Visas' editable='top'>
+		                				<field name='name'/>
+		                				<field name='pays_id'/>
+		                				<field name='reference'/>
+		                				<field name='start_date'/>
+		                				<field name='end_date'/>
+		                			</tree>
+	                			</field>
+	                			<separator string="Residences permit" colspan="4"/>
+                            	<field name="residence_permit_ids" nolabel="1" colspan="4">
+		                			<tree string='Carte de séjour' editable='top'>
+		                				<field name='name'/>
+		                				<field name='pays_id'/>
+		                				<field name='reference'/>
+		                				<field name='start_date'/>
+		                				<field name='end_date'/>
+		                			</tree>
+	                			</field>
+                            </group>
+                         </page>
+                         <page string="Family Information" groups="base.group_hr_manager">
+                         	<separator string="Parents"></separator>
+                         	<field name="parent_employee_ids" >
+                         		<tree string="Enfants" editable="top">
+                         			<field name="name" required="1"/>
+                         			<field name="birthday" />
+                         			<field name="birth_place" />
+                         			<field name="gender" required="1"/>
+                         			<field name="mobile" />
+                         			<field name="email" />
+                         		</tree>
+                         	</field>
+                         	<separator string="Children" colspan="4"/>
+                         	<field name="childrens_ids" >
+                         		<tree string="Enfants" editable="top">
+                         		<field name="name" required="1"/>
+                         			<field name="birthday" />
+                         			<field name="birth_place" />
+                         			<field name="gender" required="1"/>
+                         			<field name="mobile" />
+                         		</tree>
+                         	</field>
+                         	<separator string="Emergency Contact" />
+                         	<field name="emergency_contact_ids">
+                         		<tree  editable="top">
+                         			<field name="name" required="1"/>
+                         			<field name="email" />
+                         			<field name="mobile" required="1"/>
+                         			<field name="relation" required="1"/>
+                         		</tree>
+                         	</field>
+                         </page>
+                         <page string="Diplomas and Certificates" groups="base.group_hr_manager">
+                         	<field name="graduate_ids">
+                         		<tree>
+                         			<field name="name" />
+                         			<field name="grade_id" />
+                         			<field name="domain_id" />
+                         			<field name="date_obtention" />
+                         			<field name="type" />
+                         		</tree>
+                         	</field>
+                         </page>
+                  </xpath>
+                </field>
+            </record>   
+            
+            <record model="ir.ui.view" id="hr_employee_extension_2_form_view">
+                <field name="name">hr.employee.form</field>
+                <field name="model">hr.employee</field>
+                <field name="type">form</field>
+                <field name="inherit_id" ref="hr_contract.hr_hr_employee_view_form2"/>
+                <field name="arch" type="xml">
+                    <xpath expr="//field[@name='vehicle_distance']" position="after">
+                        <field name="recruitment_degree_id"/>
+                    </xpath>
+                    <xpath expr="//group[@string='Contract']" position="after">
+                        <group string="Accounting">
+                            <field name="payment_method" />
+                        </group>
+                    </xpath>
+                </field>
+            </record> 
+            
+
+            
+           
+    </data>
+</openerp>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 PT. Simetri Sinergi Indonesia
+     Copyright 2020 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<!-- Cash Advance -->
+<record id="expense_account_usability_module_category" model="ir.module.category">
+    <field name="name">Expense Account Usability</field>
+</record>
+
+<record id="expense_account_module_category" model="ir.module.category">
+    <field name="name">Expense Account</field>
+</record>
+
+<record id="expense_account_viewer_module_category" model="ir.module.category">
+    <field name="name">Expense Account Viewer</field>
+</record>
+
+
+</data>
+</openerp>

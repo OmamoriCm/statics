@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="res_partner_emergency_contact_view_form">
+            <field name="name">Inherit: Partner Emergency Contact Form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr='//notebook' position="inside">
+                    <page
+                        string="Emergency Contacts"
+                        attrs="{'invisible':[('is_company', '=', True)]}"
+                    >
+                        <field
+                            name="emergency_contact_ids"
+                            nolabel="1"
+                            colspan="4"
+                            context="{'default_is_company':False}"
+                        />
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

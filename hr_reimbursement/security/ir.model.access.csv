@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hr_reimbursement_type_employee,hr.reimbursement_type - user,model_hr_reimbursement_type,base.group_user,1,1,1,1
+hr_reimbursement_type_all,hr.reimbursement_type - all,model_hr_reimbursement_type,,1,0,0,0
+hr_reimbursement_employee,hr.reimbursement - user,model_hr_reimbursement,base.group_user,1,1,1,1
+hr_reimbursement_all,hr.reimbursement - all,model_hr_reimbursement,,1,0,0,0
+hr_reimbursement_line_employee,hr.reimbursement_line - user,model_hr_reimbursement_line,base.group_user,1,1,1,1
+hr_reimbursement_line_all,hr.reimbursement_line - all,model_hr_reimbursement_line,,1,0,0,0
+hr_reimbursement_analysis_all,hr.reimbursement_analysis - all,model_hr_reimbursement_analysis,,1,0,0,0

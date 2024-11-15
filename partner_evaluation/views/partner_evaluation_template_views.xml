@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="partner_evaluation_template_view_search" model="ir.ui.view">
+    <field name="name">partner.evaluation_template form</field>
+    <field name="model">partner.evaluation_template</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name" />
+        </search>
+    </field>
+</record>
+
+<record id="partner_evaluation_template_view_tree" model="ir.ui.view">
+    <field name="name">partner.evaluation_template tree</field>
+    <field name="model">partner.evaluation_template</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name" />
+        </tree>
+    </field>
+</record>
+
+<record id="partner_evaluation_template_view_form" model="ir.ui.view">
+    <field name="name">partner.evaluation_template form</field>
+    <field name="model">partner.evaluation_template</field>
+    <field name="arch" type="xml">
+        <form>
+            <header />
+            <div class="oe_right oe_button_box" style="width: 300px;" name="buttons" />
+            <group name="group_1" colspan="4" col="2">
+                <field name="name" />
+                <field name="active" />
+                <field name="require_duration" />
+            </group>
+            <notebook>
+                <page name="item" string="Items">
+                    <field name="item_ids" nolabel="1">
+                        <tree editable="top">
+                            <field name="sequence" widget="handle" />
+                            <field name="item_type_id" />
+                        </tree>
+                    </field>
+                </page>
+                <page name="result" string="Results">
+                    <group name="result_3" colspan="4" col="2">
+                        <field name="manual_result" />
+                    </group>
+                    <group name="result_1" string="Results" colspan="4" col="2">
+                        <field name="result_ids" nolabel="1" colspan="2">
+                            <tree>
+                                <field name="sequence" widget="handle" />
+                                <field name="id" />
+                                <field name="name" />
+                                <field name="quantitative_value" />
+                            </tree>
+                            <form>
+                                <group name="result_2" colspan="4" col="2">
+                                    <field name="name" />
+                                    <field name="active" />
+                                    <field name="sequence" />
+                                    <field name="quantitative_value" />
+                                </group>
+                                <group
+                                            name="result_5"
+                                            colspan="4"
+                                            col="2"
+                                            string="Server Actions"
+                                        >
+                                    <field
+                                                name="server_action_ids"
+                                                nolabel="1"
+                                                colspan="2"
+                                                domain="[('model_name','=','res.partner')]"
+                                            />
+                                </group>
+                            </form>
+                        </field>
+                    </group>
+                    <group
+                                name="result_4"
+                                string="Python Codes"
+                                colspan="4"
+                                col="2"
+                                attrs="{'invisible':[('manual_result','=',True)]}"
+                            >
+                        <field name="python_code_result" nolabel="1" colspan="2" />
+                    </group>
+                </page>
+                <page name="workflow_policy" string="Workflow Policy">
+                    <group name="workflow_policy_1" colspan="4" col="2">
+                        <field
+                                    name="partner_evaluation_confirm_grp_ids"
+                                    widget="many2many_tags"
+                                />
+                        <field
+                                    name="partner_evaluation_approve_grp_ids"
+                                    widget="many2many_tags"
+                                />
+                        <field
+                                    name="partner_evaluation_start_grp_ids"
+                                    widget="many2many_tags"
+                                />
+                        <field
+                                    name="partner_evaluation_done_grp_ids"
+                                    widget="many2many_tags"
+                                />
+                        <field
+                                    name="partner_evaluation_cancel_grp_ids"
+                                    widget="many2many_tags"
+                                />
+                        <field
+                                    name="partner_evaluation_restart_grp_ids"
+                                    widget="many2many_tags"
+                                />
+                    </group>
+                </page>
+                <page name="note" string="Note">
+                    <field name="note" nolabel="1" colspan="4" />
+                </page>
+            </notebook>
+        </form>
+    </field>
+</record>
+
+<record id="partner_evaluation_template_action" model="ir.actions.act_window">
+    <field name="name">Partner Evaluation Templates</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">partner.evaluation_template</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+            id="partner_evaluation_template_menu"
+            name="Templates"
+            parent="partner_evaluation_configuration_menu"
+            action="partner_evaluation_template_action"
+            sequence="2"
+        />
+
+</data>
+</openerp>

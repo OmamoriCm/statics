@@ -1,0 +1,24 @@
+<?xml version ="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Vignesh
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<openerp>
+<data>
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='price_subtotal']" position="after">
+                <field name="sub_with_tax" widget="monetary" />
+            </xpath>
+<!--              <xpath expr="//field[@name='amount_untaxed']" position="after">
+                <field name="show_tax" >
+                <tree>
+                    <field name="tax_id" />
+                </tree>
+                </field>
+            </xpath> -->
+        </field>
+    </record>
+</data>
+</openerp>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="service_contract_type_view_search" model="ir.ui.view">
+    <field name="name">service.contract_type form</field>
+    <field name="model">service.contract_type</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name" />
+            <field name="code" />
+        </search>
+    </field>
+</record>
+
+<record id="service_contract_type_view_tree" model="ir.ui.view">
+    <field name="name">service.contract_type tree</field>
+    <field name="model">service.contract_type</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name" />
+            <field name="code" />
+        </tree>
+    </field>
+</record>
+
+<record id="service_contract_type_view_form" model="ir.ui.view">
+    <field name="name">service.contract_type form</field>
+    <field name="model">service.contract_type</field>
+    <field name="arch" type="xml">
+        <form>
+            <header />
+            <sheet>
+                <div
+                            class="oe_right oe_button_box"
+                            style="width: 300px;"
+                            name="buttons"
+                        />
+                <group name="group_1" colspan="4" col="2">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="active" />
+                    <field
+                                name="contract_sequence_id"
+                                domain="[('code','=','service.contract')]"
+                            />
+                    <field
+                                name="contract_custom_info_template_id"
+                                domain="[('model','=','service.contract')]"
+                            />
+                </group>
+                <notebook>
+                    <page name="fix_item" string="Fix Items Configuration">
+                        <group
+                                    name="accounting"
+                                    string="Accounting"
+                                    colspan="4"
+                                    col="2"
+                                >
+                            <field
+                                        name="fix_item_receivable_journal_id"
+                                        string="Receivable Journal"
+                                    />
+                            <field
+                                        name="fix_item_receivable_account_id"
+                                        string="Receivable Account"
+                                    />
+                        </group>
+                        <group
+                                    name="allowed_product"
+                                    string="Allowed Products"
+                                    colspan="4"
+                                    col="2"
+                                >
+                            <field
+                                        name="fix_item_allowed_product_ids"
+                                        colspan="2"
+                                        nolabel="1"
+                                    />
+                        </group>
+                        <group
+                                    name="allowed_product_categ"
+                                    string="Allowed Product Categories"
+                                    colspan="4"
+                                    col="2"
+                                >
+                            <field
+                                        name="fix_item_allowed_product_categ_ids"
+                                        colspan="2"
+                                        nolabel="1"
+                                    />
+                        </group>
+                    </page>
+                    <page name="team" string="Team">
+                        <group
+                                    name="team_allowed_product"
+                                    string="Allowed Products"
+                                    colspan="4"
+                                    col="2"
+                                >
+                            <field
+                                        name="team_function_allowed_product_ids"
+                                        colspan="2"
+                                        nolabel="1"
+                                    />
+                        </group>
+                        <group
+                                    name="team_allowed_product_categ"
+                                    string="Allowed Product Categories"
+                                    colspan="4"
+                                    col="2"
+                                >
+                            <field
+                                        name="team_function_allowed_product_categ_ids"
+                                        colspan="2"
+                                        nolabel="1"
+                                    />
+                        </group>
+                    </page>
+                    <page name="analytic_project" string="Analytic &amp; Project">
+                        <group name="analytic_project_1" colspan="4" col="2">
+                            <field
+                                        name="parent_analytic_account_id"
+                                        domain="[('type','!=','template')]"
+                                    />
+                        </group>
+                    </page>
+                    <page name="workflow" string="Workflow Policy">
+                        <group name="workflow" colspan="4" col="2">
+                            <field
+                                        name="service_contract_confirm_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="service_contract_restart_approval_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="service_contract_start_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="service_contract_finish_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="service_contract_terminate_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="service_contract_cancel_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="service_contract_restart_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                        </group>
+                    </page>
+                    <page name="note" string="Note">
+                        <field name="note" />
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="service_contract_type_action" model="ir.actions.act_window">
+    <field name="name">Contract Types</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">service.contract_type</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+            id="service_contract_type_menu"
+            name="Contract Types"
+            parent="service_configuration_menu"
+            action="service_contract_type_action"
+            sequence="1"
+        />
+</data>
+</openerp>

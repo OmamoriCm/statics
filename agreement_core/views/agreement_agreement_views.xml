@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+    <record id="agreement_agreement_view_tree" model="ir.ui.view">
+        <field name="name">agreement.agreement tree</field>
+        <field name="model">agreement.agreement</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="title" />
+                <field name="partner_id" />
+                <field name="type_id" />
+                <field name="date_agreement" />
+                <field name="user_id" />
+                <field name="origin_version_id" />
+                <field name="previous_version_id" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="agreement_agreement_view_form" model="ir.ui.view">
+        <field name="name">agreement.agreement form</field>
+        <field name="model">agreement.agreement</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                            name="button_confirm"
+                            string="Confirm"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"
+                            confirm="Confirm agreement. Are you sure?"
+                        />
+                    <button
+                            name="button_print"
+                            string="Print"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','draft'),('print_ok','=',False)]}"
+                        />
+                    <button
+                            name="%(attach_signed_document_action)d"
+                            string="Attach Signed Document"
+                            type="action"
+                            attrs="{'invisible':['|','|',('state','!=','confirm'),('attach_ok','=',False),('signed_document_id','!=',False)]}"
+                        />
+                    <button
+                            name="button_approve"
+                            string="Approve"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','confirm'),('approve_ok','=',False)]}"
+                            confirm="Approve agreement. Are you sure?"
+                        />
+                    <button
+                            name="button_active"
+                            string="Active"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','approve'),('active_ok','=',False)]}"
+                            confirm="Activate agreement. Are you sure?"
+                        />
+                    <button
+                            name="button_expire"
+                            string="Expire"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','active'),('expire_ok','=',False)]}"
+                            confirm="Mark as expire agreement. Are you sure?"
+                        />
+                    <button
+                            name="button_new_revision"
+                            string="Create New Revision"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','cancel'),('revision_ok','=',False)]}"
+                            confirm="Create new revision. Are you sure?"
+                        />
+                    <button
+                            name="%(terminate_agreement_action)d"
+                            string="Terminate"
+                            type="action"
+                            attrs="{'invisible':['|',('state','!=','active'),('terminate_ok','=',False)]}"
+                            confirm="Terminate agreement. Are you sure?"
+                        />
+                    <button
+                            name="%(base_cancel_reason.base_cancel_reason_wizard_action)d"
+                            string="Cancel"
+                            type="action"
+                            attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}"
+                            confirm="Cancel agreement. Are you sure?"
+                        />
+                    <button
+                            name="button_restart"
+                            string="Set to Draft"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                            confirm="Reset agreement. Are you sure?"
+                        />
+                    <field
+                            name="state"
+                            string="State"
+                            widget="statusbar"
+                            statusbar_visible="draft,confirm,approve,active"
+                        />
+                </header>
+                <sheet>
+                    <div
+                            class="oe_right oe_button_box"
+                            style="width: 300px;"
+                            name="buttons"
+                        >
+                    </div>
+                    <div class="oe_left" style="width: 500px;">
+                        <div class="oe_title" style="width: 500px;">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                            <h2 attrs="{'invisible': [('state', '!=', 'cancel')]}">
+                                <label
+                                        for="cancel_reason_id"
+                                        string="Cancellation reason:"
+                                    />
+                                <field name="cancel_reason_id" class="oe_inline" />
+                            </h2>
+                            <h2 attrs="{'invisible': [('state', '!=', 'terminate')]}">
+                                <label
+                                        for="terminate_reason_id"
+                                        string="Termination reason:"
+                                    />
+                                <field name="terminate_reason_id" class="oe_inline" />
+                            </h2>
+                        </div>
+                    </div>
+                    <group
+                            name="group_1"
+                            colspan="4"
+                            col="2"
+                            string="General Information"
+                        >
+                        <group name="group_1_1" colspan="1" col="2">
+                            <field
+                                    name="company_id"
+                                    groups="base.group_multi_company"
+                                />
+                            <field
+                                    name="template_id"
+                                    on_change="onchange_template_id(template_id)"
+                                />
+                            <field name="type_id" />
+                            <field name="partner_id" />
+                            <field name="user_id" />
+                            <field name="parent_id" />
+                            <field name="report_id" />
+                            <field name="signed_document_id" />
+                        </group>
+                        <group name="group_1_2" colspan="1" col="2">
+                            <field name="date_agreement" />
+                            <field name="date_start" />
+                            <field name="date_end" />
+                        </group>
+                    </group>
+                    <group name="title" string="Title" colspan="4" col="2">
+                        <field name="title" colspan="2" nolabel="1" />
+                    </group>
+                    <group
+                            name="raw_description"
+                            string="Raw Description"
+                            colspan="4"
+                            col="2"
+                            class="oe_edit_only"
+                        >
+                        <field name="raw_description" colspan="2" nolabel="1" />
+                    </group>
+                    <group
+                            name="description"
+                            string="Description"
+                            colspan="4"
+                            col="2"
+                            class="oe_read_only"
+                        >
+                        <field name="description" colspan="2" nolabel="1" />
+                    </group>
+                    <notebook colspan="4">
+                        <page name="content" string="Contents">
+                            <group name="recital" colspan="4" col="2" string="Recitals">
+                                <field name="recital_ids" nolabel="1" colspan="2">
+                                    <tree>
+                                        <field name="sequence" widget="handle" />
+                                        <field name="name" />
+                                        <field name="title" />
+                                    </tree>
+                                    <form>
+                                        <group name="recital_1" colspan="4" col="2">
+                                            <field name="name" />
+                                            <field name="title" />
+                                            <field name="sequence" />
+                                        </group>
+                                        <group
+                                                name="recital_raw_content"
+                                                string="Raw Content"
+                                                colspan="4"
+                                                col="2"
+                                                class="oe_edit_only"
+                                            >
+                                            <field name="raw_content" nolabel="1" />
+                                        </group>
+                                        <group
+                                                name="recital_content"
+                                                string="Content"
+                                                colspan="4"
+                                                col="2"
+                                                class="oe_read_only"
+                                            >
+                                            <field name="content" nolabel="1" />
+                                        </group>
+                                    </form>
+                                </field>
+                            </group>
+                            <group name="section" string="Sections" colspan="4" col="2">
+                                <field name="section_ids" colspan="2" nolabel="1">
+                                    <tree>
+                                        <field name="sequence" widget="handle" />
+                                        <field name="name" />
+                                        <field name="title" />
+                                    </tree>
+                                    <form>
+                                        <group name="section_1" colspan="4" col="2">
+                                            <field name="name" />
+                                            <field name="title" />
+                                            <field name="sequence" />
+                                        </group>
+                                        <group
+                                                name="section_raw_content"
+                                                string="Raw Content"
+                                                colspan="4"
+                                                col="2"
+                                                class="oe_edit_only"
+                                            >
+                                            <field name="raw_content" nolabel="1" />
+                                        </group>
+                                        <group
+                                                name="section_content"
+                                                string="Content"
+                                                colspan="4"
+                                                col="2"
+                                                class="oe_read_only"
+                                            >
+                                            <field name="content" nolabel="1" />
+                                        </group>
+                                        <notebook>
+                                            <page name="section_clause">
+                                                <field name="clause_ids">
+                                                    <tree>
+                                                        <field
+                                                                name="sequence"
+                                                                widget="handle"
+                                                            />
+                                                        <field name="name" />
+                                                        <field name="title" />
+                                                    </tree>
+                                                    <form>
+                                                        <group
+                                                                name="clause_1"
+                                                                colspan="4"
+                                                                col="2"
+                                                            >
+                                                            <field name="name" />
+                                                            <field name="title" />
+                                                            <field name="sequence" />
+                                                        </group>
+                                                        <group
+                                                                name="clause_raw_content"
+                                                                string="Raw Content"
+                                                                colspan="4"
+                                                                col="2"
+                                                                class="oe_edit_only"
+                                                            >
+                                                            <field
+                                                                    name="raw_content"
+                                                                    nolabel="1"
+                                                                />
+                                                        </group>
+                                                        <group
+                                                                name="clause_content"
+                                                                string="Content"
+                                                                colspan="4"
+                                                                col="2"
+                                                                class="oe_read_only"
+                                                            >
+                                                            <field
+                                                                    name="content"
+                                                                    nolabel="1"
+                                                                />
+                                                        </group>
+                                                    </form>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>
+                            </group>
+                            <group
+                                    name="appendix"
+                                    colspan="4"
+                                    col="2"
+                                    string="Appendices"
+                                >
+                                <field name="appendix_ids" nolabel="1" colspan="2">
+                                    <tree>
+                                        <field name="sequence" widget="handle" />
+                                        <field name="name" />
+                                        <field name="title" />
+                                    </tree>
+                                    <form>
+                                        <group name="appendix_1" colspan="4" col="2">
+                                            <field name="name" />
+                                            <field name="title" />
+                                            <field name="sequence" />
+                                        </group>
+                                        <group
+                                                name="appendix_raw_content"
+                                                string="Raw Content"
+                                                colspan="4"
+                                                col="2"
+                                                class="oe_edit_only"
+                                            >
+                                            <field name="raw_content" nolabel="1" />
+                                        </group>
+                                        <group
+                                                name="appendix_content"
+                                                string="Content"
+                                                colspan="4"
+                                                col="2"
+                                                class="oe_read_only"
+                                            >
+                                            <field name="content" nolabel="1" />
+                                        </group>
+                                    </form>
+                                </field>
+                            </group>
+                        </page>
+                        <page name="party" string="Parties">
+                            <field name="party_ids">
+                                <tree editable="top">
+                                    <field name="sequence" widget="handle" />
+                                    <field name="name" />
+                                    <field name="party_id" />
+                                    <field
+                                            name="allowed_contact_ids"
+                                            widget="many2many_tags"
+                                            invisible="1"
+                                        />
+                                    <field
+                                            name="contact_id"
+                                            domain="[('id','in',allowed_contact_ids[0][2])]"
+                                        />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="revision" string="Revision">
+                            <group name="revision_1" colspan="4" col="2">
+                                <field name="total_revision" />
+                                <field name="revision" />
+                                <field name="previous_version_id" />
+                                <field name="origin_version_id" />
+                                <field name="version_number" />
+                            </group>
+                        </page>
+                        <page name="note" string="Notes">
+                            <field name="note" />
+                        </page>
+                        <page name="log" string="Log" groups="base.group_system">
+                            <group name="group_log_1" colspan="4" col="3">
+                                <field name="confirmed_date" string="Confirmation" />
+                                <field name="confirmed_user_id" nolabel="1" />
+                                <field name="approved_date" string="Approval" />
+                                <field name="approved_user_id" nolabel="1" />
+                                <field name="active_date" string="Active" />
+                                <field name="active_user_id" nolabel="1" />
+                                <field name="expire_date" string="Expire" />
+                                <field name="expire_user_id" nolabel="1" />
+                                <field name="terminate_date" string="Terminate" />
+                                <field name="terminate_user_id" nolabel="1" />
+                                <field name="cancelled_date" string="Cancellation" />
+                                <field name="cancelled_user_id" nolabel="1" />
+                            </group>
+                        </page>
+                        <page name="policy" string="Policy" groups="base.group_system">
+                            <group name="policy_1" colspan="4" col="2">
+                                <field name="confirm_ok" />
+                                <field name="print_ok" />
+                                <field name="attach_ok" />
+                                <field name="approve_ok" />
+                                <field name="active_ok" />
+                                <field name="expire_ok" />
+                                <field name="terminate_ok" />
+                                <field name="revision_ok" />
+                                <field name="cancel_ok" />
+                                <field name="restart_ok" />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field
+                            name="message_follower_ids"
+                            widget="mail_followers"
+                            groups="base.group_user"
+                        />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="agreement_agreement_view_search" model="ir.ui.view">
+        <field name="name">agreement.agreement search</field>
+        <field name="model">agreement.agreement</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="title" />
+                <field name="partner_id" />
+                <field name="type_id" />
+                <field name="template_id" />
+                <field name="date_agreement" />
+                <field name="date_start" />
+                <field name="date_end" />
+                <field name="user_id" />
+                <field name="origin_version_id" />
+                <field name="previous_version_id" />
+                <field name="version_number" />
+                <field name="state" />
+                <group name="grp_domain" string="Filter">
+                    <filter
+                            name="dom_origin"
+                            string="Origin Agreement"
+                            domain="[('origin_version_id','=',False)]"
+                        />
+                    <filter
+                            name="dom_internal"
+                            string="Internal Agreement"
+                            domain="[('partner_id','=',False)]"
+                        />
+                    <filter
+                            name="dom_client"
+                            string="Client Agreement"
+                            domain="[('partner_id','!=',False)]"
+                        />
+                </group>
+                <group name="grp_state" string="State">
+                    <filter
+                            name="dom_draft"
+                            string="Draft"
+                            domain="[('state','=','draft')]"
+                        />
+                    <filter
+                            name="dom_confirm"
+                            string="Waiting for Approval"
+                            domain="[('state','=','confirm')]"
+                        />
+                    <filter
+                            name="dom_approve"
+                            string="Approved"
+                            domain="[('state','=','approve')]"
+                        />
+                    <filter
+                            name="dom_active"
+                            string="Active"
+                            domain="[('state','=','active')]"
+                        />
+                    <filter
+                            name="dom_expire"
+                            string="Expired"
+                            domain="[('state','=','expire')]"
+                        />
+                    <filter
+                            name="dom_terminate"
+                            string="Terminated"
+                            domain="[('state','=','terminate')]"
+                        />
+                </group>
+                <group name="grp_group" string="Group By..">
+                    <filter
+                            name="grp_company"
+                            string="Company"
+                            context="{'group_by':'company_id'}"
+                            groups="base.group_multi_company"
+                        />
+                    <filter
+                            name="grp_partner"
+                            string="Customer"
+                            context="{'group_by':'partner_id'}"
+                        />
+                    <filter
+                            name="grp_type"
+                            string="Type"
+                            context="{'group_by':'type_id'}"
+                        />
+                    <filter
+                            name="grp_template"
+                            string="Template"
+                            context="{'group_by':'template_id'}"
+                        />
+                    <filter
+                            name="grp_user"
+                            string="Responsible"
+                            context="{'group_by':'user_id'}"
+                        />
+                    <filter
+                            name="grp_origin"
+                            string="Origin"
+                            context="{'group_by':'origin_version_id'}"
+                        />
+                    <filter
+                            name="grp_previous"
+                            string="Previous Version"
+                            context="{'group_by':'previous_version_id'}"
+                        />
+                    <filter
+                            name="grp_cancel_reason"
+                            string="Cancel Reason"
+                            context="{'group_by':'cancel_reason_id'}"
+                        />
+                    <filter
+                            name="grp_termination_reason"
+                            string="Termination Reason"
+                            context="{'group_by':'terminate_reason_id'}"
+                        />
+                    <filter
+                            name="grp_state"
+                            string="State"
+                            context="{'group_by':'state'}"
+                        />
+                    <filter
+                            name="grp_date_agreement_year"
+                            string="Date Agreement by Year"
+                            context="{'group_by':'date_agreement:year'}"
+                        />
+                    <filter
+                            name="grp_date_agreement_month"
+                            string="Date Agreement by Month"
+                            context="{'group_by':'date_agreement:month'}"
+                        />
+                    <filter
+                            name="grp_date_agreement_week"
+                            string="Date Agreement by Week"
+                            context="{'group_by':'date_agreement:week'}"
+                        />
+                    <filter
+                            name="grp_date_agreement_day"
+                            string="Date Agreement by Day"
+                            context="{'group_by':'date_agreement:day'}"
+                        />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="agreement_agreement_action" model="ir.actions.act_window">
+        <field name="name">Agreement</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">agreement.agreement</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field
+                name="search_view_id"
+                ref="agreement_core.agreement_agreement_view_search"
+            />
+        <field
+                name="context"
+            >{'search_default_dom_draft':1,'search_default_dom_confirm':1,'search_default_dom_approve':1,'search_default_dom_active':1}</field>
+    </record>
+
+    <menuitem
+            id="agreement_agreement_menu"
+            name="Agreement"
+            parent="agreement_core.agreement_menu"
+            action="agreement_agreement_action"
+            sequence="1"
+        />
+
+
+</data>
+</openerp>

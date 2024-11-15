@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+service_contract_recurring_item_employee,service.contract_recurring_item - user,model_service_contract_recurring_item,base.group_user,1,1,1,1
+service_contract_recurring_item_all,service.contract_recurring_item - all,model_service_contract_recurring_item,,1,0,0,0
+service_contract_recurring_period_employee,service.contract_recurring_period - user,model_service_contract_recurring_period,base.group_user,1,1,1,1
+service_contract_recurring_period_all,service.contract_recurring_period - all,model_service_contract_recurring_period,,1,0,0,0

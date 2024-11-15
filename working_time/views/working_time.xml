@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <template id="contact_form_working_time" inherit_id="website.company_description" name="Contact Form Working Time">
+        <xpath expr="//address" position="after">
+            <t t-if='res_company.schedule'>
+                <div>
+                    <span t-foreach='res_company.schedule' t-as='value'>
+                        <i class="fa fa-clock-o"></i>
+                        <t t-esc="value.days"/>
+                        <br />&amp;nbsp; &amp;nbsp; &amp;nbsp;<i>Morning:
+                        <t t-esc="value.morning"/></i>
+                        <br />&amp;nbsp; &amp;nbsp; &amp;nbsp;<i>Afternoon:
+                        <t t-esc="value.afternoon"/></i>
+                        <br>&amp;nbsp;</br>
+                    </span>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</data>
+</openerp>

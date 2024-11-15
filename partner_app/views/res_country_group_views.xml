@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+<data>
+
+<menuitem
+            name="Country Group"
+            id="res_partner_country_group_menu"
+            parent="res_partner_localization_menu"
+            action="base.action_country_group"
+            sequence="2"
+        />
+
+</data>
+</openerp>

@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="psychology_case_activity_view_search" model="ir.ui.view">
+    <field name="name">psychology.case_activity form</field>
+    <field name="model">psychology.case_activity</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name" />
+            <field name="partner_id" />
+            <field name="responsible_id" />
+            <field name="product_id" />
+            <field name="invoice_id" />
+            <group name="dom_state" string="State">
+                <filter
+                            name="dom_draft"
+                            string="To Do"
+                            domain="[('state','=','draft')]"
+                        />
+                <filter
+                            name="dom_open"
+                            string="In Progress"
+                            domain="[('state','=','open')]"
+                        />
+                <filter name="dom_done" string="Done" domain="[('state','=','done')]" />
+                <filter
+                            name="dom_cancel"
+                            string="Cancelled"
+                            domain="[('state','=','cancel')]"
+                        />
+            </group>
+            <group name="dom_invoice_state" string="Invoice State">
+                <filter
+                            name="dom_uninvoiceable"
+                            string="Uninvoiceable"
+                            domain="[('invoice_state','=','uninvoiceable')]"
+                        />
+                <filter
+                            name="dom_2binvoiced"
+                            string="To Be Invoiced"
+                            domain="[('invoice_state','=','2binvoiced')]"
+                        />
+                <filter
+                            name="dom_invoiced"
+                            string="Invoiced"
+                            domain="[('invoice_state','=','invoiced')]"
+                        />
+            </group>
+            <group name="group_by" string="Group By..">
+                <filter
+                            name="grp_responsible"
+                            string="Responsible"
+                            context="{'group_by':'responsible_id'}"
+                        />
+                <filter
+                            name="grp_product"
+                            string="Product"
+                            context="{'group_by':'product_id'}"
+                        />
+                <filter
+                            name="grp_partner"
+                            string="Client"
+                            context="{'group_by':'partner_id'}"
+                        />
+                <filter
+                            name="grp_state"
+                            string="State"
+                            context="{'group_by':'state'}"
+                        />
+                <filter
+                            name="grp_invoice_state"
+                            string="Invoice State"
+                            context="{'group_by':'invoice_state'}"
+                        />
+                <filter
+                            name="grp_invoice"
+                            string="# Invoice"
+                            context="{'group_by':'invoice_id'}"
+                        />
+                <filter
+                            name="grp_date_done_year"
+                            string="Date Finish by Year"
+                            context="{'group_by':'date_done:year'}"
+                        />
+                <filter
+                            name="grp_date_done_month"
+                            string="Date Finish by Month"
+                            context="{'group_by':'date_done:month'}"
+                        />
+                <filter
+                            name="grp_date_done_week"
+                            string="Date Finish by Week"
+                            context="{'group_by':'date_done:week'}"
+                        />
+                <filter
+                            name="grp_date_done_day"
+                            string="Date Finish by Day"
+                            context="{'group_by':'date_done:day'}"
+                        />
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="psychology_case_activity_view_tree" model="ir.ui.view">
+    <field name="name">psychology.case_activity tree</field>
+    <field name="model">psychology.case_activity</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name" />
+            <field name="partner_id" />
+            <field name="responsible_id" />
+            <field name="product_id" />
+            <field name="amount_untaxed" />
+            <field name="amount_tax" />
+            <field name="amount_total" />
+            <field name="invoice_line_id" invisible="1" />
+            <field name="model" invisible="1" />
+            <field name="res_id" invisible="1" />
+            <field name="reference_id" />
+            <field name="start_ok" invisible="1" />
+            <field name="finish_ok" invisible="1" />
+            <field name="cancel_ok" invisible="1" />
+            <field name="restart_ok" invisible="1" />
+            <button
+                        name="action_start"
+                        type="object"
+                        string="Start"
+                        class="oe_highlight"
+                        icon="gtk-media-play"
+                        confirm="Start activity. Are you sure?"
+                        attrs="{'invisible':['|',('state','!=','draft'),('start_ok','=',False)]}"
+                    />
+            <button
+                        name="%(psychology_finish_activity_action)d"
+                        type="action"
+                        string="Finish"
+                        class="oe_highlight"
+                        icon="gtk-media-stop"
+                        confirm="Finish activity. Are you sure?"
+                        attrs="{'invisible':['|',('state','!=','open'),('finish_ok','=',False)]}"
+                    />
+            <button
+                        name="action_cancel"
+                        type="object"
+                        string="Cancel"
+                        icon="gtk-media-pause"
+                        confirm="Cancel activity. Are you sure?"
+                        attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}"
+                    />
+            <button
+                        name="action_restart"
+                        type="object"
+                        string="Restart"
+                        icon="gtk-media-previous"
+                        confirm="Restart activity. Are you sure?"
+                        attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                    />
+            <field name="invoice_state" />
+            <field name="invoice_id" />
+            <field name="date_done" />
+            <field name="state" />
+        </tree>
+    </field>
+</record>
+
+<record id="psychology_case_activity_view_form" model="ir.ui.view">
+    <field name="name">psychology.case_activity form</field>
+    <field name="model">psychology.case_activity</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+                <button
+                            name="action_start"
+                            type="object"
+                            string="Start"
+                            class="oe_highlight"
+                            confirm="Start activity. Are you sure?"
+                            attrs="{'invisible':['|',('state','!=','draft'),('start_ok','=',False)]}"
+                        />
+                <button
+                            name="%(psychology_finish_activity_action)d"
+                            type="action"
+                            string="FInish"
+                            class="oe_highlight"
+                            confirm="Finish activity. Are you sure?"
+                            attrs="{'invisible':['|',('state','!=','open'),('finish_ok','=',False)]}"
+                        />
+                <button
+                            name="action_cancel"
+                            type="object"
+                            string="Cancel"
+                            confirm="Cancel activity. Are you sure?"
+                            attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}"
+                        />
+                <button
+                            name="action_restart"
+                            type="object"
+                            string="Restart"
+                            confirm="Restart activity. Are you sure?"
+                            attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                        />
+                <button
+                            name="action_unlink_invoice"
+                            string="Delete Invoice"
+                            type="object"
+                            attrs="{'invisible': [('invoice_state','!=','invoiced')]}"
+                        />
+                <field name="state" widget="statusbar" />
+            </header>
+            <sheet>
+                <div
+                            class="oe_right oe_button_box"
+                            style="width: 300px;"
+                            name="buttons"
+                        >
+                </div>
+                <div class="oe_left" style="width: 500px;">
+                    <div class="oe_title" style="width: 500px;">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                              <field name="name" />
+                        </h1>
+                    </div>
+                </div>
+                <group name="group_1" colspan="4" col="2">
+                    <group name="group_1_1" colspan="1" col="2">
+                        <field name="case_id" invisible="1" />
+                        <field
+                                    name="responsible_id"
+                                    domain="[('is_company','=',False),('parent_id','=',False)]"
+                                />
+                        <field
+                                    name="activity_allowed_product_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <field
+                                    name="activity_allowed_product_categ_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <field
+                                    name="product_id"
+                                    domain="['|',('id','in',activity_allowed_product_ids[0][2]),('categ_id','in',activity_allowed_product_categ_ids[0][2])]"
+                                />
+                        <field
+                                    name="analytic_account_id"
+                                    domain="[('type','not in',['view','template'])]"
+                                />
+                    </group>
+                    <group name="group_1_2">
+                        <field name="model" invisible="1" />
+                        <field name="res_id" invisible="1" />
+                        <field name="reference_id" />
+                        <field name="date_done" />
+                    </group>
+                </group>
+                <notebook>
+                    <page name="price" string="Activity Cost">
+                        <group name="price_1" colspan="4" col="2">
+                            <group name="price_1_1" colspan="1" col="2">
+                                <field
+                                            name="pricelist_id"
+                                            domain="[('currency_id','=',currency_id),('type','=','psi.activity')]"
+                                        />
+                                <field name="currency_id" invisible="1" />
+                                <field name="allowed_uom_categ_id" invisible="1" />
+                                <field
+                                            name="price_unit"
+                                            widget="monetary"
+                                            options="{'currency_field': 'currency_id'}"
+                                        />
+                                <label for="quantity" />
+                                <div>
+                                    <field name="quantity" class="oe_inline" />
+                                    <field
+                                                name="uom_id"
+                                                domain="[('category_id','=',allowed_uom_categ_id)]"
+                                                class="oe_inline"
+                                            />
+                                </div>
+                                <field name="tax_ids" widget="many2many_tags" />
+                                <field
+                                            name="amount_untaxed"
+                                            widget="monetary"
+                                            options="{'currency_field': 'currency_id'}"
+                                        />
+                                <field
+                                            name="amount_tax"
+                                            widget="monetary"
+                                            options="{'currency_field': 'currency_id'}"
+                                        />
+                                <field
+                                            name="amount_total"
+                                            widget="monetary"
+                                            options="{'currency_field': 'currency_id'}"
+                                        />
+                            </group>
+                            <group name="price_1_2" colspan="1" col="2">
+                                <field name="invoice_state" />
+                                <field name="invoice_id" />
+                                <field name="invoice_line_id" invisible="1" />
+                            </group>
+                        </group>
+                    </page>
+                    <page name="policy" string="Policies">
+                        <group name="policy_1" colspan="4" col="2">
+                            <field name="start_ok" />
+                            <field name="finish_ok" />
+                            <field name="cancel_ok" />
+                            <field name="restart_ok" />
+                            <field name="unlink_invoice_ok" />
+                        </group>
+                    </page>
+                    <page name="note" string="Notes">
+                        <field name="note" />
+                    </page>
+                </notebook>
+            </sheet>
+            <div class="oe_chatter">
+                <field
+                            name="message_follower_ids"
+                            widget="mail_followers"
+                            groups="base.group_user"
+                        />
+                <field name="message_ids" widget="mail_thread" />
+            </div>
+        </form>
+    </field>
+</record>
+
+<record id="psychology_case_activity_action" model="ir.actions.act_window">
+    <field name="name">Case Activities</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">psychology.case_activity</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="psychology_case_activity_view_search" />
+    <field name="context">{}</field>
+</record>
+
+<record
+            id="psychology_case_activity_act_window_view_tree"
+            model="ir.actions.act_window.view"
+        >
+    <field name="act_window_id" ref="psychology_case_activity_action" />
+    <field eval="1" name="sequence" />
+    <field name="view_mode">tree</field>
+    <field name="view_id" ref="psychology_case_activity_view_tree" />
+</record>
+
+<record
+            id="psychology_case_activity_act_window_view_form"
+            model="ir.actions.act_window.view"
+        >
+    <field name="act_window_id" ref="psychology_case_activity_action" />
+    <field eval="2" name="sequence" />
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="psychology_case_activity_view_form" />
+</record>
+
+<!-- For Menu -->
+<record id="psychology_case_activity_view_search_1" model="ir.ui.view">
+    <field name="name">psychology.case_activity form</field>
+    <field name="model">psychology.case_activity</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="case_id" />
+            <field name="name" />
+            <field name="partner_id" />
+            <field name="responsible_id" />
+            <field name="product_id" />
+            <field name="invoice_id" />
+            <group name="dom_state" string="State">
+                <filter
+                            name="dom_draft"
+                            string="To Do"
+                            domain="[('state','=','draft')]"
+                        />
+                <filter
+                            name="dom_open"
+                            string="In Progress"
+                            domain="[('state','=','open')]"
+                        />
+                <filter name="dom_done" string="Done" domain="[('state','=','done')]" />
+                <filter
+                            name="dom_cancel"
+                            string="Cancelled"
+                            domain="[('state','=','cancel')]"
+                        />
+            </group>
+            <group name="dom_invoice_state" string="Invoice State">
+                <filter
+                            name="dom_uninvoiceable"
+                            string="Uninvoiceable"
+                            domain="[('invoice_state','=','uninvoiceable')]"
+                        />
+                <filter
+                            name="dom_2binvoiced"
+                            string="To Be Invoiced"
+                            domain="[('invoice_state','=','2binvoiced')]"
+                        />
+                <filter
+                            name="dom_invoiced"
+                            string="Invoiced"
+                            domain="[('invoice_state','=','invoiced')]"
+                        />
+            </group>
+            <group name="group_by" string="Group By..">
+                <filter
+                            name="grp_case"
+                            string="# Case"
+                            context="{'group_by':'case_id'}"
+                        />
+                <filter
+                            name="grp_responsible"
+                            string="Responsible"
+                            context="{'group_by':'responsible_id'}"
+                        />
+                <filter
+                            name="grp_partner"
+                            string="Client"
+                            context="{'group_by':'partner_id'}"
+                        />
+                <filter
+                            name="grp_product"
+                            string="Product"
+                            context="{'group_by':'product_id'}"
+                        />
+                <filter
+                            name="grp_state"
+                            string="State"
+                            context="{'group_by':'state'}"
+                        />
+                <filter
+                            name="grp_invoice_state"
+                            string="Invoice State"
+                            context="{'group_by':'invoice_state'}"
+                        />
+                <filter
+                            name="grp_invoice"
+                            string="# Invoice"
+                            context="{'group_by':'invoice_id'}"
+                        />
+                <filter
+                            name="grp_date_done_year"
+                            string="Date Finish by Year"
+                            context="{'group_by':'date_done:year'}"
+                        />
+                <filter
+                            name="grp_date_done_month"
+                            string="Date Finish by Month"
+                            context="{'group_by':'date_done:month'}"
+                        />
+                <filter
+                            name="grp_date_done_week"
+                            string="Date Finish by Week"
+                            context="{'group_by':'date_done:week'}"
+                        />
+                <filter
+                            name="grp_date_done_day"
+                            string="Date Finish by Day"
+                            context="{'group_by':'date_done:day'}"
+                        />
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="psychology_case_activity_view_tree_1" model="ir.ui.view">
+    <field name="name">psychology.case_activity tree</field>
+    <field name="model">psychology.case_activity</field>
+    <field name="arch" type="xml">
+        <tree create="false" edit="false" delete="false">
+            <field name="case_id" />
+            <field name="name" />
+            <field name="partner_id" />
+            <field name="responsible_id" />
+            <field name="product_id" />
+            <field name="amount_untaxed" />
+            <field name="amount_tax" />
+            <field name="amount_total" />
+            <field name="invoice_line_id" invisible="1" />
+            <field name="model" invisible="1" />
+            <field name="res_id" invisible="1" />
+            <field name="reference_id" />
+            <field name="start_ok" invisible="1" />
+            <field name="finish_ok" invisible="1" />
+            <field name="cancel_ok" invisible="1" />
+            <field name="restart_ok" invisible="1" />
+            <button
+                        name="action_start"
+                        type="object"
+                        string="Start"
+                        class="oe_highlight"
+                        icon="gtk-media-play"
+                        confirm="Start activity. Are you sure?"
+                        attrs="{'invisible':['|',('state','!=','draft'),('start_ok','=',False)]}"
+                    />
+            <button
+                        name="%(psychology_finish_activity_action)d"
+                        type="action"
+                        string="Finish"
+                        class="oe_highlight"
+                        icon="gtk-media-stop"
+                        confirm="Finish activity. Are you sure?"
+                        attrs="{'invisible':['|',('state','!=','open'),('finish_ok','=',False)]}"
+                    />
+            <button
+                        name="action_cancel"
+                        type="object"
+                        string="Cancel"
+                        icon="gtk-media-pause"
+                        confirm="Cancel activity. Are you sure?"
+                        attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}"
+                    />
+            <button
+                        name="action_restart"
+                        type="object"
+                        string="Restart"
+                        icon="gtk-media-previous"
+                        confirm="Restart activity. Are you sure?"
+                        attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                    />
+            <field name="invoice_state" />
+            <field name="invoice_id" />
+            <field name="date_done" />
+            <field name="state" />
+        </tree>
+    </field>
+</record>
+
+<record id="psychology_case_activity_view_form_1" model="ir.ui.view">
+    <field name="name">psychology.case_activity form</field>
+    <field name="model">psychology.case_activity</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+                <button
+                            name="action_start"
+                            type="object"
+                            string="Start"
+                            class="oe_highlight"
+                            confirm="Start activity. Are you sure?"
+                            attrs="{'invisible':['|',('state','!=','draft'),('start_ok','=',False)]}"
+                        />
+                <button
+                            name="%(psychology_finish_activity_action)d"
+                            type="action"
+                            string="Finish"
+                            class="oe_highlight"
+                            confirm="Finish activity. Are you sure?"
+                            attrs="{'invisible':['|',('state','!=','open'),('finish_ok','=',False)]}"
+                        />
+                <button
+                            name="action_cancel"
+                            type="object"
+                            string="Cancel"
+                            confirm="Cancel activity. Are you sure?"
+                            attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}"
+                        />
+                <button
+                            name="action_restart"
+                            type="object"
+                            string="Restart"
+                            confirm="Restart activity. Are you sure?"
+                            attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                        />
+                <button
+                            name="action_unlink_invoice"
+                            string="Delete Invoice"
+                            type="object"
+                            attrs="{'invisible': [('invoice_state','!=','invoiced')]}"
+                        />
+                <field name="state" widget="statusbar" />
+            </header>
+            <sheet>
+                <div
+                            class="oe_right oe_button_box"
+                            style="width: 300px;"
+                            name="buttons"
+                        >
+                </div>
+                <div class="oe_left" style="width: 500px;">
+                    <div class="oe_title" style="width: 500px;">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                              <field name="name" />
+                        </h1>
+                    </div>
+                </div>
+                <group name="group_1" colspan="4" col="2">
+                    <group name="group_1_1" colspan="1" col="2">
+                        <field name="case_id" />
+                        <field name="responsible_id" />
+                        <field
+                                    name="activity_allowed_product_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <field
+                                    name="activity_allowed_product_categ_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <field
+                                    name="product_id"
+                                    domain="['|',('id','in',activity_allowed_product_ids[0][2]),('categ_id','in',activity_allowed_product_categ_ids[0][2])]"
+                                />
+                        <field
+                                    name="analytic_account_id"
+                                    domain="[('type','not in',['view','template'])]"
+                                />
+                    </group>
+                    <group name="group_1_2">
+                        <field name="model" invisible="1" />
+                        <field name="res_id" invisible="1" />
+                        <field name="reference_id" />
+                        <field name="date_done" />
+                    </group>
+                </group>
+                <notebook>
+                    <page name="price" string="Activity Cost">
+                        <group name="price_1" colspan="4" col="2">
+                            <group name="price_1_1" colspan="1" col="2">
+                                <field
+                                            name="pricelist_id"
+                                            domain="[('currency_id','=',currency_id),('type','=','psi.activity')]"
+                                        />
+                                <field name="currency_id" invisible="1" />
+                                <field name="allowed_uom_categ_id" invisible="1" />
+                                <field
+                                            name="price_unit"
+                                            widget="monetary"
+                                            options="{'currency_field': 'currency_id'}"
+                                        />
+                                <label for="quantity" />
+                                <div>
+                                    <field name="quantity" class="oe_inline" />
+                                    <field
+                                                name="uom_id"
+                                                domain="[('category_id','=',allowed_uom_categ_id)]"
+                                                class="oe_inline"
+                                            />
+                                </div>
+                                <field name="tax_ids" widget="many2many_tags" />
+                                <field
+                                            name="amount_untaxed"
+                                            widget="monetary"
+                                            options="{'currency_field': 'currency_id'}"
+                                        />
+                                <field
+                                            name="amount_tax"
+                                            widget="monetary"
+                                            options="{'currency_field': 'currency_id'}"
+                                        />
+                                <field
+                                            name="amount_total"
+                                            widget="monetary"
+                                            options="{'currency_field': 'currency_id'}"
+                                        />
+                            </group>
+                            <group name="price_1_2" colspan="1" col="2">
+                                <field name="invoice_state" />
+                                <field name="invoice_id" />
+                                <field name="invoice_line_id" invisible="1" />
+                            </group>
+                        </group>
+                    </page>
+                    <page name="policy" string="Policies">
+                        <group name="policy_1" colspan="4" col="2">
+                            <field name="start_ok" />
+                            <field name="finish_ok" />
+                            <field name="cancel_ok" />
+                            <field name="restart_ok" />
+                            <field name="unlink_invoice_ok" />
+                        </group>
+                    </page>
+                    <page name="note" string="Notes">
+                        <field name="note" />
+                    </page>
+                </notebook>
+            </sheet>
+            <div class="oe_chatter">
+                <field
+                            name="message_follower_ids"
+                            widget="mail_followers"
+                            groups="base.group_user"
+                        />
+                <field name="message_ids" widget="mail_thread" />
+            </div>
+        </form>
+    </field>
+</record>
+
+<record id="psychology_case_activity_action_1" model="ir.actions.act_window">
+    <field name="name">Case Activities</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">psychology.case_activity</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="psychology_case_activity_view_search_1" />
+    <field name="context">{}</field>
+</record>
+
+<record
+            id="psychology_case_activity_act_window_view_tree_1"
+            model="ir.actions.act_window.view"
+        >
+    <field name="act_window_id" ref="psychology_case_activity_action_1" />
+    <field eval="1" name="sequence" />
+    <field name="view_mode">tree</field>
+    <field name="view_id" ref="psychology_case_activity_view_tree_1" />
+</record>
+
+<record
+            id="psychology_case_activity_act_window_view_form_1"
+            model="ir.actions.act_window.view"
+        >
+    <field name="act_window_id" ref="psychology_case_activity_action_1" />
+    <field eval="2" name="sequence" />
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="psychology_case_activity_view_form_1" />
+</record>
+
+<menuitem
+            id="psychology_case_activity_menu"
+            name="Activities"
+            parent="psychology_service_activity_menu"
+            action="psychology_case_activity_action_1"
+            sequence="2"
+        />
+</data>
+</openerp>

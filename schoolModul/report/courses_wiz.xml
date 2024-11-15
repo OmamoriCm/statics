@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="courses_info_wiz">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="report.external_layout">
+                <div class="page">
+                	<div class="header">
+						<div class="row">
+							<div class="col-xs-3">
+	
+							<img t-att-src="'data:image/png;base64,%s' % res_company.logo_web" style="max-height: 70px; "  align="center"/>
+							</div>
+						</div>
+					</div>
+
+		<u><i><b><h4 align="center">courses Details</h4></b></i></u>
+		
+	<b><h4>courses Information  :</h4></b>
+	<!--table>
+	<tr>
+	<td ><span t-esc="formatLang(data['form']['start_date']"/></td>
+	<td ><span t-esc="formatLang(data['form']['end_date']"/></td> 
+    </tr>
+	</table-->
+	<table class="table table-bordered">
+			
+				<th> # </th>
+				<th>name</th>
+	<tr t-foreach="line()" t-as="l">
+				<td ><span t-esc="l['id']"/></td>
+				<td ><span t-esc="l['name']"/></td>		          		
+    </tr>
+	</table>
+	
+            </div>
+           </t>
+        </t>
+    </t>
+</template>
+</data>
+</openerp>
+
+
+

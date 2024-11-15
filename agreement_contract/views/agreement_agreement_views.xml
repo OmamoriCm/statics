@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+    <record id="agreement_agreement_view_tree" model="ir.ui.view">
+        <field name="name">agreement.agreement tree</field>
+        <field name="model">agreement.agreement</field>
+        <field name="inherit_id" ref="agreement_core.agreement_agreement_view_tree" />
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="analytic_id" />
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record id="agreement_agreement_view_form" model="ir.ui.view">
+        <field name="name">agreement.agreement form</field>
+        <field name="model">agreement.agreement</field>
+        <field name="inherit_id" ref="agreement_core.agreement_agreement_view_form" />
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='company_id']" position="before">
+                    <field name="analytic_id" />
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record id="agreement_agreement_view_search" model="ir.ui.view">
+        <field name="name">agreement.agreement search</field>
+        <field name="model">agreement.agreement</field>
+        <field name="inherit_id" ref="agreement_core.agreement_agreement_view_search" />
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="analytic_id" />
+                </xpath>
+                <xpath expr="//filter[@name='grp_company']" position="after">
+                    <filter
+                            name="grp_analytic"
+                            string="Contract"
+                            context="{'group_by':'analytic_id'}"
+                        />
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record id="agreement_agreement_action" model="ir.actions.act_window">
+        <field name="name">Contract's Agreements</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">agreement.agreement</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('analytic_id','=',active_id)]</field>
+        <field
+                name="search_view_id"
+                ref="agreement_core.agreement_agreement_view_search"
+            />
+        <field name="context">{'default_analytic_id':active_id}</field>
+    </record>
+
+</data>
+</openerp>

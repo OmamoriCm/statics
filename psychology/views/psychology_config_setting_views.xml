@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="psychology_config_setting_view_form" model="ir.ui.view">
+    <field name="name">psychology.config_setting form</field>
+    <field name="model">psychology.config_setting</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <form class="oe_form_configuration">
+            <header>
+                <button
+                            name="execute"
+                            string="Apply"
+                            type="object"
+                            class="oe_highlight"
+                        />
+                or
+                <button name="cancel" string="Cancel" type="object" class="oe_link" />
+            </header>
+            <field name="company_id" invisible="1" />
+            <separator string="Feature &amp; Integration" />
+            <group name="feature_group">
+                <label for="id" string="Feature" />
+                    <div>
+                    <div>
+                        <field name="module_psychology_assesment" class="on_inline" />
+                        <label for="module_psychology_assesment" />
+                    </div>
+                    <div>
+                        <field name="module_psychology_appointment" class="on_inline" />
+                        <label for="module_psychology_appointment" />
+                    </div>
+                    <div>
+                        <field
+                                    name="module_psychology_intervention"
+                                    class="on_inline"
+                                />
+                        <label for="module_psychology_intervention" />
+                    </div>
+                </div>
+                <label for="id" string="Integration" />
+                <div>
+                </div>
+            </group>
+        </form>
+    </field>
+</record>
+
+
+<record id="psychology_config_setting_action" model="ir.actions.act_window">
+    <field name="name">Psychology Configuration</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">psychology.config_setting</field>
+    <field name="view_type">form</field>
+    <field name="target">inline</field>
+    <field name="view_mode">form</field>
+</record>
+
+<menuitem
+            id="psychology_config_setting_menu"
+            name="General Configuration"
+            parent="psychology_configuration_menu"
+            action="psychology_config_setting_action"
+            sequence="0"
+        />
+
+
+</data>
+</openerp>

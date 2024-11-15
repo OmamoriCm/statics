@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+<data>
+
+<menuitem
+            name="Bank Account Type"
+            id="res_partner_bank_account_type_menu"
+            parent="partner_app_bank_configuration_menu"
+            action="base.action_res_partner_bank_type_form"
+            sequence="1"
+        />
+
+</data>
+</openerp>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Multi Payslip Confirmation Wizard -->
+        <record id="multi_pay_slip_confirm_view_wiz" model="ir.ui.view">
+            <field name="name">multi.pay.slip.wiz.form.view.wiz</field>
+            <field name="model">multi.pay.slip.wiz</field>
+            <field name="arch" type="xml">
+                <form string="Confirm">
+                    <h3>Click on Confirm for confirm multi Payslips.</h3>
+                    <footer>
+                        <button name="confirm_multi_pay_slip" string="Confirm" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_multi_pay_slip_confirm_wiz" model="ir.actions.act_window">
+            <field name="name">Multi Payslips Confirmation</field>
+            <field name="res_model">multi.pay.slip.wiz</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+<data>
+
+<menuitem
+            name="Partner Tags"
+            id="res_partner_partner_tags_menu"
+            parent="partner_app_category_configuration_menu"
+            action="base.action_partner_category_form"
+            sequence="1"
+        />
+
+</data>
+</openerp>

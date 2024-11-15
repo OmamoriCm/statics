@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+service_contract_man_hour_employee,service.contract_man_hour - user,model_service_contract_man_hour,base.group_user,1,1,1,1
+service_contract_man_hour_all,service.contract_man_hour - all,model_service_contract_man_hour,,1,0,0,0

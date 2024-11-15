@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="employe_reimbursement_account" model="account.account">
+    <field name="name">Employee Reimbursement - (test)</field>
+    <field name="user_type" ref="account.data_account_type_payable" />
+    <field name="code">ER01</field>
+    <field name="parent_id" ref="account.cli" />
+    <field name="reconcile" eval="True" />
+</record>
+</data>
+</openerp>

@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="hr_reimbursement_view_search" model="ir.ui.view">
+    <field name="name">hr.reimbursement form</field>
+    <field name="model">hr.reimbursement</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name" />
+            <field name="company_id" groups="base.group_multi_company" />
+            <field name="employee_id" invisible="context.get('hide_employee',False)" />
+            <field name="currency_id" groups="base.group_multi_currency" />
+            <field name="department_id" />
+            <field name="manager_id" />
+            <field name="job_id" />
+            <group name="dom_state" string="State">
+                <filter
+                            name="dom_draft"
+                            string="Draft"
+                            domain="[('state','=','draft')]"
+                        />
+                <filter
+                            name="dom_confirm"
+                            string="Waiting for Approval"
+                            domain="[('state','=','confirm')]"
+                        />
+                <filter
+                            name="dom_approve"
+                            string="Waiting for Realization"
+                            domain="[('state','=','approve')]"
+                        />
+                <filter name="dom_done" string="Done" domain="[('state','=','done')]" />
+                <filter
+                            name="dom_cancel"
+                            string="Cancel"
+                            domain="[('state','=','cancel')]"
+                        />
+                <filter
+                            name="dom_terminate"
+                            string="Terminate"
+                            domain="[('state','=','terminate')]"
+                        />
+                <filter
+                            name="needs_review"
+                            string="Needs my Review"
+                            domain="[('reviewer_ids','in',uid), ('state', 'not in', ['done', 'cancel', 'terminate'])]"
+                            help="My Reimbursement to review"
+                        />
+            </group>
+            <group name="group" string="Group By">
+                <filter
+                            name="grp_company"
+                            string="Company"
+                            context="{'group_by':'company_id'}"
+                            groups="base.group_multi_company"
+                        />
+                <filter
+                            name="grp_employee"
+                            string="Employee"
+                            context="{'group_by':'employee_id'}"
+                            invisible="context.get('hide_employee',False)"
+                        />
+                <filter
+                            name="grp_department"
+                            string="Department"
+                            context="{'group_by':'department_id'}"
+                        />
+                <filter
+                            name="grp_manager"
+                            string="Manager"
+                            context="{'group_by':'manager_id'}"
+                        />
+                <filter
+                            name="grp_job"
+                            string="Job Position"
+                            context="{'group_by':'job_id'}"
+                        />
+                <filter
+                            name="grp_currency"
+                            string="Currency"
+                            context="{'group_by':'currency_id'}"
+                            groups="base.group_multi_currency"
+                        />
+                <filter
+                            name="grp_type"
+                            string="Type"
+                            context="{'group_by':'type_id'}"
+                        />
+                <filter
+                            name="grp_date_expense_year"
+                            string="Date Expense by Year"
+                            context="{'group_by':'date_expense:year'}"
+                        />
+                <filter
+                            name="grp_date_expense_month"
+                            string="Date Expense by Month"
+                            context="{'group_by':'date_expense:month'}"
+                        />
+                <filter
+                            name="grp_date_expense_week"
+                            string="Date Expense by Week"
+                            context="{'group_by':'date_expense:week'}"
+                        />
+                <filter
+                            name="grp_date_expense_day"
+                            string="Date Expense by Day"
+                            context="{'group_by':'date_expense:day'}"
+                        />
+                <filter
+                            name="grp_date_due_year"
+                            string="Date Due by Year"
+                            context="{'group_by':'date_due:year'}"
+                        />
+                <filter
+                            name="grp_date_due_month"
+                            string="Date Due by Month"
+                            context="{'group_by':'date_due:month'}"
+                        />
+                <filter
+                            name="grp_date_due_week"
+                            string="Date Due by Week"
+                            context="{'group_by':'date_due:week'}"
+                        />
+                <filter
+                            name="grp_date_due_day"
+                            string="Date Due by Day"
+                            context="{'group_by':'date_due:day'}"
+                        />
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="hr_reimbursement_view_tree" model="ir.ui.view">
+    <field name="name">hr.reimbursement tree</field>
+    <field name="model">hr.reimbursement</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="id" />
+            <field name="name" />
+            <field name="company_id" groups="base.group_multi_company" />
+            <field name="employee_id" invisible="context.get('hide_employee',False)" />
+            <field name="department_id" />
+            <field name="manager_id" />
+            <field name="job_id" />
+            <field name="date_expense" />
+            <field name="date_due" />
+            <field name="type_id" />
+            <field name="currency_id" groups="base.group_multi_currency" />
+            <field name="amount_total" sum="Total Request" />
+            <field name="amount_realized" sum="Total Realized" />
+            <field name="amount_residual" sum="Total Residual" />
+            <field name="state" />
+        </tree>
+    </field>
+</record>
+
+<record id="hr_reimbursement_view_form" model="ir.ui.view">
+    <field name="name">hr.reimbursement form</field>
+    <field name="model">hr.reimbursement</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+                <button
+                            name="action_confirm"
+                            type="object"
+                            string="Confirm"
+                            class="oe_highlight"
+                            confirm="Confirm employee reimbursement. Are you sure?"
+                            attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"
+                        />
+                <button
+                            name="request_validation"
+                            string="Request Validation"
+                            attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
+                            class="oe_highlight"
+                            type="object"
+                        />
+                <button
+                            name="restart_validation"
+                            string="Restart Validation"
+                            attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm']),('restart_approval_ok','=',False)]}"
+                            type="object"
+                        />
+                <button
+                            name="%(base_print_policy.base_print_document_action)d"
+                            string="Print"
+                            type="action"
+                            icon="gtk-print"
+                        />
+                <button
+                            name="%(base_cancel_reason.base_cancel_reason_wizard_action)d"
+                            type="action"
+                            string="Cancel"
+                            attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}"
+                            confirm="Cancel reimbursement. Are you sure?"
+                        />
+                <button
+                            name="%(base_terminate_reason.base_terminate_reason_wizard_action)d"
+                            type="action"
+                            string="Terminate"
+                            attrs="{'invisible':['|',('state','!=','approve'),('terminate_ok','=',False)]}"
+                            confirm="Terminate reimbursement. Are you sure?"
+                        />
+                <button
+                            name="action_restart"
+                            type="object"
+                            string="Restart"
+                            confirm="Restart employee reimbursement. Are you sure?"
+                            attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                        />
+                <field
+                            name="state"
+                            widget="statusbar"
+                            statusbar_visible="draft,confirm,approve"
+                        />
+            </header>
+            <field name="need_validation" invisible="1" />
+            <field name="validated" invisible="1" />
+            <field name="rejected" invisible="1" />
+            <div
+                        class="alert alert-warning"
+                        attrs="{'invisible': ['|', '|', '|',
+                 ('validated', '=', True), ('state', 'not in', ['confirm']),
+                 ('rejected', '=', True), ('review_ids', '=', [])]}"
+                        style="margin-bottom:0px;"
+                    >
+                <p><i class="fa fa-info-circle" />This Reimbursement needs to be
+                    validated.
+                    <button
+                                name="validate_tier"
+                                string="Validate"
+                                attrs="{'invisible': [('review_ids', '=', [])]}"
+                                type="object"
+                                class="oe_inline oe_button btn-success"
+                                icon="terp-check"
+                            />
+                    <button
+                                name="reject_tier"
+                                string="Reject"
+                                type="object"
+                                class="btn-icon btn-danger"
+                                icon="terp-gtk-stop"
+                            />
+                </p>
+            </div>
+            <div
+                        class="alert alert-success"
+                        attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                        style="margin-bottom:0px;"
+                    >
+                <p><i class="fa fa-thumbs-up" /> Operation has been <b
+                            >validated</b>!</p>
+            </div>
+            <div
+                        class="alert alert-danger"
+                        attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                        style="margin-bottom:0px;"
+                    >
+                <p><i class="fa fa-thumbs-down" /> Operation has been <b
+                            >rejected</b>.</p>
+            </div>
+            <sheet>
+                <div
+                            class="oe_right oe_button_box"
+                            style="width: 300px;"
+                            name="buttons"
+                        >
+                </div>
+                <div class="oe_left" style="width: 500px;">
+                    <div class="oe_title" style="width: 500px;">
+                        <label for="name" />
+                        <h1>
+                            <field name="name" class="oe_edit_only" />
+                            <field name="display_name" class="oe_read_only" />
+                        </h1>
+                        <h2 attrs="{'invisible': [('state', '!=', 'cancel')]}">
+                            <label
+                                        for="cancel_reason_id"
+                                        string="Cancellation reason:"
+                                    />
+                            <field name="cancel_reason_id" class="oe_inline" />
+                        </h2>
+                        <h2 attrs="{'invisible': [('state', '!=', 'terminate')]}">
+                            <label
+                                        for="terminate_reason_id"
+                                        string="Termination reason:"
+                                    />
+                            <field name="terminate_reason_id" class="oe_inline" />
+                        </h2>
+                    </div>
+                </div>
+                <group name="group_1" colspan="4" col="2">
+                    <group name="group_1_1" colspan="1" col="2">
+                        <field name="company_id" groups="base.group_multi_company" />
+                        <field
+                                    name="employee_id"
+                                    invisible="context.get('hide_employee',False)"
+                                />
+                        <field name="department_id" groups="base.group_system" />
+                        <field name="manager_id" groups="base.group_system" />
+                        <field name="job_id" groups="base.group_system" />
+                    </group>
+                    <group name="group_1_2">
+                        <field name="date_expense" />
+                        <field name="date_due" />
+                        <field name="type_id" />
+                        <field
+                                    name="allowed_product_categ_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <field
+                                    name="allowed_product_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <field name="currency_id" groups="base.group_multi_currency" />
+                    </group>
+                </group>
+                <notebook colspan="4">
+                    <page name="detail" string="Reimbursement Details">
+                        <group name="detail_1" colspan="4" col="2">
+                            <button
+                                        name="%(hr_approve_reimbursement_view_action)d"
+                                        type="action"
+                                        string="Change Approved Price Unit/Quantity"
+                                        attrs="{'invisible':['|',('state', '!=', 'confirm'),('change_detail_ok','=',False)]}"
+                                    />
+                        </group>
+                        <group name="detail_2" colspan="4" col="2">
+                            <field
+                                        name="line_ids"
+                                        colspan="2"
+                                        nolabel="1"
+                                        context="{'default_employee_id':employee_id, 'default_type_id': type_id}"
+                                    >
+                                <tree editable="top">
+                                    <field name="sequence" widget="handle" />
+                                    <field name="employee_id" invisible="1" />
+                                    <field name="type_id" invisible="1" />
+                                    <field
+                                                name="product_id"
+                                                domain="['|',('id','in',parent.allowed_product_ids[0][2]),('categ_id','in',parent.allowed_product_categ_ids[0][2])]"
+                                            />
+                                    <field name="note" />
+                                    <field name="ref" />
+                                    <field
+                                                name="account_id"
+                                                groups="hr_reimbursement.employee_reimbursement_accounting_setting_group"
+                                            />
+                                    <field
+                                                name="analytic_account_id"
+                                                groups="analytic.group_analytic_accounting"
+                                            />
+                                    <field name="price_unit" />
+                                    <field name="approve_price_unit" />
+                                    <field name="quantity" />
+                                    <field name="approve_quantity" />
+                                    <field
+                                                name="allowed_uom_ids"
+                                                widget="many2many_tags"
+                                                invisible="1"
+                                            />
+                                    <field
+                                                name="uom_id"
+                                                domain="[('id','in',allowed_uom_ids)]"
+                                                groups="product.group_uom"
+                                            />
+                                    <field name="price_subtotal" />
+                                    <field name="reimbursement_state" invisible="1" />
+                                </tree>
+                            </field>
+                        </group>
+                        <group name="detail_4" colspan="4" col="2">
+                            <field name="amount_total" />
+                            <field name="amount_realized" />
+                            <field name="amount_residual" />
+                        </group>
+                    </page>
+                    <page
+                                name="accounting"
+                                string="Accounting Info"
+                                groups="hr_reimbursement.employee_reimbursement_accounting_setting_group"
+                            >
+                        <group
+                                    name="accounting_1"
+                                    colspan="4"
+                                    col="2"
+                                    string="Settings"
+                                >
+                            <field name="journal_id" />
+                            <field name="employee_reimbursement_payable_account_id" />
+                        </group>
+                        <group
+                                    name="accounting_2"
+                                    colspan="4"
+                                    col="2"
+                                    string="Accounting Entry"
+                                >
+                            <field name="move_id" />
+                            <field name="employee_reimbursement_payable_move_line_id" />
+                        </group>
+                    </page>
+                    <page string="Reviews" name="tier_validation">
+                        <group name="tier_validation_1" colspan="4" col="2">
+                            <field name="definition_id" />
+                            <field
+                                        name="reviewer_partner_ids"
+                                        widget="many2many_tags"
+                                    />
+                        </group>
+                        <group name="tier_validation_2" colspan="4" col="2">
+                            <field name="review_ids" readonly="1" />
+                        </group>
+                    </page>
+                    <page name="note" string="Notes">
+                        <field name="note" />
+                    </page>
+                    <page name="policy" string="Policies" groups="base.group_system">
+                        <group name="policy_1" colspan="4" col="2">
+                            <field name="confirm_ok" />
+                            <field name="restart_approval_ok" />
+                            <field name="change_detail_ok" />
+                            <field name="cancel_ok" />
+                            <field name="terminate_ok" />
+                            <field name="restart_ok" />
+                            <field name="show_accounting_info_ok" />
+                        </group>
+                    </page>
+                    <page name="log" string="Logs">
+                        <group name="group_5" colspan="4" col="3">
+                            <group name="group_log_1" colspan="4" col="3">
+                                <field name="confirm_date" string="Confirmation" />
+                                <field name="confirm_user_id" nolabel="1" />
+                                <field name="approve_date" string="Approval" />
+                                <field name="approve_user_id" nolabel="1" />
+                                <field name="done_date" string="Finish" />
+                                <field name="done_user_id" nolabel="1" />
+                                <field name="cancel_date" string="Cancellation" />
+                                <field name="cancel_user_id" nolabel="1" />
+                                <field name="terminate_date" string="Termination" />
+                                <field name="terminate_user_id" nolabel="1" />
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </sheet>
+            <div class="oe_chatter">
+                <field
+                            name="message_follower_ids"
+                            widget="mail_followers"
+                            groups="base.group_user"
+                        />
+                <field name="message_ids" widget="mail_thread" />
+            </div>
+        </form>
+    </field>
+</record>
+
+<record id="hr_my_reimbursement_action" model="ir.actions.act_window">
+    <field name="name">My Reimbursements</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.reimbursement</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[('employee_id.user_id.id','=',uid)]</field>
+    <field
+                name="context"
+            >{'hide_employee': True, 'search_default_dom_draft':1, 'search_default_dom_confirm':1,'search_default_dom_approve':1,'readonly_by_pass': True}</field>
+</record>
+
+<menuitem
+            id="hr_my_reimbursement_menu"
+            name="My Reimbursements"
+            parent="hr_reimbursement_root_menu"
+            action="hr_my_reimbursement_action"
+            sequence="1"
+        />
+
+<record id="hr_reimbursement_action" model="ir.actions.act_window">
+    <field name="name">Employee Reimbursements</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.reimbursement</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field
+                name="context"
+            >{'hide_employee': False, 'search_default_dom_draft':1, 'search_default_dom_confirm':1,'search_default_dom_approve':1,'readonly_by_pass': True}</field>
+</record>
+
+<menuitem
+            id="hr_reimbursement_menu"
+            name="Reimbursements"
+            parent="hr_reimbursement_root_menu"
+            action="hr_reimbursement_action"
+            sequence="2"
+        />
+</data>
+</openerp>

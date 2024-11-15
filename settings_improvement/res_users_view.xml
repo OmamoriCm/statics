@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Create a tree view to avoid the generated one -->
+
+        <record id="settings_improvement_groups_tree_view" model="ir.ui.view">
+            <field name="name">settings.improvement.groups.tree</field>
+            <field name="model">res.groups</field>
+            <field name="arch" type="xml">
+                <tree string="Groups">
+                    <field name="category_id"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Add category filter in group search view -->
+
+        <record model="ir.ui.view" id="view_groups_search">
+            <field name="name">res.groups.search (settings_improvement)</field>
+            <field name="model">res.groups</field>
+            <field name="inherit_id" ref="base.view_groups_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="category_id"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Application" icon="terp-personal" domain="[]" context="{'group_by' : 'category_id'}" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="base.action_res_groups" model="ir.actions.act_window">
+            <field name="search_view_id" ref="base.view_groups_search"/>
+        </record>
+
+    </data>
+</openerp>

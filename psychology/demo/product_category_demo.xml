@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="product_category_demo1" model="product.category">
+    <field name="name">Psychology Service</field>
+    <field name="parent_id" ref="product.product_category_all" />
+</record>
+
+<record id="product_category_demo2" model="product.category">
+    <field name="name">Psychology Service - Clinical Adult</field>
+    <field name="parent_id" ref="product_category_demo1" />
+</record>
+
+<record id="product_category_demo3" model="product.category">
+    <field name="name">Psychology Service - Clinical Child &amp; Adolescent</field>
+    <field name="parent_id" ref="product_category_demo1" />
+</record>
+
+<record id="product_category_demo4" model="product.category">
+    <field name="name">Psychology Activity</field>
+    <field name="parent_id" ref="product.product_category_all" />
+</record>
+
+<record id="product_category_demo5" model="product.category">
+    <field name="name">Psychology Activity - Clinical Adult</field>
+    <field name="parent_id" ref="product_category_demo4" />
+</record>
+
+<record id="product_category_demo6" model="product.category">
+    <field name="name">Psychology Activity - Clinical Child &amp; Adolescent</field>
+    <field name="parent_id" ref="product_category_demo4" />
+</record>
+
+</data>
+</openerp>

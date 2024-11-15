@@ -1,0 +1,299 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<openerp>
+<data noupdate="1">
+    <!-- Aeroo Report -->
+    <!-- Bank Payment No Header -->
+    <record
+            id="report_account_voucher_bank_payment_no_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Bank Payment No Header A4 PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.bank_payment</field>
+        <field
+                name="report_name"
+            >report_account_voucher_bank_payment_no_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_bank_cash_aeroo_report/reports/parser_account_voucher_bank.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_bank_cash_aeroo_report/reports/account_voucher_bank_payment_nh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- Bank Payment With Header -->
+    <record
+            id="report_account_voucher_bank_payment_with_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Bank Payment With Header A4 PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.bank_payment</field>
+        <field
+                name="report_name"
+            >report_account_voucher_bank_payment_with_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_bank_cash_aeroo_report/reports/parser_account_voucher_bank.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_bank_cash_aeroo_report/reports/account_voucher_bank_payment_wh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- Bank Receipt No Header -->
+    <record
+            id="report_account_voucher_bank_receipt_no_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Bank Receipt No Header A4 PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.bank_receipt</field>
+        <field
+                name="report_name"
+            >report_account_voucher_bank_receipt_no_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_bank_cash_aeroo_report/reports/parser_account_voucher_bank.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_bank_cash_aeroo_report/reports/account_voucher_bank_receipt_nh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- Bank Receipt With Header -->
+    <record
+            id="report_account_voucher_bank_receipt_with_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Bank Receipt With Header A4 PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.bank_receipt</field>
+        <field
+                name="report_name"
+            >report_account_voucher_bank_receipt_with_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_bank_cash_aeroo_report/reports/parser_account_voucher_bank.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_bank_cash_aeroo_report/reports/account_voucher_bank_receipt_wh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- Cash Payment No Header -->
+    <record
+            id="report_account_voucher_cash_payment_no_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Cash Payment No Header A4 PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.cash_payment</field>
+        <field
+                name="report_name"
+            >report_account_voucher_cash_payment_no_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_bank_cash_aeroo_report/reports/parser_account_voucher_cash.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_bank_cash_aeroo_report/reports/account_voucher_cash_payment_nh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- Cash Payment With Header -->
+    <record
+            id="report_account_voucher_cash_payment_with_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Cash Payment Header A4 PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.cash_payment</field>
+        <field
+                name="report_name"
+            >report_account_voucher_cash_payment_with_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_bank_cash_aeroo_report/reports/parser_account_voucher_cash.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_bank_cash_aeroo_report/reports/account_voucher_cash_payment_wh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- Cash Receipt No Header -->
+    <record
+            id="report_account_voucher_cash_receipt_no_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Cash Receipt No Header A4 PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.cash_receipt</field>
+        <field
+                name="report_name"
+            >report_account_voucher_cash_receipt_no_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_bank_cash_aeroo_report/reports/parser_account_voucher_cash.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_bank_cash_aeroo_report/reports/account_voucher_cash_receipt_nh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+    <!-- Cash Receipt With Header -->
+    <record
+            id="report_account_voucher_cash_receipt_with_header_a4_odt_pdf"
+            model="ir.actions.report.xml"
+        >
+        <field name="name">Cash Receipt With Header A4 PDF</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.cash_receipt</field>
+        <field
+                name="report_name"
+            >report_account_voucher_cash_receipt_with_header_a4_odt_pdf</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_ods" />
+        <field
+                name="parser_loc"
+            >account_voucher_bank_cash_aeroo_report/reports/parser_account_voucher_cash.py</field>
+        <field
+                name="report_rml"
+            >account_voucher_bank_cash_aeroo_report/reports/account_voucher_cash_receipt_wh_a4.odt</field>
+        <field name="parser_state">loc</field>
+        <field name="tml_source">file</field>
+    </record>
+
+    <!-- Print Policy -->
+    <!-- Bank Payment No Header -->
+    <record
+            id="print_policy_account_voucher_bank_payment_no_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Bank Payment No Header A4 PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_account_voucher_bank_payment_no_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- Bank Payment With Header -->
+    <record
+            id="print_policy_account_voucher_bank_payment_with_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Bank Payment Header A4 PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_account_voucher_bank_payment_with_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- Bank Receipt No Header -->
+    <record
+            id="print_policy_account_voucher_bank_receipt_no_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Bank Receipt No Header A4 PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_account_voucher_bank_receipt_no_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- Bank Receipt With Header -->
+    <record
+            id="print_policy_account_voucher_bank_receipt_with_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Bank Receipt Header A4 PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_account_voucher_bank_receipt_with_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- Cash Payment No Header -->
+    <record
+            id="print_policy_account_voucher_cash_payment_no_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Cash Payment No Header A4 PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_account_voucher_cash_payment_no_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- Cash Payment With Header -->
+    <record
+            id="print_policy_account_voucher_cash_payment_with_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Cash Payment Header A4 PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_account_voucher_cash_payment_with_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- Cash Receipt No Header -->
+    <record
+            id="print_policy_account_voucher_cash_receipt_no_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Cash Receipt No Header A4 PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_account_voucher_cash_receipt_no_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+    <!-- Cash Receipt With Header -->
+    <record
+            id="print_policy_account_voucher_cash_receipt_with_header_a4_odt_pdf"
+            model="base.print.policy"
+        >
+        <field name="name">Cash Receipt Header A4 PDF</field>
+        <field
+                name="report_action_id"
+                ref="report_account_voucher_cash_receipt_with_header_a4_odt_pdf"
+            />
+        <field name="active">True</field>
+        <field name="python_condition">result = True</field>
+    </record>
+</data>
+</openerp>

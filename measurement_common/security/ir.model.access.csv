@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+measurement_type_employee,measurement.type - user,model_measurement_type,base.group_user,1,1,1,1
+measurement_type_all,measurement.type - all,model_measurement_type,,0,0,0,0
+measurement_item_type_employee,measurement.item_type - user,model_measurement_item_type,base.group_user,1,1,1,1
+measurement_item_type_all,measurement.item_type - all,model_measurement_item_type,,1,0,0,0
+measurement_item_type_qualitative_option_employee,measurement.item_type_qualitative_option - user,model_measurement_item_type_qualitative_option,base.group_user,1,1,1,1
+measurement_item_type_qualitative_option_all,measurement.item_type_qualitative_option - all,model_measurement_item_type_qualitative_option,,1,0,0,0
+measurement_template_employee,measurement.template - user,model_measurement_template,base.group_user,1,1,1,1
+measurement_template_all,measurement.template - all,model_measurement_template,,1,0,0,0
+measurement_template_item_employee,measurement.template_item - user,model_measurement_template_item,base.group_user,1,1,1,1
+measurement_template_item_all,measurement.template_item - all,model_measurement_template_item,,1,0,0,0

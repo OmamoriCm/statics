@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="students_info_report">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="report.external_layout">
+                <div class="page">
+                	<div class="header">
+						<div class="row">
+							<div class="col-xs-3">
+	
+							<img t-att-src="'data:image/png;base64,%s' % res_company.logo_web" style="max-height: 70px; "  align="center"/>
+							</div>
+						</div>
+					</div>
+
+		<u><i><b><h4 align="center">student Details</h4></b></i></u>
+		
+	<b><h4>student Information  :</h4></b>
+	
+	<table class="table table-bordered">
+			
+				<th> # </th>
+				<th> name </th>
+				<th> status </th>
+				<th> email</th>
+				<th> date of birth</th>
+				<th> date of joint </th>
+				<th> mobile </th>
+	<tr>
+				<td ><span t-esc="o.id"/></td>
+				<td ><span t-esc="o.name"/></td>
+      			<td ><span t-esc="o.status"/></td>
+      			<td ><span t-esc="o.email"/></td>
+      			<td ><span t-esc="o.date_of_birth"/></td>
+				<td ><span t-esc="o.date_of_joint"/></td>
+				<td ><span t-esc="o.mobile"/></td>           		
+	
+    </tr>
+	
+	</table>
+	
+            </div>
+           </t>
+        </t>
+    </t>
+</template>
+</data>
+</openerp>
+
+
+

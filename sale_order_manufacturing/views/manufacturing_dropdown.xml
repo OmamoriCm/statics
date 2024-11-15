@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+   <data noupdate="0">
+
+	<record id="manufacture_order_auto" model="ir.actions.server">
+         <field name="name"> Manufacturing </field>
+         <field name="model_id" ref="sale.model_sale_order"/>
+         <field name="state">code</field>
+         <field name="code">action = self.get_products(cr, uid, context.get('active_ids', []), context=context)</field>
+    </record>
+
+
+    <record id="synch_pro" model="ir.values">
+	<field eval="'client_action_multi'" name="key2"/>
+	<field eval="'sale.order'" name="model"/>
+	<field name="name">sync</field>
+	<field eval="'ir.actions.server,%d'%manufacture_order_auto" name="value"/>
+	</record>
+</data>
+</openerp>

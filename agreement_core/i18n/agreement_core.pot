@@ -1,0 +1,1287 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* agreement_core
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: agreement_core
+#: field:agreement.agreement,name:0
+msgid "# Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_abstract
+msgid "Abstract Model for Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_appendix_abstract
+msgid "Abstract Model for Agreement Appendix"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_clause_abstract
+msgid "Abstract Model for Agreement Clause"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_party_abstract
+msgid "Abstract Model for Agreement Party"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_recital_abstract
+msgid "Abstract Model for Agreement Recital"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_section_abstract
+msgid "Abstract Model for Agreement Section"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Activate agreement. Are you sure?"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,active_user_id:0
+msgid "Activated By"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: selection:agreement.agreement,state:0
+#: field:agreement.template,active:0
+#: field:agreement.termination_reason,active:0
+#: field:agreement.type,active:0
+msgid "Active"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,active_date:0
+msgid "Active Date"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement_appendix,agreement_id:0
+#: field:agreement.agreement_party,agreement_id:0
+#: field:agreement.agreement_recital,agreement_id:0
+#: field:agreement.agreement_section,agreement_id:0
+#: field:agreement.appendix_abstract,agreement_id:0
+#: field:agreement.attach_signed_document,agreement_id:0
+#: field:agreement.party_abstract,agreement_id:0
+#: field:agreement.recital_abstract,agreement_id:0
+#: field:agreement.section_abstract,agreement_id:0
+#: field:agreement.template_appendix,agreement_id:0
+#: field:agreement.template_party,agreement_id:0
+#: field:agreement.template_recital,agreement_id:0
+#: field:agreement.template_section,agreement_id:0
+#: view:agreement.type:agreement_core.agreement_type_view_form
+#: model:ir.actions.act_window,name:agreement_core.agreement_agreement_action
+#: model:ir.model,name:agreement_core.model_agreement_agreement
+#: model:ir.ui.menu,name:agreement_core.agreement_agreement_menu
+#: model:ir.ui.menu,name:agreement_core.agreement_menu
+#: model:ir.ui.menu,name:agreement_core.agreement_root_menu
+msgid "Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_agreement_appendix
+msgid "Agreement Appendix"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_agreement_clause
+msgid "Agreement Clause"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.actions.act_window,name:agreement_core.agreement_config_setting_action
+msgid "Agreement Configuration"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_agreement_party
+msgid "Agreement Party"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_agreement_recital
+msgid "Agreement Recital"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_agreement_section
+msgid "Agreement Section"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.actions.act_window,name:agreement_core.agreement_template_action
+#: model:ir.model,name:agreement_core.model_agreement_template
+msgid "Agreement Template"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_template_appendix
+msgid "Agreement Template Appendix"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_template_clause
+msgid "Agreement Template Clause"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_template_party
+msgid "Agreement Template Party"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_template_recital
+msgid "Agreement Template Recital"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_template_section
+msgid "Agreement Template Section"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.actions.act_window,name:agreement_core.agreement_termination_reason_action
+#: model:ir.model,name:agreement_core.model_agreement_termination_reason
+msgid "Agreement Termination Reason"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.actions.act_window,name:agreement_core.agreement_type_action
+#: model:ir.model,name:agreement_core.model_agreement_type
+msgid "Agreement Type"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.config_setting,agreement_active_group_ids:0
+#: field:agreement.type,agreement_active_group_ids:0
+#: field:res.company,agreement_active_group_ids:0
+msgid "Allow To Activate Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.config_setting,agreement_approve_group_ids:0
+#: field:agreement.type,agreement_approve_group_ids:0
+#: field:res.company,agreement_approve_group_ids:0
+msgid "Allow To Approve Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.config_setting,agreement_attach_group_ids:0
+#: field:agreement.type,agreement_attach_group_ids:0
+#: field:res.company,agreement_attach_group_ids:0
+msgid "Allow To Attach Signed Document"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.config_setting,agreement_cancel_group_ids:0
+#: field:agreement.type,agreement_cancel_group_ids:0
+#: field:res.company,agreement_cancel_group_ids:0
+msgid "Allow To Cancel Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.config_setting,agreement_confirm_group_ids:0
+#: field:agreement.type,agreement_confirm_group_ids:0
+#: field:res.company,agreement_confirm_group_ids:0
+msgid "Allow To Confirm Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.config_setting,agreement_revision_group_ids:0
+#: field:agreement.type,agreement_revision_group_ids:0
+#: field:res.company,agreement_revision_group_ids:0
+msgid "Allow To Create New Revision"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.config_setting,agreement_expire_group_ids:0
+#: field:agreement.type,agreement_expire_group_ids:0
+#: field:res.company,agreement_expire_group_ids:0
+msgid "Allow To Mark As Expire Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.config_setting,agreement_print_group_ids:0
+#: field:agreement.type,agreement_print_group_ids:0
+#: field:res.company,agreement_print_group_ids:0
+msgid "Allow To Print Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.config_setting,agreement_restart_group_ids:0
+#: field:agreement.type,agreement_restart_group_ids:0
+#: field:res.company,agreement_restart_group_ids:0
+msgid "Allow To Restart Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.config_setting,agreement_terminate_group_ids:0
+#: field:agreement.type,agreement_terminate_group_ids:0
+#: field:res.company,agreement_terminate_group_ids:0
+msgid "Allow To Terminate Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement_party,allowed_contact_ids:0
+#: field:agreement.party_abstract,allowed_contact_ids:0
+#: field:agreement.template_party,allowed_contact_ids:0
+msgid "Allowed Contacts"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "Allowed Groups"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: view:agreement.template:agreement_core.agreement_template_view_form
+msgid "Appendices"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement_appendix,name:0
+#: field:agreement.appendix_abstract,name:0
+#: field:agreement.template_appendix,name:0
+msgid "Appendix"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,appendix_ids:0
+#: field:agreement.template,appendix_ids:0
+msgid "Appendix ids"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "Apply"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Approval"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Approve agreement. Are you sure?"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: selection:agreement.agreement,state:0
+msgid "Approved"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,approved_user_id:0
+msgid "Approved By"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,approved_date:0
+msgid "Approved Date"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: model:ir.actions.act_window,name:agreement_core.attach_signed_document_action
+#: model:ir.model,name:agreement_core.model_agreement_attach_signed_document
+msgid "Attach Signed Document"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,active_ok:0
+msgid "Can Activate"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,approve_ok:0
+msgid "Can Approve"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,attach_ok:0
+msgid "Can Attach Signed Document"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,revision_ok:0
+msgid "Can Create Revision"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,print_ok:0
+msgid "Can Print"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,expire_ok:0
+msgid "Can Set as Expire"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,terminate_ok:0
+msgid "Can Terminate"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: view:agreement.attach_signed_document:agreement_core.attach_signed_document_view_form
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: field:agreement.agreement,cancel_reason_id:0
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Cancel agreement. Are you sure?"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.attach_signed_document:agreement_core.attach_signed_document_view_form
+msgid "Cancel participants. Are you sure?"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Cancellation"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,cancelled_user_id:0
+msgid "Cancellation By"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,cancelled_date:0
+msgid "Cancellation Date"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Cancellation reason:"
+msgstr ""
+
+#. module: agreement_core
+#: selection:agreement.agreement,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement_clause,name:0
+#: field:agreement.clause_abstract,name:0
+#: field:agreement.template_clause,name:0
+msgid "Clause"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement_section,clause_ids:0
+#: field:agreement.section_abstract,clause_ids:0
+#: field:agreement.template_section,clause_ids:0
+msgid "Clauses"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+msgid "Client Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.type,code:0
+msgid "Code"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: field:agreement.agreement,company_id:0
+#: field:agreement.config_setting,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.ui.menu,name:agreement_core.agreement_config_setting_menu
+#: model:ir.ui.menu,name:agreement_core.agreement_configuration_menu
+msgid "Configuration"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: view:agreement.attach_signed_document:agreement_core.attach_signed_document_view_form
+#: view:agreement.terminate_agreement:agreement_core.terminate_agreement_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Confirm agreement. Are you sure?"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Confirmation"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,confirmed_user_id:0
+msgid "Confirmation By"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,confirmed_date:0
+msgid "Confirmation Date"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement_party,contact_id:0
+#: field:agreement.party_abstract,contact_id:0
+#: field:agreement.template_party,contact_id:0
+msgid "Contact"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: field:agreement.agreement_appendix,content:0
+#: field:agreement.agreement_clause,content:0
+#: field:agreement.agreement_recital,content:0
+#: field:agreement.agreement_section,content:0
+#: field:agreement.appendix_abstract,content:0
+#: field:agreement.clause_abstract,content:0
+#: field:agreement.recital_abstract,content:0
+#: field:agreement.section_abstract,content:0
+#: view:agreement.template:agreement_core.agreement_template_view_form
+#: field:agreement.template_appendix,content:0
+#: field:agreement.template_clause,content:0
+#: field:agreement.template_recital,content:0
+#: field:agreement.template_section,content:0
+msgid "Content"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: view:agreement.template:agreement_core.agreement_template_view_form
+msgid "Contents"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Create New Revision"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Create new revision. Are you sure?"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,create_uid:0
+#: field:agreement.agreement_appendix,create_uid:0
+#: field:agreement.agreement_clause,create_uid:0
+#: field:agreement.agreement_party,create_uid:0
+#: field:agreement.agreement_recital,create_uid:0
+#: field:agreement.agreement_section,create_uid:0
+#: field:agreement.attach_signed_document,create_uid:0
+#: field:agreement.config_setting,create_uid:0
+#: field:agreement.template,create_uid:0
+#: field:agreement.template_appendix,create_uid:0
+#: field:agreement.template_clause,create_uid:0
+#: field:agreement.template_party,create_uid:0
+#: field:agreement.template_recital,create_uid:0
+#: field:agreement.template_section,create_uid:0
+#: field:agreement.terminate_agreement,create_uid:0
+#: field:agreement.termination_reason,create_uid:0
+#: field:agreement.type,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,create_date:0
+#: field:agreement.agreement_appendix,create_date:0
+#: field:agreement.agreement_clause,create_date:0
+#: field:agreement.agreement_party,create_date:0
+#: field:agreement.agreement_recital,create_date:0
+#: field:agreement.agreement_section,create_date:0
+#: field:agreement.attach_signed_document,create_date:0
+#: field:agreement.config_setting,create_date:0
+#: field:agreement.template,create_date:0
+#: field:agreement.template_appendix,create_date:0
+#: field:agreement.template_clause,create_date:0
+#: field:agreement.template_party,create_date:0
+#: field:agreement.template_recital,create_date:0
+#: field:agreement.template_section,create_date:0
+#: field:agreement.terminate_agreement,create_date:0
+#: field:agreement.termination_reason,create_date:0
+#: field:agreement.type,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+msgid "Customer"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,date_agreement:0
+msgid "Date Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+msgid "Date Agreement by Day"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+msgid "Date Agreement by Month"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+msgid "Date Agreement by Week"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+msgid "Date Agreement by Year"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,date_end:0
+msgid "Date End"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,date_start:0
+msgid "Date Start"
+msgstr ""
+
+#. module: agreement_core
+#: help:agreement.agreement,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.abstract,description:0
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: field:agreement.agreement,description:0
+#: view:agreement.template:agreement_core.agreement_template_view_form
+#: field:agreement.template,description:0
+msgid "Description"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.abstract,display_name:0
+#: field:agreement.agreement,display_name:0
+#: field:agreement.agreement_appendix,display_name:0
+#: field:agreement.agreement_clause,display_name:0
+#: field:agreement.agreement_party,display_name:0
+#: field:agreement.agreement_recital,display_name:0
+#: field:agreement.agreement_section,display_name:0
+#: field:agreement.appendix_abstract,display_name:0
+#: field:agreement.attach_signed_document,display_name:0
+#: field:agreement.clause_abstract,display_name:0
+#: field:agreement.config_setting,display_name:0
+#: field:agreement.party_abstract,display_name:0
+#: field:agreement.recital_abstract,display_name:0
+#: field:agreement.section_abstract,display_name:0
+#: field:agreement.template,display_name:0
+#: field:agreement.template_appendix,display_name:0
+#: field:agreement.template_clause,display_name:0
+#: field:agreement.template_party,display_name:0
+#: field:agreement.template_recital,display_name:0
+#: field:agreement.template_section,display_name:0
+#: field:agreement.terminate_agreement,display_name:0
+#: field:agreement.termination_reason,display_name:0
+#: field:agreement.type,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: selection:agreement.agreement,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Expire"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: selection:agreement.agreement,state:0
+msgid "Expired"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,expire_user_id:0
+msgid "Expired By"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,expire_date:0
+msgid "Expired Date"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "Feature"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "Feature & Integration"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+msgid "Filter"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "General Information"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+msgid "Group By.."
+msgstr ""
+
+#. module: agreement_core
+#: help:agreement.agreement,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.abstract,id:0
+#: field:agreement.agreement,id:0
+#: field:agreement.agreement_appendix,id:0
+#: field:agreement.agreement_clause,id:0
+#: field:agreement.agreement_party,id:0
+#: field:agreement.agreement_recital,id:0
+#: field:agreement.agreement_section,id:0
+#: field:agreement.appendix_abstract,id:0
+#: field:agreement.attach_signed_document,id:0
+#: field:agreement.clause_abstract,id:0
+#: field:agreement.config_setting,id:0
+#: field:agreement.party_abstract,id:0
+#: field:agreement.recital_abstract,id:0
+#: field:agreement.section_abstract,id:0
+#: field:agreement.template,id:0
+#: field:agreement.template_appendix,id:0
+#: field:agreement.template_clause,id:0
+#: field:agreement.template_party,id:0
+#: field:agreement.template_recital,id:0
+#: field:agreement.template_section,id:0
+#: field:agreement.terminate_agreement,id:0
+#: field:agreement.termination_reason,id:0
+#: field:agreement.type,id:0
+msgid "ID"
+msgstr ""
+
+#. module: agreement_core
+#: help:agreement.agreement,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "Integration"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+msgid "Internal Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.abstract,__last_update:0
+#: field:agreement.agreement,__last_update:0
+#: field:agreement.agreement_appendix,__last_update:0
+#: field:agreement.agreement_clause,__last_update:0
+#: field:agreement.agreement_party,__last_update:0
+#: field:agreement.agreement_recital,__last_update:0
+#: field:agreement.agreement_section,__last_update:0
+#: field:agreement.appendix_abstract,__last_update:0
+#: field:agreement.attach_signed_document,__last_update:0
+#: field:agreement.clause_abstract,__last_update:0
+#: field:agreement.config_setting,__last_update:0
+#: field:agreement.party_abstract,__last_update:0
+#: field:agreement.recital_abstract,__last_update:0
+#: field:agreement.section_abstract,__last_update:0
+#: field:agreement.template,__last_update:0
+#: field:agreement.template_appendix,__last_update:0
+#: field:agreement.template_clause,__last_update:0
+#: field:agreement.template_party,__last_update:0
+#: field:agreement.template_recital,__last_update:0
+#: field:agreement.template_section,__last_update:0
+#: field:agreement.terminate_agreement,__last_update:0
+#: field:agreement.termination_reason,__last_update:0
+#: field:agreement.type,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,write_uid:0
+#: field:agreement.agreement_appendix,write_uid:0
+#: field:agreement.agreement_clause,write_uid:0
+#: field:agreement.agreement_party,write_uid:0
+#: field:agreement.agreement_recital,write_uid:0
+#: field:agreement.agreement_section,write_uid:0
+#: field:agreement.attach_signed_document,write_uid:0
+#: field:agreement.config_setting,write_uid:0
+#: field:agreement.template,write_uid:0
+#: field:agreement.template_appendix,write_uid:0
+#: field:agreement.template_clause,write_uid:0
+#: field:agreement.template_party,write_uid:0
+#: field:agreement.template_recital,write_uid:0
+#: field:agreement.template_section,write_uid:0
+#: field:agreement.terminate_agreement,write_uid:0
+#: field:agreement.termination_reason,write_uid:0
+#: field:agreement.type,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,write_date:0
+#: field:agreement.agreement_appendix,write_date:0
+#: field:agreement.agreement_clause,write_date:0
+#: field:agreement.agreement_party,write_date:0
+#: field:agreement.agreement_recital,write_date:0
+#: field:agreement.agreement_section,write_date:0
+#: field:agreement.attach_signed_document,write_date:0
+#: field:agreement.config_setting,write_date:0
+#: field:agreement.template,write_date:0
+#: field:agreement.template_appendix,write_date:0
+#: field:agreement.template_clause,write_date:0
+#: field:agreement.template_party,write_date:0
+#: field:agreement.template_recital,write_date:0
+#: field:agreement.template_section,write_date:0
+#: field:agreement.terminate_agreement,write_date:0
+#: field:agreement.termination_reason,write_date:0
+#: field:agreement.type,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Log"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Mark as expire agreement. Are you sure?"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: agreement_core
+#: help:agreement.agreement,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: agreement_core
+#: code:addons/agreement_core/models/agreement_agreement.py:409
+#, python-format
+msgid "No report template defined"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.abstract,note:0
+#: field:agreement.agreement,note:0
+#: field:agreement.template,note:0
+#: field:agreement.termination_reason,note:0
+#: field:agreement.type,note:0
+msgid "Note"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: view:agreement.template:agreement_core.agreement_template_view_form
+#: view:agreement.termination_reason:agreement_core.agreement_termination_reason_view_form
+#: view:agreement.type:agreement_core.agreement_type_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+msgid "Origin"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+msgid "Origin Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,origin_version_id:0
+msgid "Origin Version"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,parent_id:0
+msgid "Parent Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: view:agreement.template:agreement_core.agreement_template_view_form
+msgid "Parties"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,partner_id:0
+msgid "Partner"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement_party,party_id:0
+#: field:agreement.party_abstract,party_id:0
+#: field:agreement.template_party,party_id:0
+msgid "Party"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement_party,name:0
+#: field:agreement.party_abstract,name:0
+#: field:agreement.template_party,name:0
+msgid "Party Alias"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.abstract,party_ids:0
+#: field:agreement.agreement,party_ids:0
+#: field:agreement.template,party_ids:0
+msgid "Party ids"
+msgstr ""
+
+#. module: agreement_core
+#: code:addons/agreement_core/models/agreement_agreement.py:555
+#, python-format
+msgid "Please attach signed document"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Policy"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: field:agreement.agreement,previous_version_id:0
+msgid "Previous Version"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Print"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: field:agreement.agreement_appendix,raw_content:0
+#: field:agreement.agreement_clause,raw_content:0
+#: field:agreement.agreement_recital,raw_content:0
+#: field:agreement.agreement_section,raw_content:0
+#: field:agreement.appendix_abstract,raw_content:0
+#: field:agreement.clause_abstract,raw_content:0
+#: field:agreement.recital_abstract,raw_content:0
+#: field:agreement.section_abstract,raw_content:0
+#: view:agreement.template:agreement_core.agreement_template_view_form
+#: field:agreement.template_appendix,raw_content:0
+#: field:agreement.template_clause,raw_content:0
+#: field:agreement.template_recital,raw_content:0
+#: field:agreement.template_section,raw_content:0
+msgid "Raw Content"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.abstract,raw_description:0
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: field:agreement.agreement,raw_description:0
+#: view:agreement.template:agreement_core.agreement_template_view_form
+#: field:agreement.template,raw_description:0
+msgid "Raw Description"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement_recital,name:0
+#: field:agreement.recital_abstract,name:0
+#: field:agreement.template_recital,name:0
+msgid "Recital"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.abstract,recital_ids:0
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: field:agreement.agreement,recital_ids:0
+#: view:agreement.template:agreement_core.agreement_template_view_form
+#: field:agreement.template,recital_ids:0
+msgid "Recitals"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.ui.menu,name:agreement_core.agreement_report_menu
+msgid "Report"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.abstract,report_id:0
+#: field:agreement.agreement,report_id:0
+#: field:agreement.template,report_id:0
+msgid "Report Template"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Reset agreement. Are you sure?"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: field:agreement.agreement,user_id:0
+msgid "Responsible"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Revision"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement_clause,section_id:0
+#: field:agreement.agreement_section,name:0
+#: field:agreement.clause_abstract,section_id:0
+#: field:agreement.section_abstract,name:0
+#: field:agreement.template_clause,section_id:0
+#: field:agreement.template_section,name:0
+msgid "Section"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.abstract,section_ids:0
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: field:agreement.agreement,section_ids:0
+#: view:agreement.template:agreement_core.agreement_template_view_form
+#: field:agreement.template,section_ids:0
+msgid "Sections"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement_appendix,sequence:0
+#: field:agreement.agreement_clause,sequence:0
+#: field:agreement.agreement_party,sequence:0
+#: field:agreement.agreement_recital,sequence:0
+#: field:agreement.agreement_section,sequence:0
+#: field:agreement.appendix_abstract,sequence:0
+#: field:agreement.clause_abstract,sequence:0
+#: field:agreement.party_abstract,sequence:0
+#: field:agreement.recital_abstract,sequence:0
+#: field:agreement.section_abstract,sequence:0
+#: field:agreement.template_appendix,sequence:0
+#: field:agreement.template_clause,sequence:0
+#: field:agreement.template_party,sequence:0
+#: field:agreement.template_recital,sequence:0
+#: field:agreement.template_section,sequence:0
+#: field:agreement.type,sequence_id:0
+msgid "Sequence"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Set to Draft"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,signed_document_id:0
+#: field:agreement.attach_signed_document,document:0
+msgid "Signed Document"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: field:agreement.agreement,state:0
+msgid "State"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: field:agreement.agreement,template_id:0
+#: model:ir.ui.menu,name:agreement_core.agreement_template_menu
+msgid "Template"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: view:agreement.terminate_agreement:agreement_core.terminate_agreement_view_form
+msgid "Terminate"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.model,name:agreement_core.model_agreement_terminate_agreement
+msgid "Terminate Agreement"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.terminate_agreement:agreement_core.terminate_agreement_view_form
+#: model:ir.actions.act_window,name:agreement_core.terminate_agreement_action
+msgid "Terminate Agreements"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,terminate_date:0
+msgid "Terminate Date"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,terminate_reason_id:0
+#: field:agreement.terminate_agreement,terminate_reason_id:0
+msgid "Terminate Reason"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Terminate agreement. Are you sure?"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.terminate_agreement:agreement_core.terminate_agreement_view_form
+msgid "Terminate participants. Are you sure?"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: selection:agreement.agreement,state:0
+msgid "Terminated"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,terminate_user_id:0
+msgid "Terminated By"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: field:agreement.termination_reason,name:0
+msgid "Termination Reason"
+msgstr ""
+
+#. module: agreement_core
+#: model:ir.ui.menu,name:agreement_core.agreement_termination_reason_menu
+msgid "Termination Reasons"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+msgid "Termination reason:"
+msgstr ""
+
+#. module: agreement_core
+#: code:addons/agreement_core/models/agreement_agreement.py:546
+#, python-format
+msgid "There is already active agreement"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.abstract,title:0
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_form
+#: field:agreement.agreement,title:0
+#: field:agreement.agreement_appendix,title:0
+#: field:agreement.agreement_clause,title:0
+#: field:agreement.agreement_recital,title:0
+#: field:agreement.agreement_section,title:0
+#: field:agreement.appendix_abstract,title:0
+#: field:agreement.clause_abstract,title:0
+#: field:agreement.recital_abstract,title:0
+#: field:agreement.section_abstract,title:0
+#: field:agreement.template,title:0
+#: field:agreement.template_appendix,title:0
+#: field:agreement.template_clause,title:0
+#: field:agreement.template_recital,title:0
+#: field:agreement.template_section,title:0
+msgid "Title"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "To Activate"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "To Approve"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "To Attach Signed Document"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "To Cancel"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "To Confirm"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "To Create New Revision"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "To Mark As Expire"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "To Print"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "To Restart"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+msgid "To Terminate"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,total_revision:0
+msgid "Total"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.abstract,type_id:0
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: field:agreement.agreement,type_id:0
+#: field:agreement.template,type_id:0
+#: field:agreement.type,name:0
+#: model:ir.ui.menu,name:agreement_core.agreement_type_menu
+msgid "Type"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,revision:0
+msgid "Version"
+msgstr ""
+
+#. module: agreement_core
+#: field:agreement.agreement,version_number:0
+msgid "Version Number"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.agreement:agreement_core.agreement_agreement_view_search
+#: selection:agreement.agreement,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.type:agreement_core.agreement_type_view_form
+msgid "Workflow Policy"
+msgstr ""
+
+#. module: agreement_core
+#: code:addons/agreement_core/models/agreement_agreement.py:436
+#, python-format
+msgid "You can not restart agreement with revisions"
+msgstr ""
+
+#. module: agreement_core
+#: code:addons/agreement_core/models/agreement_agreement.py:380
+#, python-format
+msgid "You can only delete data on draft state"
+msgstr ""
+
+#. module: agreement_core
+#: view:agreement.attach_signed_document:agreement_core.attach_signed_document_view_form
+#: view:agreement.config_setting:agreement_core.agreement_config_setting_view_form
+#: view:agreement.terminate_agreement:agreement_core.terminate_agreement_view_form
+msgid "or"
+msgstr ""
+

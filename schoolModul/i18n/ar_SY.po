@@ -1,0 +1,835 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* schoolModul
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-03 15:13+0000\n"
+"PO-Revision-Date: 2017-02-03 15:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: schoolModul
+#: code:addons/schoolModul/models/courses.py:17
+#: code:addons/schoolModul/models/courses.py:18
+#, python-format
+msgid "%s (copy)"
+msgstr "%s (نسخة)"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.view_parent_form
+#: model:ir.ui.view,arch_db:schoolModul.view_project_form
+#: model:ir.ui.view,arch_db:schoolModul.view_teacher_form
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.course_wizard_view
+#: model:ir.ui.view,arch_db:schoolModul.student_wizard_view
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.school_sub_classroom
+msgid "ClassRooms"
+msgstr "الفصول"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_parents_code
+#: model:ir.model.fields,field_description:schoolModul.field_students_code
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_code
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_code
+#: model:ir.ui.view,arch_db:schoolModul.view_exam_form
+#: model:ir.ui.view,arch_db:schoolModul.view_parent_form
+#: model:ir.ui.view,arch_db:schoolModul.view_project_form
+#: model:ir.ui.view,arch_db:schoolModul.view_subjects_vi_form
+#: model:ir.ui.view,arch_db:schoolModul.view_teacher_form
+msgid "Code"
+msgstr "الكود"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.sub_school_management3
+msgid "Configration"
+msgstr "اﻹعدادات"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.school_sub_course
+msgid "Courses"
+msgstr "الكورسات"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_attendance_create_uid
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_create_uid
+#: model:ir.model.fields,field_description:schoolModul.field_course_wizard_create_uid
+#: model:ir.model.fields,field_description:schoolModul.field_courses_create_uid
+#: model:ir.model.fields,field_description:schoolModul.field_exam_results_create_uid
+#: model:ir.model.fields,field_description:schoolModul.field_exam_type_create_uid
+#: model:ir.model.fields,field_description:schoolModul.field_exams_create_uid
+#: model:ir.model.fields,field_description:schoolModul.field_grades_create_uid
+#: model:ir.model.fields,field_description:schoolModul.field_parents_create_uid
+#: model:ir.model.fields,field_description:schoolModul.field_student_wizard_create_uid
+#: model:ir.model.fields,field_description:schoolModul.field_students_create_uid
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_create_uid
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_attendance_create_date
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_create_date
+#: model:ir.model.fields,field_description:schoolModul.field_course_wizard_create_date
+#: model:ir.model.fields,field_description:schoolModul.field_courses_create_date
+#: model:ir.model.fields,field_description:schoolModul.field_exam_results_create_date
+#: model:ir.model.fields,field_description:schoolModul.field_exam_type_create_date
+#: model:ir.model.fields,field_description:schoolModul.field_exams_create_date
+#: model:ir.model.fields,field_description:schoolModul.field_grades_create_date
+#: model:ir.model.fields,field_description:schoolModul.field_parents_create_date
+#: model:ir.model.fields,field_description:schoolModul.field_student_wizard_create_date
+#: model:ir.model.fields,field_description:schoolModul.field_students_create_date
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_create_date
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_attendance_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_course_wizard_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_courses_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_exam_results_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_exam_type_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_exams_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_grades_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_parents_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_report_courses_courses_info_wiz_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_report_students_students_info_report_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_report_students_students_info_report_wiz_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_student_wizard_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_students_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_display_name
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: schoolModul
+#: selection:students,status:0
+#: selection:teachers,status:0
+msgid "Draft"
+msgstr "ابتدائية"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_parents_email
+#: model:ir.model.fields,field_description:schoolModul.field_students_email
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_course_wizard_end_date
+msgid "End Date"
+msgstr "تاريخ الإنتهاء"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_exam_results_exam
+msgid "Exam"
+msgstr "اﻹمتحان"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.configra_sub_exam_type
+msgid "Exam Types"
+msgstr "أنواع الامتحانات"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.school_sub_exam
+msgid "Exams"
+msgstr "اﻹمتحانات"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.school_sub_exam_result
+msgid "Exams Results"
+msgstr "نتائج الامتحانات"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.view_parent_form
+#: model:ir.ui.view,arch_db:schoolModul.view_project_form
+#: model:ir.ui.view,arch_db:schoolModul.view_teacher_form
+msgid "Experiment"
+msgstr "تحت التجربة"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.configra_sub_grades
+msgid "Grades"
+msgstr "الدرجة"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.sub_school_management
+msgid "Human Resources"
+msgstr "الموارد البشرية"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_attendance_id
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_id
+#: model:ir.model.fields,field_description:schoolModul.field_course_wizard_id
+#: model:ir.model.fields,field_description:schoolModul.field_courses_id
+#: model:ir.model.fields,field_description:schoolModul.field_exam_results_id
+#: model:ir.model.fields,field_description:schoolModul.field_exam_type_id
+#: model:ir.model.fields,field_description:schoolModul.field_exams_id
+#: model:ir.model.fields,field_description:schoolModul.field_grades_id
+#: model:ir.model.fields,field_description:schoolModul.field_parents_id
+#: model:ir.model.fields,field_description:schoolModul.field_report_courses_courses_info_wiz_id
+#: model:ir.model.fields,field_description:schoolModul.field_report_students_students_info_report_id
+#: model:ir.model.fields,field_description:schoolModul.field_report_students_students_info_report_wiz_id
+#: model:ir.model.fields,field_description:schoolModul.field_student_wizard_id
+#: model:ir.model.fields,field_description:schoolModul.field_students_id
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_id
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: schoolModul
+#: selection:students,status:0
+#: selection:teachers,status:0
+msgid "In Experiment"
+msgstr "في التجربة"
+
+#. module: schoolModul
+#: selection:students,status:0
+#: selection:teachers,status:0
+msgid "In Service"
+msgstr "في الدراسة"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_attendance___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_classroom___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_course_wizard___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_courses___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_exam_results___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_exam_type___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_exams___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_grades___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_parents___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_report_courses_courses_info_wiz___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_report_students_students_info_report___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_report_students_students_info_report_wiz___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_student_wizard___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_students___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_subjects___last_update
+#: model:ir.model.fields,field_description:schoolModul.field_teachers___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_attendance_write_uid
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_write_uid
+#: model:ir.model.fields,field_description:schoolModul.field_course_wizard_write_uid
+#: model:ir.model.fields,field_description:schoolModul.field_courses_write_uid
+#: model:ir.model.fields,field_description:schoolModul.field_exam_results_write_uid
+#: model:ir.model.fields,field_description:schoolModul.field_exam_type_write_uid
+#: model:ir.model.fields,field_description:schoolModul.field_exams_write_uid
+#: model:ir.model.fields,field_description:schoolModul.field_grades_write_uid
+#: model:ir.model.fields,field_description:schoolModul.field_parents_write_uid
+#: model:ir.model.fields,field_description:schoolModul.field_student_wizard_write_uid
+#: model:ir.model.fields,field_description:schoolModul.field_students_write_uid
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_write_uid
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_attendance_write_date
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_write_date
+#: model:ir.model.fields,field_description:schoolModul.field_course_wizard_write_date
+#: model:ir.model.fields,field_description:schoolModul.field_courses_write_date
+#: model:ir.model.fields,field_description:schoolModul.field_exam_results_write_date
+#: model:ir.model.fields,field_description:schoolModul.field_exam_type_write_date
+#: model:ir.model.fields,field_description:schoolModul.field_exams_write_date
+#: model:ir.model.fields,field_description:schoolModul.field_grades_write_date
+#: model:ir.model.fields,field_description:schoolModul.field_parents_write_date
+#: model:ir.model.fields,field_description:schoolModul.field_student_wizard_write_date
+#: model:ir.model.fields,field_description:schoolModul.field_students_write_date
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_write_date
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_last_login_date
+msgid "Last login date"
+msgstr "تاريخ اخر دخول للنظام"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_last_login_ip
+msgid "Last login ip"
+msgstr "اي بي اخر دخول"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_maximum_marks
+msgid "Maximum marks"
+msgstr "اعلي درجة"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_minimum_marks
+msgid "Minimum marks"
+msgstr "أقل درجة"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.view_parent_form
+#: model:ir.ui.view,arch_db:schoolModul.view_project_form
+#: model:ir.ui.view,arch_db:schoolModul.view_subjects_vi_form
+#: model:ir.ui.view,arch_db:schoolModul.view_teacher_form
+msgid "Name"
+msgstr "الاسم"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.view_exam_type_form
+msgid "Name of Course"
+msgstr "اسم الكورس"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.view_classroom_form
+msgid "Name of classroom"
+msgstr "اسم الفصل"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.view_exam_form
+msgid "Name of exam"
+msgstr "اسم الامتحان"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.view_grades_form
+msgid "Name of grades"
+msgstr "اسم الدرجة"
+
+#. module: schoolModul
+#: selection:students,status:0
+#: selection:teachers,status:0
+msgid "Out of Service"
+msgstr "خارج الدراسة"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.school_sub_menu33
+msgid "Parents"
+msgstr "اولياء الامور"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.course_wizard_view
+#: model:ir.ui.view,arch_db:schoolModul.student_wizard_view
+msgid "Print"
+msgstr "طباعة"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.view_parent_form
+#: model:ir.ui.view,arch_db:schoolModul.view_project_form
+#: model:ir.ui.view,arch_db:schoolModul.view_teacher_form
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.menu_main_report
+msgid "Reports"
+msgstr "التقارير"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.school_management
+msgid "School Management"
+msgstr "إدارة المدرسة"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_sequence
+msgid "Sequence"
+msgstr "المسلسل"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.view_parent_form
+#: model:ir.ui.view,arch_db:schoolModul.view_project_form
+#: model:ir.ui.view,arch_db:schoolModul.view_teacher_form
+msgid "Set to Draft"
+msgstr "ارجاع لبتدائية"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_course_wizard_start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_students_status
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_status
+#: model:ir.ui.view,arch_db:schoolModul.view_student_status_filter
+#: model:ir.ui.view,arch_db:schoolModul.view_teacher_status_filter
+msgid "Status"
+msgstr "الحالة"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_student_ids
+#: model:ir.ui.menu,name:schoolModul.school_sub_menu
+#: model:ir.ui.view,arch_db:schoolModul.view_subjects_vi_form
+msgid "Students"
+msgstr "الطلاب"
+
+#. module: schoolModul
+#: model:ir.actions.report.xml,name:schoolModul.students_info_report_id
+msgid "Students Details"
+msgstr "تفاصيل الطلاب"
+
+#. module: schoolModul
+#: model:ir.actions.report.xml,name:schoolModul.students_info_report_id_wizard
+msgid "Students Details wiz"
+msgstr "ويزرد تفاصيل الطلاب"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.sub_school_management2
+msgid "Students Proccesses"
+msgstr "عمليات الطلاب"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.configra_sub_subjects
+msgid "Subjects"
+msgstr "المواد"
+
+#. module: schoolModul
+#: model:ir.ui.menu,name:schoolModul.school_sub_menu2
+msgid "Teachers"
+msgstr "الاساتذة"
+
+#. module: schoolModul
+#: sql_constraint:courses:0
+msgid "The name of the course must be unique !"
+msgstr "إسم الكورس يجب ان يكون فريد !"
+
+#. module: schoolModul
+#: sql_constraint:exams:0
+#: sql_constraint:parents:0
+#: sql_constraint:teachers:0
+msgid "The name of the student must be unique !"
+msgstr "اسم الطالب يجب ان يكون فريد!"
+
+#. module: schoolModul
+#: sql_constraint:subjects:0
+msgid "The name of the subject must be unique !"
+msgstr "اسم المادة يجب ان يكون فريد !"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.course_wizard_view
+msgid "This report allows you to print informations of  your courses details"
+msgstr "هذا التقرير يسمح بطباعة معلومات وتفاصيل الكورسات"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.student_wizard_view
+msgid "This report allows you to print or generate a pdf of your students, allowing you to quickly check your student's details"
+msgstr "هذا التقرير يسمح بطباعة معلومات وتفاصيل الطلاب"
+
+#. module: schoolModul
+#: model:ir.model.fields,help:schoolModul.field_students_email
+msgid "Used to log into the system"
+msgstr "استخدم للدخول للنظام"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_students_user_id
+msgid "User ID"
+msgstr "أدي المستخدم"
+
+#. module: schoolModul
+#: model:ir.model,name:schoolModul.model_course_wizard
+msgid "Wizard to print courses report"
+msgstr "تقرير الكورسات"
+
+#. module: schoolModul
+#: model:ir.model,name:schoolModul.model_student_wizard
+msgid "Wizard to print student report"
+msgstr "تقرير الطلاب"
+
+#. module: schoolModul
+#: model:ir.model,name:schoolModul.model_attendance
+msgid "attendance"
+msgstr "الحضور"
+
+#. module: schoolModul
+#: model:ir.actions.act_window,name:schoolModul.action_classroom
+#: model:ir.model,name:schoolModul.model_classroom
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_classroom_id
+#: model:ir.ui.view,arch_db:schoolModul.view_classroom_form
+#: model:ir.ui.view,arch_db:schoolModul.view_classroom_tree
+msgid "classroom"
+msgstr "الفصل"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_name
+msgid "classroom name"
+msgstr "اسم الفصل"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_status
+msgid "classroom status"
+msgstr "حالة الفصل"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_exams_code
+msgid "code"
+msgstr "الكود"
+
+#. module: schoolModul
+#: model:ir.actions.act_window,name:schoolModul.action_course
+msgid "course"
+msgstr "الكورس"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.course_wizard_view
+msgid "course Report"
+msgstr "تقرير الكورس"
+
+#. module: schoolModul
+#: model:ir.model,name:schoolModul.model_courses
+#: model:ir.ui.view,arch_db:schoolModul.view_exam_type_tree
+msgid "courses"
+msgstr "الكورسات"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.courses_info_wiz
+msgid "courses Details"
+msgstr "تفاصيل الكورسات"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.courses_info_wiz
+msgid "courses Information  :"
+msgstr "معلومات الكورسات  :"
+
+#. module: schoolModul
+#: model:ir.actions.act_window,name:schoolModul.action_course_wizard
+#: model:ir.ui.menu,name:schoolModul.menu_course_report
+msgid "courses Report"
+msgstr "تقرير الكورسات"
+
+#. module: schoolModul
+#: model:ir.actions.report.xml,name:schoolModul.courses_info
+msgid "courses information"
+msgstr "معلومات الكورسات"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_attendance_date
+msgid "date"
+msgstr "التاريخ"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report_wiz
+msgid "date of birth"
+msgstr "تاريخ الميلاد"
+
+#. module: schoolModul
+#: code:addons/schoolModul/models/school.py:70
+#, python-format
+msgid "date of birth is in the future  !!"
+msgstr "تاريخ الميلاد في المستقبل  !!"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_parents_date_of_joint
+#: model:ir.model.fields,field_description:schoolModul.field_students_date_of_joint
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_date_of_joint
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report_wiz
+msgid "date of joint"
+msgstr "تاريخ الانضمام"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_exam_type_description
+#: model:ir.model.fields,field_description:schoolModul.field_grades_desc
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_description
+msgid "description"
+msgstr "الوصف"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report_wiz
+msgid "email"
+msgstr "اﻹيميل"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_exams_exam_type
+msgid "exam type"
+msgstr "نوع الامتحان"
+
+#. module: schoolModul
+#: model:ir.actions.act_window,name:schoolModul.action_exam_result
+#: model:ir.model,name:schoolModul.model_exam_results
+#: model:ir.ui.view,arch_db:schoolModul.view_exam_Results_form
+#: model:ir.ui.view,arch_db:schoolModul.view_exam_Results_tree
+#: model:ir.ui.view,arch_db:schoolModul.view_subjects_tree
+msgid "exam_results"
+msgstr "نتائج اﻹمتحانات"
+
+#. module: schoolModul
+#: model:ir.actions.act_window,name:schoolModul.action_exam_type
+#: model:ir.model,name:schoolModul.model_exam_type
+#: model:ir.ui.view,arch_db:schoolModul.view_exam_type_form
+msgid "exam_type"
+msgstr "نوع الإمتحان"
+
+#. module: schoolModul
+#: model:ir.actions.act_window,name:schoolModul.action_exams
+#: model:ir.model,name:schoolModul.model_exams
+#: model:ir.ui.view,arch_db:schoolModul.view_exam_form
+msgid "exams"
+msgstr "الامتحانات"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_grade_id
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_grade_id
+msgid "grade"
+msgstr "الدرجة"
+
+#. module: schoolModul
+#: model:ir.actions.act_window,name:schoolModul.action_grades
+#: model:ir.model,name:schoolModul.model_grades
+#: model:ir.ui.view,arch_db:schoolModul.view_grades_form
+#: model:ir.ui.view,arch_db:schoolModul.view_grades_tree
+msgid "grades"
+msgstr "الدرجات"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_grades_name
+msgid "grades name"
+msgstr "اسم الدرجات"
+
+#. module: schoolModul
+#: code:addons/schoolModul/models/school.py:56
+#, python-format
+msgid "invaild email"
+msgstr "اﻹيميل غير صالح"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_students_last_login_date
+msgid "last_login_date"
+msgstr "تاريخ اخر دخولe"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_students_last_login_ip
+msgid "last_login_ip"
+msgstr "عنوان اخر دخول"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_exam_results_marks
+msgid "marks"
+msgstr "الدرجات"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report_wiz
+msgid "mobile"
+msgstr "الموبايل"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_courses_name
+#: model:ir.model.fields,field_description:schoolModul.field_exam_type_name
+#: model:ir.model.fields,field_description:schoolModul.field_exams_name
+#: model:ir.model.fields,field_description:schoolModul.field_subjects_name
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report_wiz
+msgid "name"
+msgstr "الاسم"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.course_wizard_view
+#: model:ir.ui.view,arch_db:schoolModul.student_wizard_view
+msgid "or"
+msgstr "أو"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.view_parents_tree
+msgid "parent"
+msgstr "ولي الإمر"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_parents_date_of_birth
+msgid "parent birth date"
+msgstr "تاريخ ميلاد ولي الأمر"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_parents_mobile
+msgid "parent mobile"
+msgstr "تلفون ولي الأمر"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_parents_name
+msgid "parent name"
+msgstr "اسم ولي الأمر"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_parents_status
+msgid "parent status"
+msgstr "حالة ولي الامر"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_students_parent_ids
+msgid "parent_id"
+msgstr "معرف ولي الامر"
+
+#. module: schoolModul
+#: model:ir.actions.act_window,name:schoolModul.action_parent
+#: model:ir.model,name:schoolModul.model_parents
+#: model:ir.ui.view,arch_db:schoolModul.view_parent_form
+#: model:ir.ui.view,arch_db:schoolModul.view_project_form
+msgid "parents"
+msgstr "اولياء الامور"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_attendance_remarks
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_remarks
+msgid "remark"
+msgstr "ملاحظة"
+
+#. module: schoolModul
+#: model:ir.model,name:schoolModul.model_report_courses_courses_info_wiz
+msgid "report.courses.courses_info_wiz"
+msgstr "report.courses.courses_info_wiz"
+
+#. module: schoolModul
+#: model:ir.model,name:schoolModul.model_report_students_students_info_report
+msgid "report.students.students_info_report"
+msgstr "report.students.students_info_report"
+
+#. module: schoolModul
+#: model:ir.model,name:schoolModul.model_report_students_students_info_report_wiz
+msgid "report.students.students_info_report_wiz"
+msgstr "report.students.students_info_report_wiz"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_section
+msgid "section"
+msgstr "المسار"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_exams_start_date
+msgid "start_date"
+msgstr "تاريخ البداية"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report_wiz
+msgid "status"
+msgstr "الحالة"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_exam_results_student_id
+#: model:ir.model.fields,field_description:schoolModul.field_student_wizard_student_ids
+#: model:ir.ui.view,arch_db:schoolModul.view_project_form
+#: model:ir.ui.view,arch_db:schoolModul.view_student_tree
+#: model:ir.ui.view,arch_db:schoolModul.view_teacher_form
+msgid "student"
+msgstr "الطالب"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report_wiz
+msgid "student Details"
+msgstr "تفاصيل الطالب"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report
+#: model:ir.ui.view,arch_db:schoolModul.students_info_report_wiz
+msgid "student Information  :"
+msgstr "معلومات الطالب :"
+
+#. module: schoolModul
+#: model:ir.actions.act_window,name:schoolModul.action_student_wizard
+#: model:ir.ui.menu,name:schoolModul.menu_student_report
+#: model:ir.ui.view,arch_db:schoolModul.student_wizard_view
+msgid "student Report"
+msgstr "معلومات الطالب"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_students_date_of_birth
+msgid "student birth date"
+msgstr "تاريخ ميلاد الطالب"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_parents_student_id
+msgid "student id"
+msgstr "معرف الطالب"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_students_mobile
+msgid "student mobile"
+msgstr "رقم التلفون"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_students_name
+msgid "student name"
+msgstr "اسم الطالب"
+
+#. module: schoolModul
+#: model:ir.actions.act_window,name:schoolModul.action_student
+#: model:ir.model,name:schoolModul.model_students
+msgid "students"
+msgstr "الطلاب"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_exam_results_subject
+msgid "subject"
+msgstr "المادة"
+
+#. module: schoolModul
+#: model:ir.actions.act_window,name:schoolModul.action_subjects
+#: model:ir.model,name:schoolModul.model_subjects
+#: model:ir.ui.view,arch_db:schoolModul.courses_info_wiz
+msgid "subjects"
+msgstr "المواد"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_courses_subjects
+msgid "subjects of course"
+msgstr "مواد الكورس"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_student_class_room
+msgid "sudents class room"
+msgstr "فصل الطلاب"
+
+#. module: schoolModul
+#: model:ir.ui.view,arch_db:schoolModul.view_classroom_form
+msgid "supervisor"
+msgstr "المشرف"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_classroom_teacher_id
+#: model:ir.ui.view,arch_db:schoolModul.view_teacher_tree
+msgid "teacher"
+msgstr "الاستاذ"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_date_of_birth
+msgid "teacher birth date"
+msgstr "تاريخ ميلاد الاستاذ"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_mobile
+msgid "teacher mobile"
+msgstr "تلفون الاستاذ"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_name
+msgid "teacher name"
+msgstr "اسم الاستاذ"
+
+#. module: schoolModul
+#: model:ir.actions.act_window,name:schoolModul.action_teacher
+#: model:ir.model,name:schoolModul.model_teachers
+msgid "teachers"
+msgstr "الاساتذة"
+
+#. module: schoolModul
+#: model:ir.model.fields,field_description:schoolModul.field_teachers_teacher_salary
+msgid "the Amount"
+msgstr "المبلغ"
+
+#. module: schoolModul
+#: code:addons/schoolModul/models/school.py:85
+#, python-format
+msgid "the date of join is in the future !!"
+msgstr "تاريخ الانضمام في المستقبل !!"
+

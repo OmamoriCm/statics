@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="property_object_view_tree" model="ir.ui.view">
+    <field name="name">property.object tree</field>
+    <field name="model">property.object</field>
+    <field name="priority" eval="1"/>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="display_name"/>
+            <field name="type_id" invisible="context.get('hide_type', False)"/>
+            <field name="parent_id"/>
+            <field name="owner_id"/>
+            <field name="tenant_id"/>
+            <field name="tenacy_status_id"/>
+            <field name="size"/>
+            <field name="size_uom_id"/>
+            <field name="availability_status_id"/>
+        </tree>
+    </field>
+</record>
+
+<record id="property_object_view_form" model="ir.ui.view">
+    <field name="name">property.object form</field>
+    <field name="model">property.object</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group col="2" colspan="2">
+                    <field name="name"/>
+                    <field name="active"/>
+                    <field name="type_id"  invisible="context.get('hide_type', False)"/>
+                    <field name="allowed_parent_type_ids" widget="many2many_tags" invisible="1"/>
+                    <field name="need_parent" invisible="1"/>
+                    <field name="occupy_ok" invisible="1"/>
+                    <field name="parent_id" attrs="{'required':[('need_parent','=',True)]}" domain="[('type_id','in',allowed_parent_type_ids[0][2])]"/>
+                    <field name="size"/>
+                    <field name="size_uom_id"/>
+                    <field name="product_id"/>
+                </group>
+                <notebook>
+                    <page name="owner" string="Owner Information">
+                        <group name="owner1" colspan="4" col="2">
+                            <field name="owner_id"/>
+                        </group>
+                    </page>
+                    <page name="occupancy" string="Occupancy Information" attrs="{'invisible':[('occupy_ok','=',False)]}">
+                        <group name="tenant1" colspan="4" col="2">
+                            <field name="availability_status_id"/>
+                            <field name="tenant_id"/>
+                            <field name="tenacy_status_id"/>
+                        </group>
+                    </page>
+                    <page name="page_note" sring="Note">
+                        <field name="note"/>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="property_object_view_search" model="ir.ui.view">
+    <field name="name">property.object search</field>
+    <field name="model">property.object</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="type_id"  invisible="context.get('hide_type', False)"/>
+            <field name="parent_id"/>
+            <field name="owner_id"/>
+            <field name="tenant_id"/>
+            <field name="tenacy_status_id"/>
+            <field name="availability_status_id"/>
+            <group name="main" string="Group By..">
+                <filter name="grp_type" string="Type" context="{'group_by':'type_id'}"  invisible="context.get('hide_type', False)"/>
+                <filter name="grp_parent" string="Parent" context="{'group_by':'parent_id'}"/>
+                <filter name="grp_owner" string="Owner" context="{'group_by':'owner_id'}"/>
+                <filter name="grp_tenant" string="Tenant" context="{'group_by':'tenant_id'}"/>
+                <filter name="grp_tenacy_status" string="Tenacy Status" context="{'group_by':'tenacy_status_id'}"/>
+                <filter name="grp_availability_status" string="Availability Status" context="{'group_by':'availability_status_id'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+
+<record id="property_object_action" model="ir.actions.act_window">
+    <field name="name">Objects</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">property.object</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="property_object_view_search"/>
+</record>
+
+<record id="property_object_window_tree" model="ir.actions.act_window.view">
+    <field eval="1" name="sequence"/>
+    <field name="view_mode">tree</field>
+    <field name="view_id" ref="property_object_view_tree"/>
+    <field name="act_window_id" ref="property_object_action"/>
+</record>
+
+<record id="property_object_window_form" model="ir.actions.act_window.view">
+    <field eval="2" name="sequence"/>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="property_object_view_form"/>
+    <field name="act_window_id" ref="property_object_action"/>
+</record>
+
+<menuitem
+    name="Objects"
+    id="property_object_menu"
+    action="property_object_action"
+    parent="menu_property"
+    sequence="1"/>
+
+    <record id="property_object_view_structure" model="ir.ui.view">
+        <field name="name">property.object structure</field>
+        <field name="model">property.object</field>
+        <field name="field_parent">child_ids</field>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <tree toolbar="1" colors="blue:occupy_ok == False">
+                <field name="name"/>
+                <field name="type_id"/>
+                <field name="occupy_ok" invisible="1"/>
+                <field name="parent_id" invisible="1"/>
+                <field name="owner_id"/>
+                <field name="tenant_id"/>
+                <field name="tenacy_status_id"/>
+                <field name="size"/>
+                <field name="size_uom_id"/>
+                <field name="availability_status_id"/>
+            </tree>
+        </field>
+    </record>
+
+<record id="property_structures_action" model="ir.actions.act_window">
+    <field name="name">Property Structures</field>
+    <field name="res_model">property.object</field>
+    <field name="view_type">tree</field>
+    <field name="view_id" ref="property_object_view_structure"/>
+    <field name="domain">[('parent_id','=',False)]</field>
+</record>
+
+<menuitem
+    name="Property Structure"
+    id="property_structure_menu"
+    action="property_structures_action"
+    parent="menu_property"
+    sequence="99"/>
+
+</data>
+</openerp>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+  <data noupdate="0">
+
+    <record id="ir_cron_run_create_invoice" model="ir.cron" forcecreate="True">
+        <field name="name">Rental Property: Run Create Invoice</field>
+        <field name="active" eval="False"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="model" eval="'rental.property_detail_schedule'" />
+        <field eval="'run_create_invoice'" name="function"/>
+        <field eval="'()'" name="args"/>
+    </record>
+
+  </data>
+</openerp>

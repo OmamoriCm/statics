@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<!-- Case -->
+<record id="base_sequence_psychology_case" model="base.sequence_configurator">
+    <field name="model_id" ref="psychology.model_psychology_case" />
+    <field
+                name="sequence_field_id"
+                search="[('model_id.model','=','psychology.case'),('name','=','name')]"
+            />
+    <field name="fallback_sequence_id" ref="psychology.sequence_psychology_case" />
+</record>
+
+<record id="base_sequence_psychology_case_line" model="base.sequence_configurator_line">
+    <field name="generator_id" ref="base_sequence_psychology_case" />
+    <field name="sequence" eval="1" />
+    <field
+                name="sequence_computation_code"
+            >result = document.type_id.case_sequence_id</field>
+</record>
+
+<!-- Service -->
+<record id="base_sequence_psychology_service" model="base.sequence_configurator">
+    <field name="model_id" ref="psychology.model_psychology_case_service" />
+    <field
+                name="sequence_field_id"
+                search="[('model_id.model','=','psychology.case_service'),('name','=','name')]"
+            />
+    <field name="fallback_sequence_id" ref="psychology.sequence_psychology_service" />
+</record>
+
+<record
+            id="base_sequence_psychology_service_line"
+            model="base.sequence_configurator_line"
+        >
+    <field name="generator_id" ref="base_sequence_psychology_service" />
+    <field name="sequence" eval="1" />
+    <field
+                name="sequence_computation_code"
+            >result = document.case_id.type_id.service_sequence_id</field>
+</record>
+
+<!-- Activity -->
+<record id="base_sequence_psychology_activity" model="base.sequence_configurator">
+    <field name="model_id" ref="psychology.model_psychology_case_activity" />
+    <field
+                name="sequence_field_id"
+                search="[('model_id.model','=','psychology.case_activity'),('name','=','name')]"
+            />
+    <field name="fallback_sequence_id" ref="psychology.sequence_psychology_activity" />
+</record>
+
+<record
+            id="base_sequence_psychology_activity_line"
+            model="base.sequence_configurator_line"
+        >
+    <field name="generator_id" ref="base_sequence_psychology_activity" />
+    <field name="sequence" eval="1" />
+    <field
+                name="sequence_computation_code"
+            >result = document.case_id.type_id.activity_sequence_id</field>
+</record>
+</data>
+</openerp>

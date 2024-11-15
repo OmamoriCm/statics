@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="property_availability_status_view_tree" model="ir.ui.view">
+    <field name="name">property.availability_status tree</field>
+    <field name="model">property.availability_status</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+        </tree>
+    </field>
+</record>
+
+<record id="property_availability_status_view_form" model="ir.ui.view">
+    <field name="name">property.availability_status form</field>
+    <field name="model">property.availability_status</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group col="2" colspan="2">
+                    <field name="name"/>
+                    <field name="active"/>
+                </group>
+                <notebook>
+                    <page name="page_note" sring="Note">
+                        <field name="note"/>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="property_availability_status_action" model="ir.actions.act_window">
+    <field name="name">Availability Status</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">property.availability_status</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+    name="Availability Status"
+    id="property_availability_status_menu"
+    action="property_availability_status_action"
+    parent="menu_property_base_config"
+    sequence="3"/>
+
+</data>
+</openerp>

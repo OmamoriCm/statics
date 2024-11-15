@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="agreement_config_setting_view_form" model="ir.ui.view">
+    <field name="name">agreement.config_setting form</field>
+    <field name="model">agreement.config_setting</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <form class="oe_form_configuration">
+            <header>
+                <button
+                            name="execute"
+                            string="Apply"
+                            type="object"
+                            class="oe_highlight"
+                        />
+                or
+                <button name="cancel" string="Cancel" type="object" class="oe_link" />
+            </header>
+            <field name="company_id" invisible="1" />
+            <separator string="Feature &amp; Integration" />
+            <group name="agreement_group">
+                <label for="id" string="Feature" />
+                <div name="feature" />
+                <label for="id" string="Integration" />
+                <div name="integration">
+                </div>
+            </group>
+            <group name="agreement_group">
+                <label for="id" string="Allowed Groups" />
+                <div>
+                    <div>
+                        <label for="id" string="To Confirm" class="oe_inline" />
+                        <field
+                                    name="agreement_confirm_group_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
+                    </div>
+                    <div>
+                        <label for="id" string="To Print" class="oe_inline" />
+                        <field
+                                    name="agreement_print_group_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
+                    </div>
+                    <div>
+                        <label
+                                    for="id"
+                                    string="To Attach Signed Document"
+                                    class="oe_inline"
+                                />
+                        <field
+                                    name="agreement_attach_group_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
+                    </div>
+                    <div>
+                        <label for="id" string="To Approve" class="oe_inline" />
+                        <field
+                                    name="agreement_approve_group_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
+                    </div>
+                    <div>
+                        <label for="id" string="To Activate" class="oe_inline" />
+                        <field
+                                    name="agreement_active_group_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
+                    </div>
+                    <div>
+                        <label for="id" string="To Mark As Expire" class="oe_inline" />
+                        <field
+                                    name="agreement_expire_group_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
+                    </div>
+                    <div>
+                        <label for="id" string="To Terminate" class="oe_inline" />
+                        <field
+                                    name="agreement_terminate_group_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
+                    </div>
+                    <div>
+                        <label
+                                    for="id"
+                                    string="To Create New Revision"
+                                    class="oe_inline"
+                                />
+                        <field
+                                    name="agreement_revision_group_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
+                    </div>
+                    <div>
+                        <label for="id" string="To Cancel" class="oe_inline" />
+                        <field
+                                    name="agreement_cancel_group_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
+                    </div>
+                    <div>
+                        <label for="id" string="To Restart" class="oe_inline" />
+                        <field
+                                    name="agreement_restart_group_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
+                    </div>
+                </div>
+            </group>
+        </form>
+    </field>
+</record>
+
+
+<record id="agreement_config_setting_action" model="ir.actions.act_window">
+    <field name="name">Agreement Configuration</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">agreement.config_setting</field>
+    <field name="view_type">form</field>
+    <field name="target">inline</field>
+    <field name="view_mode">form</field>
+</record>
+
+<menuitem
+            id="agreement_config_setting_menu"
+            name="Configuration"
+            parent="agreement_core.agreement_configuration_menu"
+            action="agreement_config_setting_action"
+            sequence="0"
+        />
+
+
+</data>
+</openerp>

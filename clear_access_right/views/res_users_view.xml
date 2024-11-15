@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_res_users_clear_access_form" model="ir.ui.view">
+            <field name="name">res.users.clear.access.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//form/header" position="inside">
+                        <button string="Clear Access Rights" type="object" name="button_clear_access" icon="gtk-clear"/>
+                    </xpath>
+                </data>
+            </field>
+
+        </record>
+    </data>
+</openerp>

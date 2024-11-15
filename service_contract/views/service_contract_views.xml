@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="service_contract_view_search" model="ir.ui.view">
+    <field name="name">service.contract form</field>
+    <field name="model">service.contract</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name" />
+            <field name="title" />
+            <field name="type_id" />
+            <field name="reference" />
+            <field name="partner_id" />
+            <field name="salesman_id" />
+            <field name="responsible_id" />
+            <field name="company_id" groups="base.group_multi_company" />
+            <field name="currency_id" groups="base.group_multi_currency" />
+            <group name="dom_state" string="State">
+                <filter
+                            name="dom_draft"
+                            string="Draft"
+                            domain="[('state','=','draft')]"
+                        />
+                <filter
+                            name="dom_confirm"
+                            string="Waiting for Approval"
+                            domain="[('state','=','confirm')]"
+                        />
+                <filter
+                            name="dom_approve"
+                            string="Ready to Process"
+                            domain="[('state','=','approve')]"
+                        />
+                <filter
+                            name="dom_open"
+                            string="In Progress"
+                            domain="[('state','=','open')]"
+                        />
+                <filter name="dom_done" string="Done" domain="[('state','=','done')]" />
+                <filter
+                            name="dom_cancel"
+                            string="Cancel"
+                            domain="[('state','=','cancel')]"
+                        />
+                <filter
+                            name="dom_terminate"
+                            string="Terminate"
+                            domain="[('state','=','terminate')]"
+                        />
+                <filter
+                            name="needs_review"
+                            string="Needs my Review"
+                            domain="[('reviewer_ids','in',uid), ('state', 'not in', ['done', 'cancel', 'terminate'])]"
+                            help="My Service Contract to review"
+                        />
+            </group>
+            <group name="group" string="Group By">
+                <filter
+                            name="grp_company"
+                            string="Company"
+                            context="{'group_by':'company_id'}"
+                            groups="base.group_multi_company"
+                        />
+                <filter
+                            name="grp_partner"
+                            string="Customer"
+                            context="{'group_by':'partner_id'}"
+                        />
+                <filter
+                            name="grp_type"
+                            string="Type"
+                            context="{'group_by':'type_id'}"
+                        />
+                <filter
+                            name="grp_salesman"
+                            string="Salesman"
+                            context="{'group_by':'salesman_id'}"
+                        />
+                <filter
+                            name="grp_responsible"
+                            string="Responsible"
+                            context="{'group_by':'responsible_id'}"
+                        />
+                <filter
+                            name="grp_currency"
+                            string="Currency"
+                            context="{'group_by':'currency_id'}"
+                            groups="base.group_multi_currency"
+                        />
+                <filter
+                            name="grp_state"
+                            string="State"
+                            context="{'group_by':'state'}"
+                        />
+                <filter
+                            name="grp_date_year"
+                            string="Contract Date by Year"
+                            context="{'group_by':'date:year'}"
+                        />
+                <filter
+                            name="grp_date_month"
+                            string="Contract Date by Month"
+                            context="{'group_by':'date:month'}"
+                        />
+                <filter
+                            name="grp_date_week"
+                            string="Contract Date by Week"
+                            context="{'group_by':'date:week'}"
+                        />
+                <filter
+                            name="grp_date_day"
+                            string="Contract Date by Day"
+                            context="{'group_by':'date:day'}"
+                        />
+                <filter
+                            name="grp_date_start_year"
+                            string="Date Start by Year"
+                            context="{'group_by':'date_start:year'}"
+                        />
+                <filter
+                            name="grp_date_start_month"
+                            string="Date Start by Month"
+                            context="{'group_by':'date_start:month'}"
+                        />
+                <filter
+                            name="grp_date_start_week"
+                            string="Date Start by Week"
+                            context="{'group_by':'date_start:week'}"
+                        />
+                <filter
+                            name="grp_date_start_day"
+                            string="Date Start by Day"
+                            context="{'group_by':'date_start:day'}"
+                        />
+                <filter
+                            name="grp_date_end_year"
+                            string="Date End by Year"
+                            context="{'group_by':'date_end:year'}"
+                        />
+                <filter
+                            name="grp_date_end_month"
+                            string="Date End by Month"
+                            context="{'group_by':'date_end:month'}"
+                        />
+                <filter
+                            name="grp_date_end_week"
+                            string="Date End by Week"
+                            context="{'group_by':'date_end:week'}"
+                        />
+                <filter
+                            name="grp_date_end_day"
+                            string="Date End by Day"
+                            context="{'group_by':'date_end:day'}"
+                        />
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="service_contract_view_tree" model="ir.ui.view">
+    <field name="name">service.contract tree</field>
+    <field name="model">service.contract</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="id" />
+            <field name="name" />
+            <field name="title" />
+            <field name="company_id" groups="base.group_multi_company" />
+            <field name="reference" />
+            <field name="partner_id" />
+            <field name="type_id" />
+            <field name="salesman_id" />
+            <field name="responsible_id" />
+            <field name="date" />
+            <field name="date_start" />
+            <field name="date_end" />
+            <field name="currency_id" groups="base.group_multi_currency" />
+            <field name="state" />
+        </tree>
+    </field>
+</record>
+
+<record id="service_contract_view_form" model="ir.ui.view">
+    <field name="name">service.contract form</field>
+    <field name="model">service.contract</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+                <button
+                            name="action_confirm"
+                            type="object"
+                            string="Confirm"
+                            class="oe_highlight"
+                            confirm="Confirm service contract. Are you sure?"
+                            attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"
+                        />
+                <button
+                            name="request_validation"
+                            string="Request Validation"
+                            attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
+                            class="oe_highlight"
+                            type="object"
+                        />
+                <button
+                            name="restart_validation"
+                            string="Restart Validation"
+                            attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm']),('restart_approval_ok','=',False)]}"
+                            type="object"
+                        />
+                <button
+                            name="action_start"
+                            type="object"
+                            string="Start"
+                            class="oe_highlight"
+                            confirm="Start service contract. Are you sure?"
+                            attrs="{'invisible':['|',('state','!=','approve'),('open_ok','=',False)]}"
+                        />
+                <button
+                            name="action_finish"
+                            type="object"
+                            string="Finish"
+                            class="oe_highlight"
+                            confirm="Finish service contract. Are you sure?"
+                            attrs="{'invisible':['|',('state','!=','open'),('finish_ok','=',False)]}"
+                        />
+                <button
+                            name="%(base_print_policy.base_print_document_action)d"
+                            string="Print"
+                            type="action"
+                            icon="gtk-print"
+                        />
+                <button
+                            name="%(base_cancel_reason.base_cancel_reason_wizard_action)d"
+                            type="action"
+                            string="Cancel"
+                            attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}"
+                            confirm="Cancel service contract. Are you sure?"
+                        />
+                <button
+                            name="%(base_terminate_reason.base_terminate_reason_wizard_action)d"
+                            type="action"
+                            string="Terminate"
+                            attrs="{'invisible':['|',('state','!=','approve'),('terminate_ok','=',False)]}"
+                            confirm="Terminate service contract. Are you sure?"
+                        />
+                <button
+                            name="action_restart"
+                            type="object"
+                            string="Restart"
+                            confirm="Restart service contract. Are you sure?"
+                            attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                        />
+                <field
+                            name="state"
+                            widget="statusbar"
+                            statusbar_visible="draft,confirm,approve"
+                        />
+            </header>
+            <field name="need_validation" invisible="1" />
+            <field name="validated" invisible="1" />
+            <field name="rejected" invisible="1" />
+            <div
+                        class="alert alert-warning"
+                        attrs="{'invisible': ['|', '|', '|',
+                 ('validated', '=', True), ('state', 'not in', ['confirm']),
+                 ('rejected', '=', True), ('review_ids', '=', [])]}"
+                        style="margin-bottom:0px;"
+                    >
+                <p><i class="fa fa-info-circle" />This service contract needs to be
+                    validated.
+                    <button
+                                name="validate_tier"
+                                string="Validate"
+                                attrs="{'invisible': [('review_ids', '=', [])]}"
+                                type="object"
+                                class="oe_inline oe_button btn-success"
+                                icon="terp-check"
+                            />
+                    <button
+                                name="reject_tier"
+                                string="Reject"
+                                type="object"
+                                class="btn-icon btn-danger"
+                                icon="terp-gtk-stop"
+                            />
+                </p>
+            </div>
+            <sheet>
+                <div
+                            class="oe_right oe_button_box"
+                            style="width: 300px;"
+                            name="buttons"
+                        >
+                </div>
+                <div class="oe_left" style="width: 500px;">
+                    <div class="oe_title" style="width: 500px;">
+                        <label for="name" class="oe_edit_only" />
+                        <field name="name" class="oe_edit_only" />
+                        <field name="display_name" class="oe_read_only" />
+                        <label for="title" class="oe_edit_only" />
+                        <h1>
+                            <field name="title" />
+                        </h1>
+                        <h2 attrs="{'invisible': [('state', '!=', 'cancel')]}">
+                            <label
+                                        for="cancel_reason_id"
+                                        string="Cancellation reason:"
+                                    />
+                            <field name="cancel_reason_id" class="oe_inline" />
+                        </h2>
+                        <h2 attrs="{'invisible': [('state', '!=', 'terminate')]}">
+                            <label
+                                        for="terminate_reason_id"
+                                        string="Termination reason:"
+                                    />
+                            <field name="terminate_reason_id" class="oe_inline" />
+                        </h2>
+                    </div>
+                </div>
+                <group name="group_1" colspan="4" col="2">
+                    <group name="group_1_1" colspan="1" col="2">
+                        <group name="group_1_1_1" colspan="2" col="2">
+                            <field
+                                        name="company_id"
+                                        groups="base.group_multi_company"
+                                    />
+                            <field
+                                        name="partner_id"
+                                        domain="[('parent_id','=',False)]"
+                                    />
+                            <field
+                                        name="partner_signee_id"
+                                        domain="[('id','child_of',partner_id),('is_company','=',False)]"
+                                    />
+                            <field
+                                        name="partner_invoice_id"
+                                        domain="[('id','child_of',partner_id),('is_company','=',False)]"
+                                    />
+                            <field
+                                        name="partner_contact_id"
+                                        domain="[('id','child_of',partner_id),('is_company','=',False)]"
+                                    />
+                        </group>
+                        <group name="group_1_1_2" colspan="2" col="2">
+                            <field name="type_id" />
+                            <field name="reference" />
+                            <field name="salesman_id" />
+                            <field name="responsible_id" />
+                        </group>
+                    </group>
+                    <group name="group_1_2">
+                        <field name="currency_id" groups="base.group_multi_currency" />
+                        <field
+                                    name="pricelist_id"
+                                    domain="[('currency_id','=',currency_id),('type','=','scfi')]"
+                                />
+                        <field name="date" />
+                        <field name="date_start" />
+                        <field name="date_end" />
+                    </group>
+                </group>
+                <notebook colspan="4">
+                    <page name="fix_item" string="Fix Items">
+                        <group
+                                    name="fix_item_accounting"
+                                    string="Accounting Setting"
+                                    colspan="4"
+                                    col="2"
+                                    groups="service_contract.contract_service_accounting_setting_group"
+                                >
+                            <field
+                                        name="fix_item_receivable_journal_id"
+                                        string="Receivable Journal"
+                                    />
+                            <field
+                                        name="fix_item_receivable_account_id"
+                                        string="Receivable Account"
+                                    />
+                        </group>
+                        <group
+                                    name="fix_item_detail"
+                                    string="Items"
+                                    colspan="4"
+                                    col="2"
+                                >
+                            <field
+                                        name="fix_item_allowed_product_ids"
+                                        widget="many2many_tags"
+                                        invisible="1"
+                                    />
+                            <field
+                                        name="fix_item_allowed_product_categ_ids"
+                                        widget="many2many_tags"
+                                        invisible="1"
+                                    />
+                            <field name="fix_item_ids" nolabel="1" colspan="2">
+                                <tree>
+                                    <field name="product_id" />
+                                    <field name="name" />
+                                    <field name="price_unit" />
+                                    <field name="quantity" />
+                                    <field name="uom_id" />
+                                    <field name="amount_untaxed" />
+                                    <field name="amount_tax" />
+                                    <field name="amount_total" />
+                                </tree>
+                            </field>
+                        </group>
+                        <group
+                                    name="fix_item_payment_term"
+                                    string="Payment Terms"
+                                    colspan="4"
+                                    col="2"
+                                >
+                          <field
+                                        name="fix_item_payment_term_ids"
+                                        nolabel="1"
+                                        colspan="2"
+                                        context="{'default_fix_item_allowed_product_ids':fix_item_allowed_product_ids, 'default_fix_item_allowed_product_categ_ids':fix_item_allowed_product_categ_ids}"
+                                    >
+                              <tree>
+                                  <field name="sequence" widget="handle" />
+                                  <field name="name" />
+                                  <field name="amount_untaxed" />
+                                  <field name="amount_tax" />
+                                  <field name="amount_total" />
+                                  <field name="invoice_id" />
+                                  <field name="term_status" />
+                                  <field name="state" />
+                                  <button
+                                                name="action_create_invoice"
+                                                string="Create Invoice"
+                                                type="object"
+                                                icon="gtk-execute"
+                                                states="uninvoiced"
+                                            />
+                                  <button
+                                                name="action_delete_invoice"
+                                                string="Delete Invoice"
+                                                type="object"
+                                                icon="gtk-cancel"
+                                                states="invoiced"
+                                            />
+                                  <button
+                                                name="action_disconnect_invoice"
+                                                string="Disconnect Invoice"
+                                                type="object"
+                                                icon="gtk-undo"
+                                                states="invoiced"
+                                            />
+                              </tree>
+                              <form>
+                                  <group
+                                                name="fix_item_payment_term_1"
+                                                colspan="4"
+                                                col="2"
+                                            >
+                                      <field name="name" />
+                                      <field name="sequence" />
+                                      <field name="invoice_id" />
+                                      <field
+                                                    name="fix_item_allowed_product_ids"
+                                                    widget="many2many_tags"
+                                                    invisible="1"
+                                                />
+                                      <field
+                                                    name="fix_item_allowed_product_categ_ids"
+                                                    widget="many2many_tags"
+                                                    invisible="1"
+                                                />
+                                      <field
+                                                    name="detail_ids"
+                                                    context="{'default_pricelist_id':parent.pricelist_id, 'default_date':parent.date, 'default_currency_id':parent.currency_id}"
+                                                    colspan="2"
+                                                    nolabel="1"
+                                                >
+                                          <tree editable="top">
+                                              <field name="sequence" widget="handle" />
+                                              <field
+                                                            name="pricelist_id"
+                                                            domain="[('currency_id','=',currency_id),('type','=','scfi')]"
+                                                        />
+                                              <field name="date" invisible="1" />
+                                              <field name="currency_id" invisible="1" />
+                                              <field
+                                                            name="product_id"
+                                                            domain="['|',('id','in',parent.fix_item_allowed_product_ids[0][2]),('categ_id','in',parent.fix_item_allowed_product_categ_ids[0][2])]"
+                                                        />
+                                              <field name="name" />
+                                              <field name="price_unit" />
+                                              <field name="quantity" />
+                                              <field
+                                                            name="allowed_uom_categ_id"
+                                                            invisible="1"
+                                                        />
+                                              <field
+                                                            name="uom_id"
+                                                            domain="[('category_id','=',allowed_uom_categ_id)]"
+                                                        />
+                                              <field
+                                                            name="tax_ids"
+                                                            widget="many2many_tags"
+                                                        />
+                                              <field name="amount_untaxed" />
+                                              <field name="amount_tax" />
+                                              <field name="amount_total" />
+                                              <field name="invoice_line_id" />
+                                          </tree>
+                                      </field>
+                                  </group>
+                              </form>
+                          </field>
+                          <button
+                                        name="%(add_contract_payment_term_action)s"
+                                        string="Add Addendum"
+                                        type="action"
+                                        context="{'default_contract_id': active_id}"
+                                        states="approve,open"
+                                        colspan="2"
+                                    />
+                          <field
+                                        name="amount_untaxed"
+                                        widget="monetary"
+                                        options="{'currency_field':'currency_id'}"
+                                    />
+                          <field
+                                        name="amount_tax"
+                                        widget="monetary"
+                                        options="{'currency_field':'currency_id'}"
+                                    />
+                          <field
+                                        name="amount_total"
+                                        widget="monetary"
+                                        options="{'currency_field':'currency_id'}"
+                                    />
+                        </group>
+                    </page>
+                    <page name="team" string="Teams">
+                        <group name="team" colspan="4" col="2">
+                            <field
+                                        name="team_function_allowed_product_ids"
+                                        widget="many2many_tags"
+                                        invisible="1"
+                                    />
+                            <field
+                                        name="team_function_allowed_product_categ_ids"
+                                        widget="many2many_tags"
+                                        invisible="1"
+                                    />
+                            <field name="team_ids" colspan="2" nolabel="1">
+                                <tree editable="top">
+                                    <field
+                                                name="product_id"
+                                                domain="['|',('id','in',parent.team_function_allowed_product_ids[0][2]),('categ_id','in',parent.team_function_allowed_product_categ_ids[0][2])]"
+                                            />
+                                    <field name="user_id" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page name="custom_info" string="Custom Information">
+                        <group name="grp_1">
+                            <label for="custom_info_template_id" />
+                            <div>
+                                <field
+                                            name="custom_info_template_id"
+                                            options='{"no_quick_create": True}'
+                                            groups="service_contract.contract_service_custom_info_setting_group"
+                                        />
+                            </div>
+                            <field
+                                        name="custom_info_ids"
+                                        colspan="4"
+                                        nolabel="1"
+                                        context="{'embed': True, 'tree_view_ref': 'base_custom_information.custom_info_value_tree_editable'}"
+                                    />
+                            <button
+                                        name="button_update_info"
+                                        type="object"
+                                        string="Update"
+                                    />
+                        </group>
+                    </page>
+                    <page
+                                name="analytic_project"
+                                string="Analytic &amp; Project"
+                                groups="service_contract.contract_service_analytic_setting_group"
+                            >
+                        <group name="analytic_project_1" colspan="4" col="2">
+                            <field
+                                        name="parent_analytic_account_id"
+                                        domain="[('type','!','template')]"
+                                    />
+                            <field name="analytic_account_id" />
+                        </group>
+                    </page>
+                    <page string="Reviews" name="tier_validation">
+                        <group name="tier_validation_1" colspan="4" col="2">
+                            <field
+                                        name="definition_id"
+                                        groups="service_contract.contract_service_multiple_approval_setting_group"
+                                    />
+                            <field
+                                        name="reviewer_partner_ids"
+                                        widget="many2many_tags"
+                                    />
+                        </group>
+                        <group name="tier_validation_2" colspan="4" col="2">
+                            <field name="review_ids" readonly="1" />
+                        </group>
+                    </page>
+                    <page
+                                name="policy"
+                                string="Policies"
+                                groups="service_contract.contract_service_workflow_policy_setting_group"
+                            >
+                        <group name="policy_1" colspan="4" col="2">
+                            <field name="confirm_ok" />
+                            <field name="restart_approval_ok" />
+                            <field name="open_ok" />
+                            <field name="finish_ok" />
+                            <field name="cancel_ok" />
+                            <field name="terminate_ok" />
+                            <field name="restart_ok" />
+                        </group>
+                    </page>
+                    <page name="log" string="Logs">
+                        <group name="group_5" colspan="4" col="2">
+                            <label for="confirm_date" string="Confirmation" />
+                            <div>
+                                <field name="confirm_date" class="oe_inline" />
+                                <field name="confirm_user_id" class="oe_inline" />
+                            </div>
+                            <label for="open_date" string="Start" />
+                            <div>
+                                <field name="open_date" class="oe_inline" />
+                                <field name="open_user_id" class="oe_inline" />
+                            </div>
+                            <label for="done_date" string="Finish" />
+                            <div>
+                                <field name="done_date" class="oe_inline" />
+                                <field name="done_user_id" class="oe_inline" />
+                            </div>
+                            <label for="cancel_date" string="Cancellation" />
+                            <div>
+                                <field name="cancel_date" class="oe_inline" />
+                                <field name="cancel_user_id" class="oe_inline" />
+                            </div>
+                            <label for="terminate_date" string="Termination" />
+                            <div>
+                                <field name="terminate_date" class="oe_inline" />
+                                <field name="terminate_user_id" class="oe_inline" />
+                            </div>
+                        </group>
+                    </page>
+                    <page name="note" string="Notes">
+                        <field name="note" />
+                    </page>
+                </notebook>
+            </sheet>
+            <div class="oe_chatter">
+                <field
+                            name="message_follower_ids"
+                            widget="mail_followers"
+                            groups="base.group_user"
+                        />
+                <field name="message_ids" widget="mail_thread" />
+            </div>
+        </form>
+    </field>
+</record>
+
+<record id="service_contract_action" model="ir.actions.act_window">
+    <field name="name">Contracts</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">service.contract</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{
+        'search_default_dom_draft':1,
+        'search_default_dom_confirm':1,
+        'search_default_dom_approve':1,
+        'search_default_dom_open':1,
+        }
+    </field>
+</record>
+
+<menuitem
+            id="service_contract_menu"
+            name="Contracts"
+            parent="service_contract_root_menu"
+            action="service_contract_action"
+            sequence="1"
+        />
+</data>
+</openerp>

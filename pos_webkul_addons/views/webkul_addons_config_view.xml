@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="config_webkul_pos_addons_form" model="ir.ui.view">
+            <field name="name">Webkul POS Addons Setting</field>
+            <field name="model">webkul.pos.addons</field>
+            <field name="arch" type="xml">
+               <form string="Webkul POS Addons Settings" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <group string="Product Management" col="4">
+
+                        <label for="module_pos_category_filter"/>
+                        <div name="module_pos_category_filter">
+                            <div class="oe_inline">
+                                <field name="module_pos_category_filter"/>
+                            </div>
+                        </div>
+                        <label for="pos_cat_merge"/>
+                        <div name="pos_cat_merge">
+                            <div class="oe_inline">
+                                <field name="pos_cat_merge"/>
+                            </div>
+                        </div>
+                        <label for="module_pos_product_pack"/>
+                        <div name="module_pos_product_pack">
+                            <div class="oe_inline">
+                                <field name="module_pos_product_pack"/>
+                            </div>
+                        </div>
+                        <label for="module_pos_stocks"/>
+                        <div name="module_pos_stocks">
+                            <div class="oe_inline">
+                                <field name="module_pos_stocks"/>
+                            </div>
+                        </div>
+
+                    </group>
+                    <group string="Billing &amp; Invoicing" col="4">
+
+                        <label for="module_pos_invoice"/>
+                        <div name="module_pos_invoice">
+                            <div class="oe_inline">
+                                <field name="module_pos_invoice"/>
+                            </div>
+                        </div>
+
+                        <label for="module_pos_order_reprint"/>
+                        <div name="module_pos_order_reprint">
+                            <div class="oe_inline">
+                                <field name="module_pos_order_reprint"/>
+                            </div>
+                        </div>
+
+                    </group>
+                    <group string="Prices &amp; Promotion " col="4">
+
+                        <label for="module_pos_discounted_product"/>
+                        <div name="module_pos_discounted_product">
+                            <div class="oe_inline">
+                                <field name="module_pos_discounted_product"/>
+                            </div>
+                        </div>
+                        
+                    </group>
+                    <group string="Advertising &amp; Marketing  " col="4">
+
+                        <label for="module_pos_loyalty_management"/>
+                        <div name="module_pos_loyalty_management">
+                            <div class="oe_inline">
+                                <field name="module_pos_loyalty_management"/>
+                            </div>
+                        </div>
+                        <label for="module_pos_coupons"/>
+                        <div name="module_pos_coupons">
+                            <div class="oe_inline">
+                                <field name="module_pos_coupons"/>
+                            </div>
+                        </div>
+                    </group>
+                    <group string="Value added" col="4">
+
+                        <label for="module_pos_carry_bag"/>
+                        <div name="module_pos_carry_bag">
+                            <div class="oe_inline">
+                                <field name="module_pos_carry_bag"/>
+                            </div>
+                        </div>
+                    </group>
+                    <group string="Misc." col="4">
+
+                        <label for="module_pos_clock"/>
+                        <div name="module_pos_clock">
+                            <div class="oe_inline">
+                                <field name="module_pos_clock"/>
+                            </div>
+                        </div>
+                    </group>
+                </form> 
+            </field>
+        </record>
+
+        <record id="action_webkul_pos_addons" model="ir.actions.act_window">
+            <field name="name">Webkul POS Addons Setting</field>
+            <field name="res_model">webkul.pos.addons</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+         <menuitem id="menu_webkul_pos_addons" parent="base.menu_config" action="action_webkul_pos_addons" name="Webkul POS Addons"/>
+
+    </data>
+</openerp>

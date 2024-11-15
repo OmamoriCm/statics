@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="zip"/>
+                <field name="city"/>
+                <field name="street" string="Streets"
+                       filter_domain="['|', ('street', 'like', self), ('street2', 'like', self)]"/>
+                <field name="phone" string="Phones"
+                       filter_domain="['|', ('phone', 'like', self), ('mobile', 'like', self)]"/>
+            </field>
+
+            <!-- We split the search of name, ref / email in two
+                 as searching in email can return a lot of unwanted result
+                 for exemple when you sell on marketplace and search for a customer
+                 amazon you will have all customer that have bought throught the marketplace -->
+
+            <field name="name" position="attributes">
+                <attribute name="string">Name, Ref</attribute>
+                <attribute name="filter_domain">['|', ('display_name','ilike',self), ('ref','=',self)]</attribute>
+            </field>
+            <field name="name" position="after">
+                <field name="email"/>
+            </field>
+
+        </field>
+    </record>
+
+  </data>
+</openerp>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+
+        <record id="property_room_reservation_view_tree" model="ir.ui.view">
+            <field name="name">Form Property Room Reservation</field>
+            <field name="model">property.room_reservation</field>
+            <field name="inherit_id" ref="property_reservation_common.property_reservation_common_view_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='name']" position="attributes">
+                        <attribute name="string"># Reservation</attribute>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="property_room_reservation_view_form" model="ir.ui.view">
+            <field name="name">Form Property Room Reservation</field>
+            <field name="model">property.room_reservation</field>
+            <field name="inherit_id" ref="property_reservation_common.property_reservation_common_view_form"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='name']" position="attributes">
+                        <attribute name="string"># Reservation</attribute>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="property_room_reservation_view_search" model="ir.ui.view">
+            <field name="name">Search Property Room Reservation</field>
+            <field name="model">property.room_reservation</field>
+            <field name="inherit_id" ref="property_reservation_common.property_reservation_common_view_search"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='name']" position="attributes">
+                        <attribute name="string"># Reservation</attribute>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+        
+        <record id="property_room_reservation_action" model="ir.actions.act_window">
+            <field name="name">Room Reservations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">property.room_reservation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="property_reservation_room.property_room_reservation_view_search"/>
+        </record>
+
+        <menuitem
+            name="Room Reservations"
+            id="property_room_reservation_menu"
+            action="property_room_reservation_action"
+            parent="property_reservation_common.menu_property_reservation_root"
+            sequence="1"/>        
+    </data>
+</openerp>

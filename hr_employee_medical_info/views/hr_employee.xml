@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="hr_employee_view_form" model="ir.ui.view">
+            <field name="name">hr.employee.view.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                    <xpath expr="//form/sheet/notebook/page[@string='Personal Information']" position="after">
+
+                            <page string="Medical Informations">
+                                <group col="4">
+                                    <group col="2">
+                                        <separator string="Doctor Information" colspan="4"/>
+                                        <field name="doctor" placeholder="Doctor Name"/>
+                                        <field name="doctor_phone" placeholder="Doctor's Contact No"/>
+                                    </group>
+                                    <group col="2">
+                                        <separator string="Physical Information" colspan="4"/>
+                                        <field name="blood_group"/>
+                                        <field name="height"/>
+                                        <field name="weight"/>
+                                    </group>
+                                </group>
+                                <separator string="Does the applicant have any Disabilities?"
+                                           colspan="4"/>
+                                <group col="6" colspan="4">
+                                    <field name="eye"/>
+                                    <field name="ear"/>
+                                    <field name="nose_throat"/>
+                                    <field name="respiratory"/>
+                                    <field name="cardiovascular"/>
+                                    <field name="neurological"/>
+                                    <field name="muskoskeletal"/>
+                                    <field name="dermatological"/>
+                                    <field name="blood_pressure"/>
+                                </group>
+                                <separator string="Medical Notes" colspan="4"/>
+                                <group col="6" colspan="4">
+                                    <field name="medical_comment" placeholder="Notes About Medical.."
+                                           nolabel="1"/>
+                                </group>
+                            </page>
+
+                  </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>

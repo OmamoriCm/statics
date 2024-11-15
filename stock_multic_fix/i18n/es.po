@@ -1,0 +1,77 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * stock_multic_fix
+# 
+# Translators:
+# Nicolas Mac Rouillon <nmr@ingadhoc.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: stock (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-20 19:37+0000\n"
+"PO-Revision-Date: 2016-09-19 20:36+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/adhoc/ingadhoc-stock-8-0/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: stock_multic_fix
+#: code:addons/stock_multic_fix/sale.py:56
+#, python-format
+msgid "All pickings must be from the same company!"
+msgstr "Todos los remitos deben ser de la misma Compañía!"
+
+#. module: stock_multic_fix
+#: field:stock.invoice.onshipping,company_id:0
+msgid "Company"
+msgstr "Compañía"
+
+#. module: stock_multic_fix
+#: model:ir.model,name:stock_multic_fix.model_stock_quant
+msgid "Quants"
+msgstr ""
+
+#. module: stock_multic_fix
+#: model:ir.model,name:stock_multic_fix.model_stock_invoice_onshipping
+msgid "Stock Invoice Onshipping"
+msgstr ""
+
+#. module: stock_multic_fix
+#: model:ir.model,name:stock_multic_fix.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento stock"
+
+#. module: stock_multic_fix
+#: code:addons/stock_multic_fix/sale.py:38
+#, python-format
+msgid "The quant company must be the same as the location company!"
+msgstr ""
+
+#. module: stock_multic_fix
+#: code:addons/stock_multic_fix/sale.py:41
+#, python-format
+msgid "The quant company must be the same as the negative location  company!"
+msgstr ""
+
+#. module: stock_multic_fix
+#: code:addons/stock_multic_fix/sale.py:24
+#, python-format
+msgid ""
+"The stock move company must be the same as the destination  location "
+"company!"
+msgstr ""
+
+#. module: stock_multic_fix
+#: code:addons/stock_multic_fix/sale.py:20
+#, python-format
+msgid ""
+"The stock move company must be the same as the source location company!"
+msgstr ""
+
+#. module: stock_multic_fix
+#: view:stock.invoice.onshipping:stock_multic_fix.view_stock_invoice_onshipping
+msgid "[('type','=',journal_type),('company_id','=',company_id)]"
+msgstr "[('type','=',journal_type),('company_id','=',company_id)]"

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+<!-- student views -->
+
+		<record id="view_project_form" model="ir.ui.view">
+			<field name="name">students</field>
+			<field name="model">students</field>
+			<field name="arch" type="xml">
+				<form string="student" version="7.0">
+					<header>
+
+						<button name="experiment" string="Experiment"  type="object"
+							class="oe_highlight" />
+						<button name="approved" string="Approve" 
+							class="oe_highlight"  type="object"/>
+						<button name="refuse" string="Refuse" 
+							class="oe_highlight"  type="object"/>
+						<button string="Set to Draft" name="set_to_draft" 
+							icon="gtk-convert" type="object"/>
+						<field name="status" widget="statusbar"
+							statusbar_visible="draft,experiment,approved,refuse" />
+					</header>
+					<sheet>
+						<group>
+							
+						<h1>
+							<field name="user_id" placeholder="Name" style="width: 22em"       domain="[('user_id','!=','id')]"/>
+
+							<field name="code" placeholder="Code" style="width: 10em"/>
+							<field name="patch" placeholder="2017-2018" style="width: 10em"/>
+
+						</h1>
+						</group>
+
+
+						<group col="4" colspan="4">
+
+							<field name="email" />
+							<field name="date_of_birth" />
+							<field name="mobile" />
+
+						</group>
+
+						<group col="4" colspan="4">
+
+							<field name="date_of_joint" />
+
+						</group>
+
+						<notebook>
+							<page string="parents">
+								<field name="parent_ids" nolabel="1">
+									<tree editable="top">
+										<field name="name" />
+										<field name="student_id" invisible="1" />
+                                       	<field name="email" />
+										<field name="date_of_birth" />
+										<field name="mobile" />
+										<field name="date_of_joint" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+        
+<!-- student tree views -->
+
+		<record id="view_student_tree" model="ir.ui.view">
+			<field name="name">students</field>
+			<field name="model">students</field>
+			<field name="arch" type="xml">
+				<tree string="student">
+
+									<field name="name" />
+									<field name="email" />
+									<field name="date_of_birth" />
+									<field name="mobile" />
+									<field name="parent_ids"/>
+									<field name="date_of_joint" />
+									<field name="status" />
+					
+				</tree>
+			</field>
+		</record>
+
+		<!-- student status filter -->
+
+		<record id="view_student_status_filter" model="ir.ui.view">
+			<field name="name">students_status_search</field>
+			<field name="model">students</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				
+						<filter string="Status" icon="terp-folder-orange"
+							domain="" context="{'group_by':'status'}" />
+						<separator orientation="vertical" />
+					
+			</field>
+		</record>
+
+		<!-- student patch filter -->
+		<record id="view_student_filter" model="ir.ui.view">
+			<field name="name">students_patch_search</field>
+			<field name="model">students</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				
+						<filter string="Patch" icon="terp-folder-orange"
+							domain="" context="{'group_by':'patch'}" />
+						<separator orientation="vertical" />
+					
+			</field>
+		</record>
+
+
+<!-- student action -->
+		<record id="action_student" model="ir.actions.act_window">
+			<field name="name">students</field>
+			<field name="res_model">students</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+     <!-- student sub menu action -->
+     
+		<menuitem id="school_sub_menu" parent="sub_school_management"
+			name="Students" action="action_student" />
+
+
+	    
+
+</data>
+</openerp>

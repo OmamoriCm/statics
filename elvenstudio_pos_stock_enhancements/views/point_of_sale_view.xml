@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="epse_pos_config_form_view">
+            <field name="name">epse.pos.config.form.view</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <field name="stock_location_id" position="after">
+                    <field name="auto_transfer_picking" />
+                	<field name="return_picking_type_id" />
+                </field>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="epse_pos_pos_form_view">
+            <field name="name">epse.pos.pos.form.view</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <field name="picking_id" position="after">
+                	<field name="return_picking_id" />
+                </field>
+            </field>
+        </record>
+        
+    </data>
+</openerp>
+
+        

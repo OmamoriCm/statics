@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_expense_account_type_employee,hr.expense_account_type - employee,model_hr_expense_account_type,base.group_user,1,1,1,1
+access_hr_expense_account_type_all,hr.expense_account_type - all,model_hr_expense_account_type,,1,0,0,0
+access_hr_expense_account_employee,hr.expense_account - employee,model_hr_expense_account,base.group_user,1,1,1,1
+access_hr_expense_account_all,hr.expense_account - all,model_hr_expense_account,,0,0,0,0

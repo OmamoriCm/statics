@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="product_product_demo1" model="product.product">
+    <field name="name">Administration/Registration</field>
+    <field name="categ_id" ref="product_category_demo1" />
+    <field name="list_price">30000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+<record id="product_product_demo2_1" model="product.product">
+    <field name="name">School Readiness Assesment</field>
+    <field name="categ_id" ref="product_category_demo3" />
+    <field name="list_price">525000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+<record id="product_product_demo2_2" model="product.product">
+    <field name="name">Career Guidance Assesment</field>
+    <field name="categ_id" ref="product_category_demo3" />
+    <field name="list_price">525000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+<record id="product_product_demo2_3" model="product.product">
+    <field name="name">Major Assesment</field>
+    <field name="categ_id" ref="product_category_demo3" />
+    <field name="list_price">525000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+<record id="product_product_demo3_1" model="product.product">
+    <field name="name">Couples Therapy</field>
+    <field name="categ_id" ref="product_category_demo2" />
+    <field name="list_price">525000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+<record id="product_product_demo3_2" model="product.product">
+    <field name="name">Stress Management</field>
+    <field name="categ_id" ref="product_category_demo2" />
+    <field name="list_price">525000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+<record id="product_product_demo4_1" model="product.product">
+    <field name="name">Evaluator</field>
+    <field name="categ_id" ref="product_category_demo4" />
+    <field name="list_price">30000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+<record id="product_product_demo4_2" model="product.product">
+    <field name="name">Second Opinion</field>
+    <field name="categ_id" ref="product_category_demo4" />
+    <field name="list_price">150000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+<record id="product_product_demo4_3" model="product.product">
+    <field name="name">Tester</field>
+    <field name="categ_id" ref="product_category_demo4" />
+    <field name="list_price">100000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+
+</data>
+</openerp>

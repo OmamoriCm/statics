@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* currency_updater_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-19 08:44+0000\n"
+"PO-Revision-Date: 2016-12-19 09:45+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: pl\n"
+"X-Generator: Poedit 1.8.5\n"
+
+#. module: currency_updater_ext
+#: code:addons/currency_updater_ext/update_service_PL_NBP_ext.py:121
+#, python-format
+msgid "Base currency rate should be 1.00!"
+msgstr "Base currency rate should be 1.00!"
+
+#. module: currency_updater_ext
+#: model:ir.model,name:currency_updater_ext.model_res_currency_rate
+msgid "Currency Rate"
+msgstr "Kurs waluty"
+
+#. module: currency_updater_ext
+#: model:ir.model,name:currency_updater_ext.model_currency_rate_update_service
+msgid "Currency Rate Update"
+msgstr "Aktualizacja Kursu Walut"
+
+#. module: currency_updater_ext
+#: field:res.currency.rate,tablename:0
+msgid "Table name"
+msgstr "Numer tabeli"
+
+#. module: currency_updater_ext
+#: code:addons/currency_updater_ext/update_service_PL_NBP_ext.py:119
+#, python-format
+msgid "There is no base currency set!"
+msgstr "Nie jest ustawiona waluta domyślna (bazowa)!"

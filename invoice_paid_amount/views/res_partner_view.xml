@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+      <!-- Extended partner Form View to add invoice paid amount functionality -->
+      <record model="ir.ui.view" id="partner_view_buttons_inherit_paid_invoice">
+          <field name="name">partner.view.buttons.paid.invoice</field>
+          <field name="model">res.partner</field>
+          <field name="inherit_id" ref="base.view_partner_form" />
+          <field name="priority" eval="20"/>
+          <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]"/>
+          <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+                    <button type="action" 
+                        class="oe_stat_button"
+                        id="invoice_button"
+                        icon="fa-pencil-square-o"
+                        name="%(account.action_invoice_refund_out_tree)d"
+                        attrs="{'invisible': [('customer', '=', False)]}" 
+                        context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
+                        <div><strong><field name="invoice_paid_amount" widget="monetary"/></strong><br/>Paid Amount</div>
+                    </button>
+                </xpath>
+          </field>
+      </record>
+
+    </data>
+</openerp>

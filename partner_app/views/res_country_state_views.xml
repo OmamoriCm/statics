@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+<data>
+
+<menuitem
+            name="Fed. States"
+            id="res_partner_fed_states_menu"
+            parent="res_partner_localization_menu"
+            action="base.action_country_state"
+            sequence="3"
+        />
+
+</data>
+</openerp>

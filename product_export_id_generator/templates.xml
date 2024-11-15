@@ -1,0 +1,15 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="custom_product_product_form_view">
+            <field name="name">product.product.form</field>
+            <field name="model">product.product</field>
+            <field eval="7" name="priority"/>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <field name="lst_price" position="after">
+                    <field name="product_export_id"/>
+                </field>
+            </field> 
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="product_product_demo1" model="product.product">
+    <field name="name">Odoo Financial Accounting Package</field>
+    <field name="categ_id" ref="product_category_demo1" />
+    <field name="list_price">50000000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+<record id="product_product_demo2" model="product.product">
+    <field name="name">Odoo Management Accounting Package</field>
+    <field name="categ_id" ref="product_category_demo1" />
+    <field name="list_price">25000000.00</field>
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_unit" />
+    <field name="uom_po_id" ref="product.product_uom_unit" />
+</record>
+
+<record id="product_product_demo3" model="product.product">
+    <field name="name">Odoo Consultant</field>
+    <field name="categ_id" ref="product_category_demo2" />
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_hour" />
+    <field name="uom_po_id" ref="product.product_uom_hour" />
+</record>
+
+<record id="product_product_demo4" model="product.product">
+    <field name="name">Odoo Developer</field>
+    <field name="categ_id" ref="product_category_demo2" />
+    <field name="type">service</field>
+    <field name="uom_id" ref="product.product_uom_hour" />
+    <field name="uom_po_id" ref="product.product_uom_hour" />
+</record>
+
+</data>
+</openerp>

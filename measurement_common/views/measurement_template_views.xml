@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="measurement_template_view_search" model="ir.ui.view">
+    <field name="name">measurement.template form</field>
+    <field name="model">measurement.template</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+        </search>
+    </field>
+</record>
+
+<record id="measurement_template_view_tree" model="ir.ui.view">
+    <field name="name">measurement.template tree</field>
+    <field name="model">measurement.template</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+        </tree>
+    </field>
+</record>
+
+<record id="measurement_template_view_form" model="ir.ui.view">
+    <field name="name">measurement.template form</field>
+    <field name="model">measurement.template</field>
+    <field name="arch" type="xml">
+        <form>
+            <header/>
+            <div class="oe_right oe_button_box" style="width: 300px;" name="buttons"/>
+            <group name="group_1" colspan="4" col="2">
+                <field name="name"/>
+                <field name="active"/>
+            </group>
+            <notebook>
+                <page name="item" string="Items">
+                    <field name="item_ids" nolabel="1">
+                        <tree editable="top">
+                            <field name="sequence" widget="handle"/>
+                            <field name="item_type_id"/>
+                        </tree>
+                    </field>
+                </page>
+                <page name="note" string="Note">
+                    <field name="note" nolabel="1" colspan="4"/>
+                </page>
+            </notebook>
+        </form>
+    </field>
+</record>
+
+<record id="measurement_template_action" model="ir.actions.act_window">
+    <field name="name">Measurement Templates</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">measurement.template</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+    id="measurement_template_menu"
+    name="Measurement Templates"
+    parent="measurement_configuration_menu"
+    action="measurement_template_action"
+    sequence="3"
+    />
+
+</data>
+</openerp>

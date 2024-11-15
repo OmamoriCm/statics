@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		
+		<record id="view_invoice_line_discount_multi_tree" model="ir.ui.view">
+			<field name="name">account.invoice.line.discount.multi.inherit</field>
+			<field name="model">account.invoice.line</field>
+			<field name="inherit_id" ref="account.view_invoice_line_tree"/>
+			<field name="arch" type="xml">
+				<field name="discount" position="after">
+                    <field name="show_discount_line" groups="dos_multiple_discount.group_discount_multiple_per_so_line"/>					
+				</field>
+			</field>
+		</record>
+		
+		<record id="invoice_form_discount_multi_inherit" model="ir.ui.view">
+            <field name="name">invoice.form.discount.multi.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_line']/tree//field[@name='discount']" position="after">
+                    <field name="show_discount_line" groups="dos_multiple_discount.group_discount_multiple_per_so_line"/>					
+                </xpath>
+            </field>
+        </record>
+		
+	</data>
+</openerp>

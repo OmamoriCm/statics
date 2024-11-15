@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data noupdate="1">
+
+<record id="pricelist_standard_psi_service" model="product.pricelist">
+    <field name="name">Default Psychology Service</field>
+    <field name="type">psi.service</field>
+</record>
+
+<record id="pricelist_version_standard_psi_service" model="product.pricelist.version">
+    <field name="pricelist_id" ref="pricelist_standard_psi_service" />
+    <field name="name">Default Version</field>
+</record>
+
+<record id="pricelist_item_standard_psi_service" model="product.pricelist.item">
+    <field name="price_version_id" ref="pricelist_version_standard_psi_service" />
+    <field name="base" ref="product.list_price" />
+    <field name="sequence">1000</field>
+    <field name="name">Default Line</field>
+</record>
+
+<record id="pricelist_standard_psi_activity" model="product.pricelist">
+    <field name="name">Default Psychology Activity</field>
+    <field name="type">psi.activity</field>
+</record>
+
+<record id="pricelist_version_standard_psi_activity" model="product.pricelist.version">
+    <field name="pricelist_id" ref="pricelist_standard_psi_activity" />
+    <field name="name">Default Version</field>
+</record>
+
+<record id="pricelist_item_standard_psi_activity" model="product.pricelist.item">
+    <field name="price_version_id" ref="pricelist_version_standard_psi_activity" />
+    <field name="base" ref="product.list_price" />
+    <field name="sequence">1000</field>
+    <field name="name">Default Line</field>
+</record>
+
+</data>
+</openerp>

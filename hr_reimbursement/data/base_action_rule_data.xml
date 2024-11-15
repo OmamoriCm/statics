@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="base_action_rule_01" model="base.action.rule">
+    <field name="name">Reimbusement Reconciliation</field>
+    <field name="model_id" ref="account.model_account_move_line" />
+    <field name="sequence" eval="1" />
+    <field name="kind">on_write</field>
+    <field
+                name="server_action_ids"
+                eval="[(4, ref('hr_reimbursement.ir_action_server_01'))]"
+            />
+    <field name="filter_pre_id" ref="hr_reimbursement.ir_filter_reimbursement_02" />
+    <field name="filter_id" ref="hr_reimbursement.ir_filter_reimbursement_01" />
+</record>
+
+<record id="base_action_rule_02" model="base.action.rule">
+    <field name="name">Reimbusement Unreconciliation</field>
+    <field name="model_id" ref="account.model_account_move_line" />
+    <field name="sequence" eval="1" />
+    <field name="kind">on_write</field>
+    <field
+                name="server_action_ids"
+                eval="[(4, ref('hr_reimbursement.ir_action_server_02'))]"
+            />
+    <field name="filter_pre_id" ref="hr_reimbursement.ir_filter_reimbursement_01" />
+    <field name="filter_id" ref="hr_reimbursement.ir_filter_reimbursement_02" />
+</record>
+
+</data>
+</openerp>

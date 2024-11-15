@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<report id="students_info_report_id"
+                string="Students Details"
+                model="students"
+                report_type = "qweb-pdf"
+                file="schoolModul.students_info_report"
+                name="schoolModul.students_info_report" />
+	</data>
+        <data>
+        
+	<report id="students_info_report_id_wizard"
+                string="Students Details wiz"
+                model="students"
+                report_type = "qweb-pdf"
+                file="schoolModul.students_info_report_wiz"
+                name="schoolModul.students_info_report_wiz"
+                menu="False" />
+        </data>
+        <data>
+                
+        <report id="courses_info"
+                string="courses information"
+                model="courses"
+                report_type = "qweb-pdf"
+                file="schoolModul.courses_info_wiz"
+                name="schoolModul.courses_info_wiz"
+                menu="False" />
+        </data>
+
+</openerp>

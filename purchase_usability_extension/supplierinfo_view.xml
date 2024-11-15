@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<openerp>
+<data>
+
+    <record id="product_supplierinfo_form_view" model="ir.ui.view">
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_form_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="product_tmpl_id" invisible="not context.get('supplierinfo_main_view')" required="context.get('supplierinfo_main_view')"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_supplierinfo_tree_view" model="ir.ui.view">
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="product_tmpl_id" invisible="not context.get('supplierinfo_main_view')"/>
+            </field>
+            <field name="name" position="after">
+                <field name="product_name"/>
+                <field name="product_code" string="Supplier Code"/>
+            </field>
+            <field name="min_qty" position="after">
+                <field name="product_uom"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- There is no native search view -->
+    <record id="product_supplierinfo_view_filter" model="ir.ui.view">
+        <field name="model">product.supplierinfo</field>
+        <field name="arch" type="xml">
+            <search string="Product Supplier">
+                <field name="product_tmpl_id" string="Product"
+                       filter_domain="['|', ('product_name','ilike',self), ('product_tmpl_id', 'ilike', self)]"/>
+                <field name="product_code" string="Product Supplier Code"/>
+                <field name="name" string="Supplier"/>
+                <group expand="0" string="Group by" name="groupby">
+                   <filter name="supplier_groupby" string="Supplier" context="{'group_by' : 'name'}"/>
+                   <filter name="product_groupby" string="Product" context="{'group_by' : 'product_tmpl_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="product_supplierinfo_action" model="ir.actions.act_window">
+        <field name="name">Product Supplier Info</field>
+        <field name="res_model">product.supplierinfo</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'supplierinfo_main_view': True}</field>
+    </record>
+
+    <menuitem id="product_supplierinfo_menu" 
+              name="Product Supplier"
+              parent="purchase.menu_procurement_management_product"
+              action="product_supplierinfo_action"
+              sequence="50"/>
+
+</data>
+</openerp>

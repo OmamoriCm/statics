@@ -1,0 +1,8 @@
+
+{
+	'name':'school_management',
+	'version':'0.1',
+	'author':'ibrahim',
+	'data' : ['views/school_view.xml'],
+	'installable':'true',
+}

@@ -1,0 +1,15 @@
+<openerp>
+    <data>
+
+		<template id="vit_po_keterangan" inherit_id="purchase.report_purchaseorder_document"> 
+		
+			<xpath expr="//div[@class='oe_structure'][last()]" position="after">
+
+				<div id="ket_po">
+				    <p>Harap kirim invoice setelah PO diterima</p>
+				</div>
+
+			</xpath>
+		</template>
+    </data>
+ </openerp>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="base_workflow_holiday" model="base.workflow_policy">
+    <field name="model_id" ref="hr_holidays.model_hr_holidays" />
+</record>
+
+<record id="base_workflow_line_holiday_confirm" model="base.workflow_policy_line">
+    <field
+                name="workflow_id"
+                ref="hr_holiday_multiple_approval.base_workflow_holiday"
+            />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','hr.holidays'),('name','=','confirm_ok')]"
+            />
+    <field
+                name="python_code"
+            >if document.type == 'remove' and document.holiday_type == 'employee':
+    result = document.employee_id.company_id.leave_request_confirm_grp_ids.ids
+elif document.type == 'add' and document.holiday_type == 'employee':
+    result = document.employee_id.company_id.leave_allocation_confirm_grp_ids.ids
+elif document.type == 'add' and document.holiday_type == 'category':
+    company = env.user.company_id
+    result = company.leave_allocation_confirm_grp_ids.ids
+</field>
+</record>
+
+<record id="base_workflow_line_holiday_cancel" model="base.workflow_policy_line">
+    <field
+                name="workflow_id"
+                ref="hr_holiday_multiple_approval.base_workflow_holiday"
+            />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','hr.holidays'),('name','=','cancel_ok')]"
+            />
+    <field
+                name="python_code"
+            >if document.type == 'remove' and document.holiday_type == 'employee':
+    result = document.employee_id.company_id.leave_request_cancel_grp_ids.ids
+elif document.type == 'add' and document.holiday_type == 'employee':
+    result = document.employee_id.company_id.leave_allocation_cancel_grp_ids.ids
+elif document.type == 'add' and document.holiday_type == 'category':
+    company = env.user.company_id
+    result = company.leave_allocation_cancel_grp_ids.ids
+</field>
+</record>
+
+<record id="base_workflow_line_holiday_restart" model="base.workflow_policy_line">
+    <field
+                name="workflow_id"
+                ref="hr_holiday_multiple_approval.base_workflow_holiday"
+            />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','hr.holidays'),('name','=','restart_ok')]"
+            />
+    <field
+                name="python_code"
+            >if document.type == 'remove' and document.holiday_type == 'employee':
+    result = document.employee_id.company_id.leave_request_restart_grp_ids.ids
+elif document.type == 'add' and document.holiday_type == 'employee':
+    result = document.employee_id.company_id.leave_allocation_restart_grp_ids.ids
+elif document.type == 'add' and document.holiday_type == 'category':
+    company = env.user.company_id
+    result = company.leave_allocation_restart_grp_ids.ids
+</field>
+</record>
+
+<record
+            id="base_workflow_line_holiday_restart_approval"
+            model="base.workflow_policy_line"
+        >
+    <field
+                name="workflow_id"
+                ref="hr_holiday_multiple_approval.base_workflow_holiday"
+            />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','hr.holidays'),('name','=','restart_validation_ok')]"
+            />
+    <field
+                name="python_code"
+            >if document.type == 'remove' and document.holiday_type == 'employee':
+    result = document.employee_id.company_id.leave_request_restart_val_grp_ids.ids
+elif document.type == 'add' and document.holiday_type == 'employee':
+    result = document.employee_id.company_id.leave_allocation_restart_val_grp_ids.ids
+elif document.type == 'add' and document.holiday_type == 'category':
+    company = env.user.company_id
+    result = company.leave_allocation_restart_val_grp_ids.ids
+</field>
+</record>
+
+</data>
+</openerp>

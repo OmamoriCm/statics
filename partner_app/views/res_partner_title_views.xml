@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+<data>
+
+<menuitem
+            name="Titles"
+            id="res_partner_titles_menu"
+            parent="partner_app_category_configuration_menu"
+            action="base.action_partner_title_partner"
+            sequence="2"
+        />
+
+<menuitem
+            name="Contact Titles"
+            id="res_partner_contact_titles_menu"
+            parent="partner_app_category_configuration_menu"
+            action="base.action_partner_title_contact"
+            sequence="3"
+        />
+
+</data>
+</openerp>

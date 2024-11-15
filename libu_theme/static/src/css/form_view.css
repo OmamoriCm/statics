@@ -1,0 +1,29 @@
+@charset "utf-8";			
+
+/*left side bar selection active*/
+.openerp .nav-pills > li.active > a, .openerp a.list-group-item.active > a {
+  background-color: #000000;
+  color: white;
+  border-radius: 0;
+}
+
+/*top bar active selection custom*/
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #FF2525;
+}
+li.active :hover {
+  background-color: #FF2525 !important;
+}
+
+/* menu highlight #default blue */
+.openerp .oe_secondary_menu_section {
+  font-weight: bold;
+  margin-left: 8px;
+  color: #3A3A3C;
+}
+
+.navbar-inverse {
+  background-color: #000000;
+  border-color: #0F0707;
+}

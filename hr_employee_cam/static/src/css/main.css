@@ -1,0 +1,12 @@
+.camera_modal .modal-body {
+    width: 600px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera_modal #hr_camera {
+    width: 480px;
+    height: 320px;
+}

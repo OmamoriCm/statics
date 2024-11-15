@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+<!-- teacher views -->
+
+		<record id="view_teacher_form" model="ir.ui.view">
+			<field name="name">teachers</field>
+			<field name="model">teachers</field>
+			<field name="arch" type="xml">
+				<form string="student" version="7.0">
+					<header>
+
+						<button name="experiment" string="Experiment"  type="object"
+							class="oe_highlight" />
+						<button name="approved" string="Approve" 
+							class="oe_highlight"  type="object"/>
+						<button name="refuse" string="Refuse" 
+							class="oe_highlight"  type="object"/>
+						<button string="Set to Draft" name="set_to_draft" 
+							icon="gtk-convert" type="object"/>
+						<field name="status" widget="statusbar"
+							statusbar_visible="draft,experiment,approved,refuse" />
+					</header>
+					<sheet>
+						<group>
+						<h1>
+							<field name="name" placeholder="Name" style="width: 22em" />
+							<field name="code" placeholder="Code" style="width: 10em"/>
+						</h1>
+                        </group>
+						<group col="4" colspan="4">
+
+							<field name="email" />
+							<field name="date_of_birth" />
+							<field name="mobile" />
+
+						</group>
+
+						<group col="4" colspan="4">
+
+							<field name="date_of_joint" />
+							<field name="classroom_id" />
+							<field name="teacher_salary" />
+
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+        
+
+        <!-- teacher status filter -->
+
+		<record id="view_teacher_status_filter" model="ir.ui.view">
+			<field name="name">teacher_status_search</field>
+			<field name="model">teachers</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				
+						<filter string="Status" icon="terp-folder-orange"
+							domain="" context="{'group_by':'status'}" />
+						<separator orientation="vertical" />
+					
+			</field>
+		</record>
+
+       
+<!-- teacher tree views -->
+
+		<record id="view_teacher_tree" model="ir.ui.view">
+			<field name="name">teachers</field>
+			<field name="model">teachers</field>
+			<field name="arch" type="xml">
+				<tree string="teacher">
+					
+									<field name="name" />
+									<field name="email" />
+									<field name="date_of_birth" />
+									<field name="mobile" />
+									<field name="date_of_joint" />
+									<field name="status" />
+									<field name="teacher_salary" />
+									<field name="classroom_id" />
+					
+				</tree>
+			</field>
+		</record>
+        
+
+<!-- parent views -->
+
+		<record id="view_parents_form" model="ir.ui.view">
+			<field name="name">parents</field>
+			<field name="model">parents</field>
+			<field name="arch" type="xml">
+				<form string="parents">
+					<header>
+
+						<button name="experiment" string="Experiment"  type="object"
+							class="oe_highlight" />
+						<button name="approved" string="Approve" 
+							class="oe_highlight"  type="object"/>
+						<button name="refuse" string="Refuse" 
+							class="oe_highlight"  type="object"/>
+						<button string="Set to Draft" name="set_to_draft" 
+							icon="gtk-convert" type="object"/>
+						<field name="status" widget="statusbar"
+							statusbar_visible="draft,experiment,approved,refuse" />
+					</header>
+					<sheet>
+						<group> 
+						<h1>
+							<field name="name" placeholder="Name" style="width: 22em" />
+							<field name="code" placeholder="Code" style="width: 10em"/>
+						</h1>
+                        </group>
+						<group col="4" colspan="4">
+                        
+                            <field name="student_id" />
+							<field name="email" />
+							<field name="date_of_birth" />
+							<field name="mobile" />
+
+						</group>
+
+						<group>
+
+							<field name="date_of_joint" />
+							<field name="status" />
+
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+        
+<!-- parent tree views -->
+
+		<record id="view_parents_tree" model="ir.ui.view">
+			<field name="name">parentstree</field>
+			<field name="model">parents</field>
+			<field name="arch" type="xml">
+				<tree string="parent">
+					
+									<field name="name" />
+									<field name="name"/>
+									<field name="student_id" />
+							        <field name="email" />
+							        <field name="date_of_birth" />
+							        <field name="mobile" />
+                                    <field name="date_of_joint" />
+							        <field name="status" />
+					
+				</tree>
+			</field>
+		</record>
+        
+
+<!-- exam form views -->
+		<record id="view_exam_form" model="ir.ui.view">
+			<field name="name">exams</field>
+			<field name="model">exams</field>
+			<field name="arch" type="xml">
+				<form string="exams" version="7.0">
+					<sheet>
+						<group>
+							<h1>
+							<field name="name" placeholder="Name of exam" style="width: 22em" />
+							<field name="code" placeholder="Code" style="width: 10em"/>
+							</h1>
+						</group>
+						<group>
+							<field name="exam_type" />
+							<field name="start_date"/>
+						</group>
+				
+					</sheet>
+				</form>
+			</field>
+		</record>
+        
+<!-- exams tree views -->
+
+		<record id="view_exam_type_tree" model="ir.ui.view">
+			<field name="name">exams</field>
+			<field name="model">exams</field>
+			<field name="arch" type="xml">
+				<tree string="exams">
+
+							<field name="name" />
+							<field name="code"/>
+							<field name="exam_type" />
+							<field name="start_date"/>	
+				</tree>
+			</field>
+		</record>
+
+		
+		<record id="view_exams_filter" model="ir.ui.view">
+			<field name="name">exam__search</field>
+			<field name="model">exams</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				
+						<filter string="exam type" icon="terp-folder-orange"
+							domain="" context="{'group_by':'exam_type'}" />
+						<separator orientation="vertical" />
+						
+			</field>
+		</record>
+
+		<!-- Results form views -->
+		<record id="view_exam_Results_form" model="ir.ui.view">
+			<field name="name">exam_results</field>
+			<field name="model">exam_results</field>
+			<field name="arch" type="xml">
+				<form string="exam_results" version="7.0">
+					<sheet>
+						<group>
+							<field name="student_id" />
+							<field name="exam"  />
+							<field name="subject" />
+							<field name="marks"/>
+
+						<!-- domain="[('exam.id', 'ilike', self)]"  -->
+						
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+        
+<!-- Results tree views -->
+
+		<record id="view_exam_Results_tree" model="ir.ui.view">
+			<field name="name">exam_results</field>
+			<field name="model">exam_results</field>
+			<field name="arch" type="xml">
+				<tree string="exam_results">
+
+							<field name="student_id"/>
+							<field name="exam" />
+							<field name="subject" />
+							<field name="marks"/>
+					
+				</tree>
+			</field>
+		</record>
+
+<!-- Results  filter -->
+
+		<record id="view_teacher_status_filter" model="ir.ui.view">
+			<field name="name">exam_results_search</field>
+			<field name="model">exam_results</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				
+						<filter string="Student" icon="terp-folder-orange"
+							domain="" context="{'group_by':'student_id'}" />
+						<separator orientation="vertical" />
+						
+						<filter string="Exam" icon="terp-folder-orange"
+							domain="" context="{'group_by':'exam'}" />
+						<separator orientation="vertical" />
+
+						<filter string="Subject" icon="terp-folder-orange"
+							domain="" context="{'group_by':'subject'}" />
+						<separator orientation="vertical" />
+						
+						<filter string="Marks" icon="terp-folder-orange"
+							domain="" context="{'group_by':'marks'}" />
+						<separator orientation="vertical" />
+			</field>
+		</record>
+
+<!-- teacher action -->
+		<record id="action_teacher" model="ir.actions.act_window">
+			<field name="name">teachers</field>
+			<field name="res_model">teachers</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+        
+<!-- parent action -->
+		<record id="action_parent" model="ir.actions.act_window">
+			<field name="name">parents</field>
+			<field name="res_model">parents</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>   
+
+
+<!-- exam action -->
+		<record id="action_exams" model="ir.actions.act_window">
+			<field name="name">exams</field>
+			<field name="res_model">exams</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>   
+
+
+<!-- results action -->
+		<record id="action_exam_result" model="ir.actions.act_window">
+			<field name="name">exam_results</field>
+			<field name="res_model">exam_results</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>   
+
+        
+<!-- menuitem of school system -->
+    <!-- main menu -->
+		<menuitem id="school_management" name="School Management" />
+		<menuitem id="sub_school_management" name="Human Resources"
+			parent="school_management" />
+            
+      <!-- teacher sub menu action -->
+      
+		<menuitem id="school_sub_menu2" parent="sub_school_management"
+			name="Teachers" action="action_teacher" />
+            
+      <!-- parent sub menu action -->
+      
+        <menuitem id="school_sub_menu33" parent="sub_school_management"
+			name="Parents" action="action_parent" />
+
+	  <menuitem id="sub_school_management2" name="Students Proccesses"
+			parent="school_management" />
+
+	  <!-- student exam sub menu action -->
+     
+		<menuitem id="school_sub_exam" parent="sub_school_management2"
+			name="Exams" action="action_exams" />
+
+	 <!-- student exam results sub menu action -->
+
+	  <menuitem id="school_sub_exam_result" parent="sub_school_management2"
+			name="Exams Results" action="action_exam_result" />
+            
+	</data>
+</openerp>

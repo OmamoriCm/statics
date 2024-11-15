@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+
+        <record id="property_object_type_view_tree" model="ir.ui.view">
+            <field name="name">property.object_type tree</field>
+            <field name="model">property.object_type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="need_parent"/>
+                    <field name="occupy_ok"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="property_object_type_view_form" model="ir.ui.view">
+            <field name="name">property.object_type form</field>
+            <field name="model">property.object_type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_create_menu" string="Create Menu" type="object" attrs="{'invisible':[('menu_id','!=',False)]}"/>
+                        <button name="action_reload" string="Reload Menu" type="object" attrs="{'invisible':[('menu_id','=',False)]}"/>
+                    </header>
+                    <sheet>
+                        <group col="2" colspan="2">
+                            <field name="name"/>
+                            <field name="active"/>
+                            <field name="occupy_ok"/>
+                            <field name="need_parent"/>
+                            <field name="allowed_parent_type_ids" widget="many2many_tags"/>
+                        </group>
+                        <notebook>
+                            <page name="display_format" string="Display Format">
+                                <field name="display_name_format"/>
+                            </page>
+                            <page name="page_note" string="Note">
+                                <field name="note"/>
+                            </page>
+                            <page name="technical" string="Technical">
+                                <group name="technical_1" colspan="4" col="2">
+                                    <field name="menu_sequence"/>
+                                    <field name="window_action_id"/>
+                                    <field name="menu_id"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="property_object_type_action" model="ir.actions.act_window">
+            <field name="name">Property Object Types</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">property.object_type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            name="Object Types"
+            id="property_object_type_menu"
+            action="property_object_type_action"
+            parent="menu_property_base_config"
+            sequence="1"/>
+
+    </data>
+</openerp>

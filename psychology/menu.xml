@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<menuitem id="psychology_app_menu" name="Psychology" sequence="10" />
+
+<menuitem
+            id="psychology_client_root_menu"
+            name="Client"
+            sequence="1"
+            parent="psychology_app_menu"
+        />
+
+<menuitem
+            id="psychology_case_menu"
+            name="Case"
+            sequence="2"
+            parent="psychology_app_menu"
+        />
+
+<menuitem
+            id="psychology_service_activity_menu"
+            name="Services &amp; Activities"
+            sequence="90"
+            parent="psychology_app_menu"
+        />
+
+<menuitem
+            id="psychology_report_menu"
+            name="Report"
+            sequence="98"
+            parent="psychology_app_menu"
+        />
+
+<menuitem
+            id="psychology_configuration_menu"
+            name="Configuration"
+            sequence="99"
+            parent="psychology_app_menu"
+        />
+
+<menuitem
+            id="psychology_case_configuration_menu"
+            name="Case"
+            sequence="1"
+            parent="psychology_configuration_menu"
+        />
+
+
+</data>
+</openerp>

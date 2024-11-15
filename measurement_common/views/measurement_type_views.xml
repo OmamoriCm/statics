@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="measurement_type_view_search" model="ir.ui.view">
+    <field name="name">measurement.type form</field>
+    <field name="model">measurement.type</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="code"/>
+        </search>
+    </field>
+</record>
+
+<record id="measurement_type_view_tree" model="ir.ui.view">
+    <field name="name">measurement.type tree</field>
+    <field name="model">measurement.type</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="code"/>
+        </tree>
+    </field>
+</record>
+
+<record id="measurement_type_view_form" model="ir.ui.view">
+    <field name="name">measurement.type form</field>
+    <field name="model">measurement.type</field>
+    <field name="arch" type="xml">
+        <form>
+            <header/>
+            <div class="oe_right oe_button_box" style="width: 300px;" name="buttons"/>
+            <group name="group_1" colspan="4" col="2">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active"/>
+                <field name="sequence_id"/>
+            </group>
+            <notebook>
+                <page name="workflow_policy" string="Workflow Policy">
+                    <group name="workflow_policy_1" colspan="4" col="2">
+                        <field name="measurement_confirm_grp_ids" widget="many2many_tags"/>
+                        <field name="measurement_approve_grp_ids" widget="many2many_tags"/>
+                        <field name="measurement_start_grp_ids" widget="many2many_tags"/>
+                        <field name="measurement_done_grp_ids" widget="many2many_tags"/>
+                        <field name="measurement_cancel_grp_ids" widget="many2many_tags"/>
+                        <field name="measurement_restart_grp_ids" widget="many2many_tags"/>
+                    </group>
+                </page>
+                <page name="note" string="Note">
+                    <field name="note" nolabel="1" colspan="4"/>
+                </page>
+            </notebook>
+        </form>
+    </field>
+</record>
+
+<record id="measurement_type_action" model="ir.actions.act_window">
+    <field name="name">Measurement Types</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">measurement.type</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+    id="measurement_type_menu"
+    name="Measurement Types"
+    parent="measurement_configuration_menu"
+    action="measurement_type_action"
+    sequence="1"
+    />
+
+</data>
+</openerp>

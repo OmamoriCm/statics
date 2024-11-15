@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017-2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="tile_category_view_form" model="ir.ui.view">
+    <field name="name">tile.category form</field>
+    <field name="model">tile.category</field>
+    <field name="inherit_id" ref="web_dashboard_tile_category.tile_category_view_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='state']" position="before">
+                <button name="action_generate_cron" string="Generate Cron" type="object" attrs="{'invisible':[('cron_id','!=',False)]}"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page name="email" string="Email">
+                    <group name="email_1" colspan="4" col="2">
+                        <field name="cron_id"/>
+                        <field name="recipient_partner_ids" widget="many2many_tags"/>
+                        <field name="email_template_id" domain="[('model_id.model','=','tile.category')]"/>
+                    </group>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+</data>
+</openerp>

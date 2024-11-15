@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="0">
+
+    <record id="group_discount_multiple_per_so_line" model="res.groups">
+        <field name="name">Discount Multiple on lines</field>
+    </record>
+    
+    <record id="group_discount_multiple_per_product" model="res.groups">
+        <field name="name">Discount Multiple on Product</field>
+    </record>
+
+
+</data>
+</openerp>

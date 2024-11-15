@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="ir_filter_reimbursement_01" model="ir.filters">
+    <field name="name">Reconcilled</field>
+    <field
+                name="domain"
+            >[['reimbursement_id','!=',False],['reconcile_id','!=',False]]</field>
+    <field name="model_id">account.move.line</field>
+    <field name="user_id" eval="False" />
+    <field name="active" eval="0" />
+</record>
+
+<record id="ir_filter_reimbursement_02" model="ir.filters">
+    <field name="name">Unreconcilled</field>
+    <field
+                name="domain"
+            >[['reimbursement_id','!=',False],['reconcile_id','=',False]]</field>
+    <field name="model_id">account.move.line</field>
+    <field name="user_id" eval="False" />
+    <field name="active" eval="0" />
+</record>
+</data>
+</openerp>

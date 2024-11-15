@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="purchase-order_form_view" model="ir.ui.view">
+            <field name="name">purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="arch" type="xml">
+		    
+                    <xpath expr="//sheet//notebook//page//group//field[@name='amount_untaxed']" position="after">
+			    <group class="oe_subtotal_footer oe_right" style="width:30%%" colspan="2">
+				   <field name="taxes" nolabel='1' colspan="2"  >
+		                    <tree>
+		                        <field name="name" colspan="2" />
+		                        <field name="base" colspan="2"/>
+		                        <field name="amount" colspan="2" />
+		                    </tree>
+		                </field>
+				   
+			    </group>
+			   
+		   </xpath>	
+            </field>
+        </record>
+    </data>
+</openerp>

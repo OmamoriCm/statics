@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_partner_evaluation_item_type_qualitative_option_all,partner.evaluation_item_type_qualitative_option - All,model_partner_evaluation_item_type_qualitative_option,,1,0,0,0
+access_partner_evaluation_item_type_qualitative_option_employee,partner.evaluation_item_type_qualitative_option - Employee,model_partner_evaluation_item_type_qualitative_option,base.group_user,1,1,1,1
+access_partner_evaluation_item_type_all,partner.evaluation_item_type - All,model_partner_evaluation_item_type,,1,0,0,0
+access_partner_evaluation_item_type_employee,partner.evaluation_item_type - Employee,model_partner_evaluation_item_type,base.group_user,1,1,1,1
+access_partner_evaluation_item_all,partner.evaluation_item - All,model_partner_evaluation_item,,1,0,0,0
+access_partner_evaluation_item_employee,partner.evaluation_item - Employee,model_partner_evaluation_item,base.group_user,1,1,1,1
+access_partner_evaluation_result_all,partner.evaluation_result - All,model_partner_evaluation_result,,1,0,0,0
+access_partner_evaluation_result_employee,partner.evaluation_result - Employee,model_partner_evaluation_result,base.group_user,1,1,1,1
+access_partner_evaluation_template_item_all,partner.evaluation_template_item - All,model_partner_evaluation_template_item,,1,0,0,0
+access_partner_evaluation_template_item_employee,partner.evaluation_template_item - Employee,model_partner_evaluation_template_item,base.group_user,1,1,1,1
+access_partner_evaluation_template_all,partner.evaluation_template - All,model_partner_evaluation_template,,1,0,0,0
+access_partner_evaluation_template_employee,partner.evaluation_template - Employee,model_partner_evaluation_template,base.group_user,1,1,1,1
+access_partner_evaluation_all,partner.evaluation - All,model_partner_evaluation,,1,0,0,0
+access_partner_evaluation_employee,partner.evaluation - Employee,model_partner_evaluation,base.group_user,1,1,1,1

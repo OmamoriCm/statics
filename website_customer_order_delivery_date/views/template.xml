@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    
+    <template id="customer_order_delivery_date_assets_frontend" inherit_id="website.assets_frontend">
+          <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/web/static/lib/jquery.ui/css/smoothness/jquery-ui-1.9.1.custom.css"/>
+             <script type="text/javascript" src="/web/static/lib/jquery.ui/js/jquery-ui-1.9.1.custom.js"></script>
+             <script type="text/javascript" src="/website_customer_order_delivery_date/static/src/js/website_customer_order_delivery_date.js"></script>
+         </xpath>
+    </template>
+        
+    <template id="website_sale_customer_order_delivery_date" inherit_id="website_sale.payment">
+        <xpath expr="//div[@id='payment_method']" position="before">
+            <t t-if="website and website.is_customer_order_delivery_date_feature==False">
+                <div class="mb64 row">
+                    <div class="form-group col-lg-12">
+                        <div class="row">
+                            <div class='col-sm-2'>
+                                    <div class="form-group">
+                                        <label class="control-label" for="delivery_date">Delivery Date</label>
+                                        <div class='input-group date'>
+                                            <input type='text' class="form-control" id='delivery_date' readonly="True"/>
+                                            <span class="input-group-addon" id='delivery_date_icon'
+                                                  onclick="$('#delivery_date').datepicker('show');">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                            </div>
+                         </div>
+                         <t t-if="website and website.is_customer_order_delivery_comment_feature==False">
+                            <div class="row">
+                                <div class='col-sm-4'>
+                                    <div class="form-group">
+                                        <label class="control-label" for="delivery_comment">Delivery Comment</label><br/>
+                                        <textarea rows="3" cols="30" class="form-control" id="delivery_comment" placeholder="Write a comment..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                         </t>
+                        </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+</data>
+</openerp>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="service_contract_view_form" model="ir.ui.view">
+    <field name="name">service.contract form</field>
+    <field name="model">service.contract</field>
+    <field name="inherit_id" ref="service_contract.service_contract_view_form" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='date_end']" position="after">
+                <field name="recurring_service_ok" />
+            </xpath>
+            <xpath expr="//page[@name='team']" position="before">
+                <page
+                            name="recurring_item"
+                            string="Recurring Items"
+                            attrs="{'invisible':[('recurring_service_ok','=',False)]}"
+                        >
+                    <group
+                                name="recurring_invoice"
+                                string="Invoice"
+                                colspan="4"
+                                col="2"
+                            >
+                        <field
+                                    name="recurring_item_receivable_journal_id"
+                                    domain="[('type','=','sale')]"
+                                    string="Journal"
+                                />
+                        <field
+                                    name="recurring_item_receivable_account_id"
+                                    domain="[('type','=','receivable')]"
+                                    string="Receivable Account"
+                                />
+                    </group>
+                    <group
+                                name="recurring_income_realization"
+                                string="Income Realization"
+                                colspan="4"
+                                col="2"
+                            >
+                        <field
+                                    name="recurring_item_income_realization_journal_id"
+                                    string="Journal"
+                                    domain="[('type','=','general')]"
+                                />
+                        <field
+                                    name="recurring_item_income_realization_account_id"
+                                    string="Account"
+                                    domain="[('type','=','other')]"
+                                />
+                    </group>
+                    <group name="recurring_item" string="Items" colspan="4" col="2">
+
+                        <field
+                                    name="recurring_item_allowed_product_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <field
+                                    name="recurring_item_allowed_product_categ_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <button
+                                    name="action_reload_recurring_item_price"
+                                    type="object"
+                                    string="Reload Price"
+                                    icon="gtk-execute"
+                                    colspan="2"
+                                    attrs="{'invisible':[('state','!=','draft')]}"
+                                />
+                        <field
+                                    name="recurring_item_ids"
+                                    colspan="2"
+                                    nolabel="1"
+                                    mode="tree"
+                                    context="{'default_pricelist_id':pricelist_id}"
+                                >
+
+                            <tree editable="top">
+                                <field name="sequence" widget="handle" />
+                                <field
+                                            name="product_id"
+                                            domain="['|',('id','in',parent.recurring_item_allowed_product_ids[0][2]),('categ_id','in',parent.recurring_item_allowed_product_categ_ids[0][2])]"
+                                        />
+                                <field
+                                            name="recurring_item_allowed_product_ids"
+                                            widget="many2many_tags"
+                                            invisible="1"
+                                        />
+                                <field
+                                            name="recurring_item_allowed_product_categ_ids"
+                                            widget="many2many_tags"
+                                            invisible="1"
+                                        />
+                                <field name="name" />
+                                <field name="pricelist_id" invisible="0" />
+                                <field name="price_unit" />
+                                <field name="quantity" />
+                                <field name="allowed_uom_categ_id" invisible="1" />
+                                <field
+                                            name="uom_id"
+                                            domain="[('category_id','=',allowed_uom_categ_id)]"
+                                        />
+                                <field name="amount_untaxed" />
+                                <field name="amount_tax" />
+                                <field name="amount_total" />
+                            </tree>
+                        </field>
+                    </group>
+                    <group name="recurring_period" string="Period" colspan="4" col="2">
+                        <field
+                                    name="recurring_period"
+                                    attrs="{'required':[('recurring_service_ok','=',True)]}"
+                                />
+                        <field
+                                    name="recurring_period_lenght"
+                                    attrs="{'required':[('recurring_service_ok','=',True)]}"
+                                />
+                        <field
+                                    name="recurring_period_num"
+                                    attrs="{'required':[('recurring_service_ok','=',True)]}"
+                                />
+                        <button
+                                    name="action_create_recurring_period"
+                                    type="object"
+                                    string="Create Recurring Period"
+                                    icon="gtk-execute"
+                                    colspan="2"
+                                    attrs="{'invisible':[('state','!=','draft')]}"
+                                    confirm="Create recurring service? This will delete existing recurring service"
+                                />
+                        <field
+                                    name="recurring_period_ids"
+                                    colspan="2"
+                                    nolabel="1"
+                                    mode="tree"
+                                >
+                            <tree>
+                                <field name="date_start" />
+                                <field name="date_end" />
+                                <field name="analytic_account_id" />
+                                <field name="income_realization_move_id" />
+                                <button
+                                            name="action_create_income_realization"
+                                            string="Create Income Realization"
+                                            type="object"
+                                            icon="gtk-execute"
+                                            attrs="{'invisible':[('income_realization_move_id','!=',False)]}"
+                                        />
+                                <button
+                                            name="action_delete_income_realization"
+                                            string="Delete Income Realization"
+                                            type="object"
+                                            icon="gtk-cancel"
+                                            attrs="{'invisible':[('income_realization_move_id','=',False)]}"
+                                        />
+                                <field name="invoice_id" />
+                                <field name="invoice_state" />
+                                <button
+                                            name="action_create_invoice"
+                                            string="Create Invoice"
+                                            type="object"
+                                            icon="gtk-execute"
+                                            attrs="{'invisible':[('invoice_state','=','invoiced')]}"
+                                        />
+                                <button
+                                            name="action_delete_invoice"
+                                            string="Delete Invoice"
+                                            type="object"
+                                            icon="gtk-cancel"
+                                            attrs="{'invisible':[('invoice_state','=','tobeinvoiced')]}"
+                                        />
+                                <field name="state" />
+                                <button
+                                            name="action_start"
+                                            string="Start"
+                                            type="object"
+                                            icon="gtk-media-play"
+                                            attrs="{'invisible':[('state','!=','draft')]}"
+                                        />
+                                <button
+                                            name="action_end"
+                                            string="End"
+                                            type="object"
+                                            icon="gtk-media-stop"
+                                            attrs="{'invisible':[('state','!=','open')]}"
+                                        />
+                                <button
+                                            name="action_restart"
+                                            string="Restart"
+                                            type="object"
+                                            icon="gtk-media-previous"
+                                            attrs="{'invisible':[('state','=','draft')]}"
+                                        />
+                            </tree>
+                        </field>
+                    </group>
+                    <group name="recurring_amount" colspan="4" col="2">
+                        <field name="recurring_item_amount_untaxed" string="Untaxed" />
+                        <field name="recurring_item_amount_tax" string="Tax" />
+                        <field name="recurring_item_amount_total" string="Total" />
+                    </group>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+</data>
+</openerp>

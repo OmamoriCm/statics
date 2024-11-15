@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017-2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="tile_category_view_tree" model="ir.ui.view">
+    <field name="name">tile.category tree</field>
+    <field name="model">tile.category</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+        </tree>
+    </field>
+</record>
+
+<record id="tile_category_view_form" model="ir.ui.view">
+    <field name="name">tile.category form</field>
+    <field name="model">tile.category</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+                <button name="action_active" string="Active" type="object" states="draft" class="oe_highlight"/>
+                <button name="action_reload" string="Reload" type="object" states="active"/>
+                <button name="action_draft" string="Draft" type="object" states="active"/>
+                <field name="state" widget="statusbar"/>
+            </header>
+            <sheet>
+                <div class="oe_right oe_button_box" style="width: 300px;" name="buttons">
+                    <button name="action_open_tile"
+                        string="Dashboard Tiles"
+                        type="object"
+                        class="oe_inline oe_stat_button"
+                        icon="fa-book"
+                    />
+                </div>
+                <group name="group_1" colspan="4" col="2">
+                    <field name="name"/>
+                </group>
+                <notebook colspan="4">
+                    <page name="tiles" string="Dashboard Tiles">
+                        <field name="tile_ids"/>
+                    </page>
+                    <page name="groups" string="Groups">
+                        <field name="group_ids"/>
+                    </page>
+                    <page name="technical" string="Technical">
+                        <group name="technical_1" colspan="4" col="2">
+                            <field name="window_action_id"/>
+                            <field name="menu_id"/>
+                        </group>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="tile_category_view_search" model="ir.ui.view">
+    <field name="name">tile.category search</field>
+    <field name="model">tile.category</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+        </search>
+    </field>
+</record>
+
+<record id="tile_category_action" model="ir.actions.act_window">
+    <field name="name">Tile Categories</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">tile.category</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="tile_category_view_search"/>
+</record>
+
+<menuitem
+    id="tile_category_menu"
+    name="Tile Category"
+    parent="base.next_id_2"
+    action="tile_category_action"
+    sequence="51"
+    />
+
+
+</data>
+</openerp>

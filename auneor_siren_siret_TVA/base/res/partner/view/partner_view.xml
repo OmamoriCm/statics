@@ -1,0 +1,43 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<!-- # -*- coding: utf-8 -*-
+##############################################################################
+#
+#    OpenERP, Open Source Management Solution
+#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+############################################################################## -->
+<openerp>
+	<data>
+
+        <record id="hnm_l10n_fr_view_partner_informations_form" model="ir.ui.view">
+            <field name="name">hnm.l10n.fr.res.partner.form.inherit1</field>
+            <field name="model">res.partner</field>
+            <field name="priority">2</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="lang" position="after">
+<!--                 <page string="Legal informations"> -->
+                        <newline/>
+                        <field name="rcs"/>
+                        <field name="siren"/>
+                        <field name="siret" on_change="onchange_siret(siret)"/>
+<!--                 </page> -->
+                </field>
+            </field>
+        </record>
+
+	</data>
+</openerp>

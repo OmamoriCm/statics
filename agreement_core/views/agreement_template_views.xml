@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+    <record id="agreement_template_view_tree" model="ir.ui.view">
+        <field name="name">agreement.template tree</field>
+        <field name="model">agreement.template</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="title" />
+                <field name="type_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="agreement_template_view_form" model="ir.ui.view">
+        <field name="name">agreement.template form</field>
+        <field name="model">agreement.template</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form>
+                <group name="group_1" colspan="4" col="2">
+                    <field name="title" />
+                    <field name="active" />
+                    <field name="type_id" />
+                    <field name="report_id" />
+                </group>
+                <group
+                        name="raw_description"
+                        string="Raw Description"
+                        colspan="4"
+                        col="2"
+                        class="oe_edit_only"
+                    >
+                    <field name="raw_description" colspan="2" nolabel="1" />
+                </group>
+                <group
+                        name="description"
+                        string="Description"
+                        colspan="4"
+                        col="2"
+                        class="oe_read_only"
+                    >
+                    <field name="description" colspan="2" nolabel="1" />
+                </group>
+                <notebook colspan="4">
+                    <page name="content" string="Contents">
+                        <group name="recital" colspan="4" col="2" string="Recitals">
+                            <field name="recital_ids" nolabel="1" colspan="2">
+                                <tree>
+                                    <field name="sequence" widget="handle" />
+                                    <field name="name" />
+                                    <field name="title" />
+                                </tree>
+                                <form>
+                                    <group name="recital_1" colspan="4" col="2">
+                                        <field name="name" />
+                                        <field name="title" />
+                                        <field name="sequence" />
+                                    </group>
+                                    <group
+                                            name="recital_raw_content"
+                                            string="Raw Content"
+                                            colspan="4"
+                                            col="2"
+                                            class="oe_edit_only"
+                                        >
+                                        <field name="raw_content" nolabel="1" />
+                                    </group>
+                                    <group
+                                            name="recital_content"
+                                            string="Content"
+                                            colspan="4"
+                                            col="2"
+                                            class="oe_read_only"
+                                        >
+                                        <field name="content" nolabel="1" />
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                        <group name="section" string="Sections" colspan="4" col="2">
+                            <field name="section_ids" colspan="2" nolabel="1">
+                                <tree>
+                                    <field name="sequence" widget="handle" />
+                                    <field name="name" />
+                                    <field name="title" />
+                                </tree>
+                                <form>
+                                    <group name="section_1" colspan="4" col="2">
+                                        <field name="name" />
+                                        <field name="title" />
+                                        <field name="sequence" />
+                                    </group>
+                                    <group
+                                            name="section_raw_content"
+                                            string="Raw Content"
+                                            colspan="4"
+                                            col="2"
+                                            class="oe_edit_only"
+                                        >
+                                        <field name="raw_content" nolabel="1" />
+                                    </group>
+                                    <group
+                                            name="section_content"
+                                            string="Content"
+                                            colspan="4"
+                                            col="2"
+                                            class="oe_read_only"
+                                        >
+                                        <field name="content" nolabel="1" />
+                                    </group>
+                                    <notebook>
+                                        <page name="section_clause">
+                                            <field name="clause_ids">
+                                                <tree>
+                                                    <field
+                                                            name="sequence"
+                                                            widget="handle"
+                                                        />
+                                                    <field name="name" />
+                                                    <field name="title" />
+                                                </tree>
+                                                <form>
+                                                    <group
+                                                            name="clause_1"
+                                                            colspan="4"
+                                                            col="2"
+                                                        >
+                                                        <field name="name" />
+                                                        <field name="title" />
+                                                        <field name="sequence" />
+                                                    </group>
+                                                    <group
+                                                            name="clause_raw_content"
+                                                            string="Raw Content"
+                                                            colspan="4"
+                                                            col="2"
+                                                            class="oe_edit_only"
+                                                        >
+                                                        <field
+                                                                name="raw_content"
+                                                                nolabel="1"
+                                                            />
+                                                    </group>
+                                                    <group
+                                                            name="clause_content"
+                                                            string="Content"
+                                                            colspan="4"
+                                                            col="2"
+                                                            class="oe_read_only"
+                                                        >
+                                                        <field
+                                                                name="content"
+                                                                nolabel="1"
+                                                            />
+                                                    </group>
+                                                </form>
+                                            </field>
+                                        </page>
+                                    </notebook>
+                                </form>
+                            </field>
+                        </group>
+                        <group name="appendix" colspan="4" col="2" string="Appendices">
+                            <field name="appendix_ids" nolabel="1" colspan="2">
+                                <tree>
+                                    <field name="sequence" widget="handle" />
+                                    <field name="name" />
+                                    <field name="title" />
+                                </tree>
+                                <form>
+                                    <group name="appendix_1" colspan="4" col="2">
+                                        <field name="name" />
+                                        <field name="title" />
+                                        <field name="sequence" />
+                                    </group>
+                                    <group
+                                            name="appendix_raw_content"
+                                            string="Raw Content"
+                                            colspan="4"
+                                            col="2"
+                                            class="oe_edit_only"
+                                        >
+                                        <field name="raw_content" nolabel="1" />
+                                    </group>
+                                    <group
+                                            name="appendix_content"
+                                            string="Content"
+                                            colspan="4"
+                                            col="2"
+                                            class="oe_read_only"
+                                        >
+                                        <field name="content" nolabel="1" />
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                    </page>
+                    <page name="party" string="Parties">
+                        <field name="party_ids">
+                            <tree editable="top">
+                                <field name="sequence" widget="handle" />
+                                <field name="name" />
+                                <field name="party_id" />
+                                <field
+                                        name="allowed_contact_ids"
+                                        widget="many2many_tags"
+                                        invisible="1"
+                                    />
+                                <field
+                                        name="contact_id"
+                                        domain="[('id','in',allowed_contact_ids[0][2])]"
+                                    />
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="note" string="Notes">
+                        <field name="note" />
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="agreement_template_view_search" model="ir.ui.view">
+        <field name="name">agreement.template search</field>
+        <field name="model">agreement.template</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="title" />
+            </search>
+        </field>
+    </record>
+
+    <record id="agreement_template_action" model="ir.actions.act_window">
+        <field name="name">Agreement Template</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">agreement.template</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field
+                name="search_view_id"
+                ref="agreement_core.agreement_template_view_search"
+            />
+    </record>
+
+    <menuitem
+            id="agreement_template_menu"
+            name="Template"
+            parent="agreement_core.agreement_configuration_menu"
+            action="agreement_template_action"
+            sequence="3"
+        />
+
+
+</data>
+</openerp>

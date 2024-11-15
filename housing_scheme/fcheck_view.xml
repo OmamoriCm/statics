@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+	<data>
+	
+			<!-- Form view of Final Check -->
+			<record id="view_form_fcheck" model="ir.ui.view">
+				<field name="name">view.form.fcheck</field>
+				<field name="model">fcheck.model</field>
+				<field name="arch" type="xml">
+					<form string="Plot Measurements" version="8.0">
+						
+						<separator string ="Owner Details" colspan="4"/>
+						<group colspan="4" col="4">
+							<field name="name"/>
+							<field name="active"/>
+							<field name="plot"/>
+							<field name="block"/>
+						</group>
+						
+						<separator string ="Gruond Floor" colspan="4"/>
+						<group colspan="4" col="4">
+								<field name="flawn"/>
+                                <field name="rpass"/>
+                                <field name="lpass"/>
+                                <field name="bpass"/>
+                                <field name="fbwall"/>
+                                <field name="bbwall"/>
+                                <field name="rbwall"/>
+                                <field name="lbwall"/>
+                                <field name="ceiling"/>
+                                <field name="ramp"/>
+                   		</group>
+                   		
+                   		<separator string ="First Floor" colspan="4"/>
+                   		<group colspan="4" col="4">
+								<field name="flawn"/>
+                                <field name="rpass"/>
+                                <field name="lpass"/>
+                                <field name="bpass"/>
+                                <field name="fbwall"/>
+                                <field name="bbwall"/>
+                                <field name="rbwall"/>
+                                <field name="lbwall"/>
+                   		</group>
+  						
+  						<separator string ="Second Floor" colspan="4"/>
+                   		<group colspan="4" col="4">
+								<field name="ceiling"/>
+                                <field name="ramp"/>
+                                <field name="fffloor"/>
+                                <field name="mumty"/>
+                                <field name="squarter"/>
+                                <field name="wtank"/>
+                   		</group>
+                   		
+                   		<separator string ="Garbage" colspan="4"/>
+                   		<group colspan="4" col="4">
+								<field name="lplot"/>
+                                <field name="rplot"/>
+                                <field name="fplot"/>
+                                <field name="bplot"/>
+                   		</group>
+  
+                        <separator string="Notes" colspan="4"/>
+                            	<field name="notes" nolabel="1"/>
+                   		
+					</form>
+				</field>
+			</record>
+			
+
+			<!-- Tree view of Final Check -->
+			<record id="view_tree_fcheck" model="ir.ui.view">
+				<field name="name">view.tree.fcheck</field>
+				<field name="model">fcheck.model</field>
+				<field name="arch" type="xml">
+					<tree string="Final Check">
+						<field name="name"/>
+						<field name="plot"/>
+                        <field name="block"/>
+						<field name="active"/>
+					</tree>
+				</field>
+			</record>
+
+
+			<!-- Action of Plot-->
+			<record id="action_fcheck" model="ir.actions.act_window">   
+				<field name="name">Plots</field>
+				<field name="res_model">fcheck.model</field>
+				<field name="view_type">form</field>
+				<field name="view_mode">tree,form</field>
+			</record>
+			
+			<menuitem id="menu_main_mgm" name="Management"/>
+			<menuitem id="measurements" name="Measurements" parent="menu_main_mgm"/>
+			<menuitem id="fcheck" action="action_fcheck" parent="measurements"/>
+         
+	</data>
+</openerp>

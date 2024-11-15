@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    
+<record model="ir.ui.view" id="mass_mailing_contact_tree">
+    <field name="name">mass_mailing.contact.tree.bounce</field>
+    <field name="model">mail.mass_mailing.contact</field>
+    <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_contact_tree"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='opt_out']" position="after">
+            <field name="is_bounced"/>
+        </xpath>
+    </field>
+</record>
+
+<!-- Cron that process the bounced mails -->   
+ <record id="ir_cron_bounced_mails" model="ir.cron">
+    <field name="name">Opt out Bounced Mails</field>
+    <field eval="True" name="active" />
+    <field name="user_id" ref="base.user_root" />
+    <field name="interval_number">60</field>
+    <field name="interval_type">minutes</field>
+    <field name="numbercall">-1</field>
+    <field eval="False" name="doall" />
+    <field name="model">mail.mail.statistics</field>
+    <field name="function">_process_bounced_mails</field>
+    <field name="args">()</field>
+</record>
+
+</data>
+</openerp>
